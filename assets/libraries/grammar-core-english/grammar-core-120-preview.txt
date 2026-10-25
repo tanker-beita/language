@@ -1,0 +1,509 @@
+英语核心语法例句
+教学分类草案：6 大类、20 小类、120 个核心语法点，每点 1 句。分类可扩展，不代表语法的固定总数。
+
+1：词语短语
+  1-1：词类与构词
+    1-1-1：名词表示人或事物
+      The teacher opened the window.
+      老师打开了窗户。
+
+    1-1-2：动词表示动作
+      The children laughed.
+      孩子们笑了。
+
+    1-1-3：形容词描述性质
+      The soup is hot.
+      汤很烫。
+
+    1-1-4：副词修饰动作
+      She answered politely.
+      她礼貌地作了回答。
+
+    1-1-5：派生构词
+      His kindness touched everyone.
+      他的善良感动了所有人。
+
+    1-1-6：复合构词
+      I left my notebook at home.
+      我把笔记本忘在家里了。
+
+  1-2：名词与代词
+    1-2-1：名词规则复数
+      There are three apples in the bowl.
+      碗里有三个苹果。
+
+    1-2-2：名词不规则复数
+      The children brushed their teeth.
+      孩子们刷了牙。
+
+    1-2-3：不可数名词
+      I need some information about the course.
+      我需要一些关于这门课程的信息。
+
+    1-2-4：名词所有格
+      This is my sister's bicycle.
+      这是我姐姐的自行车。
+
+    1-2-5：人称代词的主格与宾格
+      She invited me to dinner.
+      她邀请我吃晚饭。
+
+    1-2-6：反身代词
+      He taught himself Spanish.
+      他自学了西班牙语。
+
+  1-3：冠词与限定词
+    1-3-1：不定冠词 a 与 an
+      She bought a notebook and an umbrella.
+      她买了一本笔记本和一把雨伞。
+
+    1-3-2：定冠词 the
+      Please close the door behind you.
+      请随手关上你身后的门。
+
+    1-3-3：零冠词
+      Water is essential for life.
+      水对生命至关重要。
+
+    1-3-4：指示限定词
+      These shoes are more comfortable than those boots.
+      这几双鞋比那几双靴子更舒服。
+
+    1-3-5：物主限定词
+      Our teacher checked their homework.
+      我们的老师检查了他们的作业。
+
+    1-3-6：数量限定词
+      We have a few eggs but little milk.
+      我们有几个鸡蛋，但牛奶很少。
+
+  1-4：形容词、副词与比较等级
+    1-4-1：形容词作定语
+      A small dog followed us home.
+      一只小狗跟着我们回了家。
+
+    1-4-2：形容词作表语
+      The garden looks beautiful.
+      花园看起来很美。
+
+    1-4-3：频率副词的位置
+      She usually walks to work.
+      她通常步行上班。
+
+    1-4-4：比较级
+      This road is wider than that one.
+      这条路比那条路宽。
+
+    1-4-5：最高级
+      She is the tallest student in our class.
+      她是我们班最高的学生。
+
+    1-4-6：同级比较
+      This bag is as heavy as that one.
+      这个包和那个包一样重。
+
+  1-5：介词与短语搭配
+    1-5-1：时间介词
+      The meeting starts at nine on Monday.
+      会议在星期一九点开始。
+
+    1-5-2：地点介词
+      The keys are under the sofa.
+      钥匙在沙发下面。
+
+    1-5-3：方向介词
+      She walked into the kitchen.
+      她走进了厨房。
+
+    1-5-4：介词后接名词或动名词
+      He left without saying goodbye.
+      他没有道别就离开了。
+
+    1-5-5：动词与介词搭配
+      You can depend on me.
+      你可以依靠我。
+
+    1-5-6：短语动词
+      Please turn off the light.
+      请把灯关掉。
+
+2：句子结构
+  2-1：句子成分与基本句型
+    2-1-1：主语加谓语
+      The baby smiled.
+      宝宝笑了。
+
+    2-1-2：主语加谓语加宾语
+      I need an English menu.
+      我需要一份英文菜单。
+
+    2-1-3：主语加系动词加表语
+      The room is quiet.
+      房间很安静。
+
+    2-1-4：主语加谓语加间接宾语加直接宾语
+      She gave me a dictionary.
+      她给了我一本词典。
+
+    2-1-5：主语加谓语加宾语加宾语补足语
+      The news made him happy.
+      这个消息使他很高兴。
+
+    2-1-6：主语加谓语加必需状语
+      She lives in Madrid.
+      她住在马德里。
+
+    2-1-7：主语加谓语加宾语加必需状语
+      He put the keys on the table.
+      他把钥匙放在了桌上。
+
+    2-1-8：后置定语
+      The woman in the red coat is my aunt.
+      穿红色外套的那位女士是我姑姑。
+
+    2-1-9：时间与地点状语
+      We met at the station yesterday.
+      我们昨天在车站见了面。
+
+    2-1-10：同位语
+      My brother, a doctor, works nearby.
+      我哥哥是一名医生，在附近工作。
+
+  2-2：主谓一致
+    2-2-1：第三人称单数主语
+      He works in a library.
+      他在图书馆工作。
+
+    2-2-2：复数主语
+      The students are ready.
+      学生们准备好了。
+
+    2-2-3：and 连接的并列主语
+      Tom and Anna enjoy hiking.
+      汤姆和安娜喜欢徒步旅行。
+
+    2-2-4：不定代词作主语
+      Everyone needs a little help sometimes.
+      每个人有时都需要一点帮助。
+
+3：动词形式
+  3-1：时态与体
+    3-1-1：一般现在时
+      She drinks tea every morning.
+      她每天早上喝茶。
+
+    3-1-2：一般过去时
+      We visited the museum yesterday.
+      我们昨天参观了博物馆。
+
+    3-1-3：一般将来时
+      I will call you tomorrow.
+      我明天会给你打电话。
+
+    3-1-4：现在进行时
+      They are playing chess now.
+      他们现在正在下国际象棋。
+
+    3-1-5：过去进行时
+      I was cooking when you called.
+      你打电话时，我正在做饭。
+
+    3-1-6：将来进行时
+      This time tomorrow, we will be flying to Rome.
+      明天这个时候，我们将正在飞往罗马的途中。
+
+    3-1-7：现在完成时
+      I have already finished my homework.
+      我已经做完作业了。
+
+    3-1-8：过去完成时
+      The train had left before we reached the station.
+      我们到达车站前，火车已经开走了。
+
+    3-1-9：将来完成时
+      By Friday, she will have finished the report.
+      到星期五，她将已经完成这份报告。
+
+    3-1-10：现在完成进行时
+      I have been studying for two hours.
+      我已经连续学习两个小时了。
+
+    3-1-11：过去完成进行时
+      He had been waiting for an hour when the bus arrived.
+      公共汽车到达时，他已经等了一个小时。
+
+    3-1-12：将来完成进行时
+      By June, she will have been teaching here for ten years.
+      到六月，她在这里任教就满十年了。
+
+  3-2：主动与被动语态
+    3-2-1：主动语态
+      The chef prepared the meal.
+      厨师准备了这顿饭。
+
+    3-2-2：一般时态的被动语态
+      The windows are cleaned every week.
+      这些窗户每周都会被擦洗。
+
+    3-2-3：进行时态的被动语态
+      The bridge is being repaired.
+      这座桥正在维修。
+
+    3-2-4：完成时态的被动语态
+      The invitations have been sent.
+      邀请函已经寄出了。
+
+  3-3：情态动词与相关表达
+    3-3-1：能力
+      My sister can swim very well.
+      我妹妹游泳游得很好。
+
+    3-3-2：许可
+      You may use my phone.
+      你可以用我的手机。
+
+    3-3-3：义务与必要性
+      You must wear a seat belt.
+      你必须系安全带。
+
+    3-3-4：建议
+      You should get some rest.
+      你应该休息一下。
+
+    3-3-5：可能性推测
+      It might rain this afternoon.
+      今天下午可能会下雨。
+
+    3-3-6：对过去的推测
+      She must have forgotten our meeting.
+      她一定是忘了我们的约会。
+
+  3-4：非谓语动词
+    3-4-1：不定式作宾语
+      I hope to see you soon.
+      我希望很快见到你。
+
+    3-4-2：不定式作目的状语
+      She went to the library to study.
+      她去图书馆学习。
+
+    3-4-3：不定式作宾语补足语
+      The teacher asked us to wait outside.
+      老师让我们在外面等候。
+
+    3-4-4：动名词作主语
+      Reading improves your vocabulary.
+      阅读能增加你的词汇量。
+
+    3-4-5：动名词作宾语
+      He enjoys cooking for his family.
+      他喜欢给家人做饭。
+
+    3-4-6：现在分词作定语
+      The girl standing by the door is my cousin.
+      站在门边的女孩是我表妹。
+
+    3-4-7：过去分词作定语
+      The car parked outside belongs to my uncle.
+      停在外面的那辆车是我叔叔的。
+
+    3-4-8：分词作状语
+      Feeling tired, she went to bed early.
+      因为觉得累，她早早就上床睡觉了。
+
+4：句子类型
+  4-1：陈述、疑问、祈使与感叹
+    4-1-1：陈述句
+      The shop closes at six.
+      这家商店六点关门。
+
+    4-1-2：一般疑问句
+      Do you speak English?
+      你会说英语吗？
+
+    4-1-3：特殊疑问句
+      Where did you buy this book?
+      你在哪里买的这本书？
+
+    4-1-4：选择疑问句
+      Would you like tea or coffee?
+      你想喝茶还是咖啡？
+
+    4-1-5：祈使句
+      Please open the window.
+      请打开窗户。
+
+    4-1-6：感叹句
+      What a beautiful garden this is!
+      这是一个多么美丽的花园啊！
+
+  4-2：肯定与否定
+    4-2-1：肯定句
+      She likes this song.
+      她喜欢这首歌。
+
+    4-2-2：not 构成否定
+      I do not agree with you.
+      我不同意你的看法。
+
+    4-2-3：否定词构成否定
+      Nobody answered the phone.
+      没有人接电话。
+
+    4-2-4：部分否定
+      Not all birds can fly.
+      并非所有的鸟都会飞。
+
+5：并列从句
+  5-1：并列结构
+    5-1-1：词语并列
+      She bought bread and cheese.
+      她买了面包和奶酪。
+
+    5-1-2：分句并列：递进与补充
+      I cooked dinner, and he washed the dishes.
+      我做了晚饭，他洗了碗。
+
+    5-1-3：分句并列：转折
+      The task was difficult, but we finished it.
+      任务很难，但我们完成了。
+
+    5-1-4：分句并列：选择
+      We can take the bus, or we can walk.
+      我们可以坐公共汽车，也可以步行。
+
+  5-2：名词性从句
+    5-2-1：主语从句
+      What she said surprised me.
+      她说的话让我很惊讶。
+
+    5-2-2：宾语从句
+      I know that he is honest.
+      我知道他很诚实。
+
+    5-2-3：表语从句
+      The problem is that we have no time.
+      问题是我们没有时间。
+
+    5-2-4：同位语从句
+      The news that our team had won made us happy.
+      我们队获胜的消息让我们很高兴。
+
+  5-3：定语从句
+    5-3-1：关系代词引导：修饰人
+      The woman who lives next door is a nurse.
+      住在隔壁的那位女士是一名护士。
+
+    5-3-2：关系代词引导：修饰事物
+      The book that you lent me is useful.
+      你借给我的那本书很有用。
+
+    5-3-3：非限制性定语从句
+      My father, who is retired, grows vegetables.
+      我父亲已经退休了，他种蔬菜。
+
+    5-3-4：关系副词引导
+      This is the town where I grew up.
+      这就是我长大的小镇。
+
+  5-4：状语从句
+    5-4-1：时间状语从句
+      I will call you when I arrive.
+      我到了就给你打电话。
+
+    5-4-2：原因状语从句
+      We stayed inside because it was raining.
+      因为下雨，我们待在室内。
+
+    5-4-3：条件状语从句
+      If it rains, we will stay home.
+      如果下雨，我们就待在家里。
+
+    5-4-4：让步状语从句
+      Although he was tired, he kept working.
+      虽然他很累，但他仍然继续工作。
+
+    5-4-5：目的状语从句
+      She spoke slowly so that everyone could understand her.
+      她说得很慢，以便每个人都能听懂。
+
+    5-4-6：结果状语从句
+      The box was so heavy that I could not lift it.
+      箱子太重了，我提不起来。
+
+6：特殊句式
+  6-1：倒装、强调与省略
+    6-1-1：否定词置于句首的部分倒装
+      Never have I seen such a clear sky.
+      我从未见过如此晴朗的天空。
+
+    6-1-2：地点状语置于句首的完全倒装
+      On the hill stood an old castle.
+      山上矗立着一座古老的城堡。
+
+    6-1-3：so 引导的倒装
+      She likes tea, and so do I.
+      她喜欢茶，我也喜欢。
+
+    6-1-4：it 强调句
+      It was Tom who called me last night.
+      昨晚给我打电话的是汤姆。
+
+    6-1-5：do 加强语气
+      I do understand your concern.
+      我确实理解你的担忧。
+
+    6-1-6：并列结构中的省略
+      Tom ordered tea, and Anna coffee.
+      汤姆点了茶，安娜点了咖啡。
+
+  6-2：条件、假设与虚拟表达
+    6-2-1：与现在事实相反的假设
+      If I were you, I would take the job.
+      如果我是你，我会接受这份工作。
+
+    6-2-2：与过去事实相反的假设
+      If I had left earlier, I would have caught the train.
+      如果我早点出发，就赶上那班火车了。
+
+    6-2-3：对将来可能性较小的假设
+      If I won the lottery, I would buy a house.
+      如果我中了彩票，我会买一套房子。
+
+    6-2-4：混合时间条件句
+      If I had studied medicine, I would be a doctor now.
+      如果我当初学了医学，我现在就是医生了。
+
+    6-2-5：wish 表达与现实不同的愿望
+      I wish I knew the answer.
+      我真希望自己知道答案。
+
+    6-2-6：建议或要求后的虚拟表达
+      The doctor suggested that he rest for a few days.
+      医生建议他休息几天。
+
+  6-3：引语转换、存在句与形式主宾语
+    6-3-1：直接引语
+      Anna said, "I am tired."
+      安娜说：“我累了。”
+
+    6-3-2：间接引语转述陈述
+      Anna said that she was tired.
+      安娜说她累了。
+
+    6-3-3：间接引语转述疑问
+      He asked me where I lived.
+      他问我住在哪里。
+
+    6-3-4：there be 存在句
+      There is a book on the desk.
+      桌上有一本书。
+
+    6-3-5：it 作形式主语
+      It is important to get enough sleep.
+      保证充足睡眠很重要。
+
+    6-3-6：it 作形式宾语
+      I find it difficult to wake up early.
+      我觉得早起很难。
+

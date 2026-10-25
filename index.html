@@ -6,7 +6,7 @@
   <title>langLSRW</title>
   <!-- Page content stays hidden until the user's own settings (theme, fonts) are applied, so the default look never flashes. -->
   <style>html.is-booting body > * { visibility: hidden; }</style>
-  <link rel="stylesheet" href="src/styles.css?v=20261021-44">
+  <link rel="stylesheet" href="src/styles.css?v=20261025-9">
 
 </head>
 <body data-theme="eye" data-active-page="listenPage">
@@ -282,9 +282,9 @@
         <aside class="library-sidebar" aria-label="句库分类">
           <button id="librarySettingsTabBtn" class="library-type-button library-settings-button" type="button">自定义句库</button>
           <button id="commonLibraryTabBtn" class="library-type-button is-active" type="button" aria-current="true">常用句库</button>
+          <button id="grammarLibraryTabBtn" class="library-type-button" type="button" aria-current="false" title="按语法分类浏览英语例句，并选择内容练习">语法句库</button>
           <button id="audioLibraryTabBtn" class="library-type-button" type="button" aria-current="false" title="管理音频 + 字幕材料，每句播放原声">音频字幕</button>
           <button class="library-type-button" type="button" disabled>情景句库</button>
-          <button class="library-type-button" type="button" disabled>语法句库</button>
           <button class="library-type-button" type="button" disabled>等级句库</button>
           <button class="library-type-button" type="button" disabled>短语句库</button>
         </aside>
@@ -310,6 +310,22 @@
             <button id="libraryLastPageBtn" type="button" disabled>最后页</button>
             <span id="libraryStatus" class="library-status" aria-live="polite">尚未加载</span>
           </div>
+        </section>
+        <section id="grammarLibraryPanel" class="grammar-library-panel library-settings-panel" hidden>
+          <div class="library-summary">
+            <div class="library-title-line"><h3>英语语法句库</h3><span id="grammarLibraryMeta" class="small-note">120 个核心语法点 · 每点 1 句预览</span></div>
+            <button id="useGrammarLibraryBtn" class="primary" type="button" disabled title="把当前筛选结果载入听写与口说练习">练习当前结果</button>
+          </div>
+          <div class="grammar-library-filters">
+            <label><span>大类</span><select id="grammarCategorySelect" title="按语法大类筛选"><option value="">全部大类</option></select></label>
+            <label><span>小类</span><select id="grammarSubcategorySelect" title="按语法小类筛选"><option value="">全部小类</option></select></label>
+            <label><span>语法点</span><select id="grammarPointSelect" title="选择一个具体语法点"><option value="">全部语法点</option></select></label>
+          </div>
+          <label class="grammar-library-search-row" for="grammarLibrarySearch"><span>搜索 (分类/语法点/英文/中文)：</span>
+            <input id="grammarLibrarySearch" class="library-search" type="search" autocomplete="off" placeholder="例如：主谓一致、完成时、teacher" title="搜索分类名称、语法点名称、中英文例句或例句 ID">
+          </label>
+          <div id="grammarLibraryList" class="library-sentence-list" aria-label="语法例句"></div>
+          <div class="grammar-library-footer"><span id="grammarLibraryStatus" class="library-status" aria-live="polite">尚未加载</span><button id="retryGrammarLibraryBtn" type="button" hidden title="重新读取语法句库文件">重新加载</button></div>
         </section>
         <section id="librarySettingsPanel" class="library-settings-panel" hidden>
           <div>
@@ -805,12 +821,13 @@
   <script src="src/auth/supabase-auth-service.js?v=20260925-1"></script>
   <script src="src/generated/grammar-prompt.js?v=20260921-10"></script>
   <script src="src/library.js?v=20260923-1"></script>
+  <script src="src/grammar-library.js?v=20261025-3"></script>
   <script src="src/dictionary/dictionary-service.js?v=20261021-3"></script>
   <script src="src/languages/en/text.js?v=20260928-2"></script>
   <script src="src/languages/es/text.js?v=20260928-2"></script>
   <script src="src/languages/en/dictionary.js?v=20260928-2"></script>
   <script src="src/languages/es/dictionary.js?v=20260928-2"></script>
   <script src="src/user-data.js?v=20260928-5"></script>
-  <script src="src/app.js?v=20261021-24"></script>
+  <script src="src/app.js?v=20261025-1"></script>
 </body>
 </html>

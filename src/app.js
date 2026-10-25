@@ -366,8 +366,9 @@ const fallbackSentences = [
       const isCommon = label === "常用句库";
       const isFavorites = label === "用户收藏";
       const isAudio = label === "音频字幕";
+      const isGrammar = label === "语法句库";
       let customOption = select.querySelector('option[value="custom"]');
-      if (!isCommon && !isFavorites && !isAudio) {
+      if (!isCommon && !isFavorites && !isAudio && !isGrammar) {
         if (!customOption) {
           customOption = document.createElement("option");
           customOption.value = "custom";
@@ -377,7 +378,7 @@ const fallbackSentences = [
         select.value = "custom";
       } else {
         if (customOption) customOption.remove();
-        select.value = isCommon ? "common" : isAudio ? "audio" : "favorites";
+        select.value = isCommon ? "common" : isAudio ? "audio" : isGrammar ? "grammar" : "favorites";
       }
       select.title = `当前使用：${label}`;
       updateCurrentLibrarySelectAvailability();
@@ -459,7 +460,11 @@ const fallbackSentences = [
     function saveLastPosition() {
       userData.put("position", "last", {
         libraryLabel: state.currentLibraryLabel,
-        index: state.index
+        index: state.index,
+        ...(state.currentLibraryLabel === "语法句库" ? {
+          sentenceIds: state.sentences.map(item => item.id),
+          sentenceId: state.sentences[state.index]?.id || ""
+        } : {})
       }, languageScope());
     }
 
@@ -1018,7 +1023,8 @@ const fallbackSentences = [
       const views = [
         ["common", "commonLibraryPanel", "commonLibraryTabBtn"],
         ["settings", "librarySettingsPanel", "librarySettingsTabBtn"],
-        ["audio", "audioLibraryPanel", "audioLibraryTabBtn"]
+        ["audio", "audioLibraryPanel", "audioLibraryTabBtn"],
+        ["grammar", "grammarLibraryPanel", "grammarLibraryTabBtn"]
       ];
       const active = views.some(([name]) => name === view) ? view : "common";
       views.forEach(([name, panelId, buttonId]) => {
@@ -1028,6 +1034,35 @@ const fallbackSentences = [
       });
       if (active === "common") $("librarySearchInput").focus();
       if (active === "audio") renderAudioLibrary();
+      if (active === "grammar") grammarLibrary.open();
+    }
+
+    const grammarLibrary = window.langLSRWGrammarLibrary.init({
+      isEnglish: () => state.learningLanguageId === "en",
+      onUse: (items, id) => {
+        state.sentences = normalizeSentenceList(items);
+        state.index = Math.max(0, state.sentences.findIndex(item => item.id === id));
+        setCurrentLibrary("语法句库", `当前句库：英语语法句库（${state.sentences.length}句）`);
+        closeLibraryModal();
+        setActivePage("listenPage");
+        resetCurrent(true);
+      }
+    });
+
+    async function useFullGrammarLibrary() {
+      const languageId = state.learningLanguageId;
+      if (languageId !== "en") return;
+      try {
+        const { rows } = await window.langLSRWGrammarLibrary.load();
+        if (state.learningLanguageId !== languageId) return;
+        state.sentences = normalizeSentenceList(rows);
+        state.index = 0;
+        setCurrentLibrary("语法句库", `当前句库：英语语法句库（${rows.length}句）`);
+        resetCurrent(true);
+      } catch (error) {
+        syncCurrentLibrarySelect(state.currentLibraryLabel);
+        showAppAlert(`语法句库加载失败：${error.message}`);
+      }
     }
 
     function useFavoritesLibrary() {
@@ -1978,6 +2013,24 @@ const fallbackSentences = [
     async function tryLoadDefaultLibrary() {
       const lastPosition = loadLastPosition();
       await loadCommonLibrary();
+      if (lastPosition?.libraryLabel === "语法句库" && state.learningLanguageId === "en") {
+        try {
+          const { rows } = await window.langLSRWGrammarLibrary.load();
+          if (state.learningLanguageId !== "en") return;
+          const byId = new Map(rows.map(row => [row.id, row]));
+          const items = Array.isArray(lastPosition.sentenceIds)
+            ? lastPosition.sentenceIds.map(id => byId.get(id)).filter(Boolean) : rows;
+          if (items.length) {
+            state.sentences = normalizeSentenceList(items);
+            state.index = Math.max(0, items.findIndex(item => item.id === lastPosition.sentenceId));
+            setCurrentLibrary("语法句库", `当前句库：英语语法句库（${items.length}句）`);
+            render();
+            return;
+          }
+        } catch (error) {
+          console.warn("无法恢复语法句库，改用常用句库", error);
+        }
+      }
       if (lastPosition && lastPosition.libraryLabel === "用户收藏" && currentLearningLanguage().sentenceFavoritesEnabled) {
         const favorites = loadUserSentences();
         if (favorites.length) {
@@ -2857,9 +2910,19 @@ const fallbackSentences = [
     }
 
     function applyLearningLanguageLibraryOptions() {
+      const librarySelect = $("currentLibrarySelect");
+      let grammarOption = librarySelect.querySelector('option[value="grammar"]');
+      if (!grammarOption) {
+        grammarOption = new Option("语法句库", "grammar");
+        grammarOption.title = "切换到完整的英语语法句库";
+        librarySelect.append(grammarOption);
+      }
+      grammarOption.hidden = state.learningLanguageId !== "en";
+      grammarOption.disabled = state.learningLanguageId !== "en";
       const favoritesOption = $("currentLibrarySelect").querySelector('option[value="favorites"]');
       if (favoritesOption) favoritesOption.hidden = !currentLearningLanguage().sentenceFavoritesEnabled;
       applyLearningLanguageFavoriteOptions();
+      if (!$("grammarLibraryPanel").hidden) grammarLibrary.open();
     }
 
     // 收藏 page: categories, sorts, and 背单词 controls follow the current learning language.
@@ -9487,6 +9550,7 @@ ${orderNote}`;
     $("commonLibraryTabBtn").addEventListener("click", () => setLibraryView("common"));
     $("librarySettingsTabBtn").addEventListener("click", () => setLibraryView("settings"));
     $("audioLibraryTabBtn").addEventListener("click", () => setLibraryView("audio"));
+    $("grammarLibraryTabBtn").addEventListener("click", () => setLibraryView("grammar"));
     document.querySelectorAll("[data-free-translate]").forEach((button) => {
       button.addEventListener("click", translateCurrentLibraryForFree);
     });
@@ -9537,6 +9601,8 @@ ${orderNote}`;
       if (value === "common") {
         if (!state.library.items.length) await loadCommonLibrary();
         useCommonLibrary();
+      } else if (value === "grammar") {
+        await useFullGrammarLibrary();
       } else if (value === "favorites") {
         useFavoritesLibrary();
       } else if (value === "audio") {

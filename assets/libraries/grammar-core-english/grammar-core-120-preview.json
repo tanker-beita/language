@@ -1,0 +1,1484 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "english-grammar-core",
+  "title": "英语核心语法例句",
+  "description": "教学分类草案：6 大类、20 小类、120 个核心语法点，每点 1 句。分类可扩展，不代表语法的固定总数。",
+  "categories": [
+    {
+      "id": "words",
+      "name": "词语短语",
+      "subcategories": [
+        {
+          "id": "words.classes",
+          "name": "词类与构词",
+          "points": [
+            {
+              "id": "words.classes.noun",
+              "name": "名词表示人或事物",
+              "examples": [
+                {
+                  "id": "words.classes.noun.001",
+                  "en": "The teacher opened the window.",
+                  "zh": "老师打开了窗户。"
+                }
+              ]
+            },
+            {
+              "id": "words.classes.verb",
+              "name": "动词表示动作",
+              "examples": [
+                {
+                  "id": "words.classes.verb.001",
+                  "en": "The children laughed.",
+                  "zh": "孩子们笑了。"
+                }
+              ]
+            },
+            {
+              "id": "words.classes.adjective",
+              "name": "形容词描述性质",
+              "examples": [
+                {
+                  "id": "words.classes.adjective.001",
+                  "en": "The soup is hot.",
+                  "zh": "汤很烫。"
+                }
+              ]
+            },
+            {
+              "id": "words.classes.adverb",
+              "name": "副词修饰动作",
+              "examples": [
+                {
+                  "id": "words.classes.adverb.001",
+                  "en": "She answered politely.",
+                  "zh": "她礼貌地作了回答。"
+                }
+              ]
+            },
+            {
+              "id": "words.classes.derivation",
+              "name": "派生构词",
+              "examples": [
+                {
+                  "id": "words.classes.derivation.001",
+                  "en": "His kindness touched everyone.",
+                  "zh": "他的善良感动了所有人。"
+                }
+              ]
+            },
+            {
+              "id": "words.classes.compound",
+              "name": "复合构词",
+              "examples": [
+                {
+                  "id": "words.classes.compound.001",
+                  "en": "I left my notebook at home.",
+                  "zh": "我把笔记本忘在家里了。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "words.nouns-pronouns",
+          "name": "名词与代词",
+          "points": [
+            {
+              "id": "words.nouns-pronouns.regular-plural",
+              "name": "名词规则复数",
+              "examples": [
+                {
+                  "id": "words.nouns-pronouns.regular-plural.001",
+                  "en": "There are three apples in the bowl.",
+                  "zh": "碗里有三个苹果。"
+                }
+              ]
+            },
+            {
+              "id": "words.nouns-pronouns.irregular-plural",
+              "name": "名词不规则复数",
+              "examples": [
+                {
+                  "id": "words.nouns-pronouns.irregular-plural.001",
+                  "en": "The children brushed their teeth.",
+                  "zh": "孩子们刷了牙。"
+                }
+              ]
+            },
+            {
+              "id": "words.nouns-pronouns.uncountable",
+              "name": "不可数名词",
+              "examples": [
+                {
+                  "id": "words.nouns-pronouns.uncountable.001",
+                  "en": "I need some information about the course.",
+                  "zh": "我需要一些关于这门课程的信息。"
+                }
+              ]
+            },
+            {
+              "id": "words.nouns-pronouns.possessive",
+              "name": "名词所有格",
+              "examples": [
+                {
+                  "id": "words.nouns-pronouns.possessive.001",
+                  "en": "This is my sister's bicycle.",
+                  "zh": "这是我姐姐的自行车。"
+                }
+              ]
+            },
+            {
+              "id": "words.nouns-pronouns.personal-pronoun",
+              "name": "人称代词的主格与宾格",
+              "examples": [
+                {
+                  "id": "words.nouns-pronouns.personal-pronoun.001",
+                  "en": "She invited me to dinner.",
+                  "zh": "她邀请我吃晚饭。"
+                }
+              ]
+            },
+            {
+              "id": "words.nouns-pronouns.reflexive-pronoun",
+              "name": "反身代词",
+              "examples": [
+                {
+                  "id": "words.nouns-pronouns.reflexive-pronoun.001",
+                  "en": "He taught himself Spanish.",
+                  "zh": "他自学了西班牙语。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "words.determiners",
+          "name": "冠词与限定词",
+          "points": [
+            {
+              "id": "words.determiners.indefinite-article",
+              "name": "不定冠词 a 与 an",
+              "examples": [
+                {
+                  "id": "words.determiners.indefinite-article.001",
+                  "en": "She bought a notebook and an umbrella.",
+                  "zh": "她买了一本笔记本和一把雨伞。"
+                }
+              ]
+            },
+            {
+              "id": "words.determiners.definite-article",
+              "name": "定冠词 the",
+              "examples": [
+                {
+                  "id": "words.determiners.definite-article.001",
+                  "en": "Please close the door behind you.",
+                  "zh": "请随手关上你身后的门。"
+                }
+              ]
+            },
+            {
+              "id": "words.determiners.zero-article",
+              "name": "零冠词",
+              "examples": [
+                {
+                  "id": "words.determiners.zero-article.001",
+                  "en": "Water is essential for life.",
+                  "zh": "水对生命至关重要。"
+                }
+              ]
+            },
+            {
+              "id": "words.determiners.demonstrative",
+              "name": "指示限定词",
+              "examples": [
+                {
+                  "id": "words.determiners.demonstrative.001",
+                  "en": "These shoes are more comfortable than those boots.",
+                  "zh": "这几双鞋比那几双靴子更舒服。"
+                }
+              ]
+            },
+            {
+              "id": "words.determiners.possessive-determiner",
+              "name": "物主限定词",
+              "examples": [
+                {
+                  "id": "words.determiners.possessive-determiner.001",
+                  "en": "Our teacher checked their homework.",
+                  "zh": "我们的老师检查了他们的作业。"
+                }
+              ]
+            },
+            {
+              "id": "words.determiners.quantity",
+              "name": "数量限定词",
+              "examples": [
+                {
+                  "id": "words.determiners.quantity.001",
+                  "en": "We have a few eggs but little milk.",
+                  "zh": "我们有几个鸡蛋，但牛奶很少。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "words.adjectives-adverbs",
+          "name": "形容词、副词与比较等级",
+          "points": [
+            {
+              "id": "words.adjectives-adverbs.attributive",
+              "name": "形容词作定语",
+              "examples": [
+                {
+                  "id": "words.adjectives-adverbs.attributive.001",
+                  "en": "A small dog followed us home.",
+                  "zh": "一只小狗跟着我们回了家。"
+                }
+              ]
+            },
+            {
+              "id": "words.adjectives-adverbs.predicative",
+              "name": "形容词作表语",
+              "examples": [
+                {
+                  "id": "words.adjectives-adverbs.predicative.001",
+                  "en": "The garden looks beautiful.",
+                  "zh": "花园看起来很美。"
+                }
+              ]
+            },
+            {
+              "id": "words.adjectives-adverbs.adverb-position",
+              "name": "频率副词的位置",
+              "examples": [
+                {
+                  "id": "words.adjectives-adverbs.adverb-position.001",
+                  "en": "She usually walks to work.",
+                  "zh": "她通常步行上班。"
+                }
+              ]
+            },
+            {
+              "id": "words.adjectives-adverbs.comparative",
+              "name": "比较级",
+              "examples": [
+                {
+                  "id": "words.adjectives-adverbs.comparative.001",
+                  "en": "This road is wider than that one.",
+                  "zh": "这条路比那条路宽。"
+                }
+              ]
+            },
+            {
+              "id": "words.adjectives-adverbs.superlative",
+              "name": "最高级",
+              "examples": [
+                {
+                  "id": "words.adjectives-adverbs.superlative.001",
+                  "en": "She is the tallest student in our class.",
+                  "zh": "她是我们班最高的学生。"
+                }
+              ]
+            },
+            {
+              "id": "words.adjectives-adverbs.equal-comparison",
+              "name": "同级比较",
+              "examples": [
+                {
+                  "id": "words.adjectives-adverbs.equal-comparison.001",
+                  "en": "This bag is as heavy as that one.",
+                  "zh": "这个包和那个包一样重。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "words.prepositions-phrases",
+          "name": "介词与短语搭配",
+          "points": [
+            {
+              "id": "words.prepositions-phrases.time",
+              "name": "时间介词",
+              "examples": [
+                {
+                  "id": "words.prepositions-phrases.time.001",
+                  "en": "The meeting starts at nine on Monday.",
+                  "zh": "会议在星期一九点开始。"
+                }
+              ]
+            },
+            {
+              "id": "words.prepositions-phrases.place",
+              "name": "地点介词",
+              "examples": [
+                {
+                  "id": "words.prepositions-phrases.place.001",
+                  "en": "The keys are under the sofa.",
+                  "zh": "钥匙在沙发下面。"
+                }
+              ]
+            },
+            {
+              "id": "words.prepositions-phrases.direction",
+              "name": "方向介词",
+              "examples": [
+                {
+                  "id": "words.prepositions-phrases.direction.001",
+                  "en": "She walked into the kitchen.",
+                  "zh": "她走进了厨房。"
+                }
+              ]
+            },
+            {
+              "id": "words.prepositions-phrases.prepositional-object",
+              "name": "介词后接名词或动名词",
+              "examples": [
+                {
+                  "id": "words.prepositions-phrases.prepositional-object.001",
+                  "en": "He left without saying goodbye.",
+                  "zh": "他没有道别就离开了。"
+                }
+              ]
+            },
+            {
+              "id": "words.prepositions-phrases.verb-preposition",
+              "name": "动词与介词搭配",
+              "examples": [
+                {
+                  "id": "words.prepositions-phrases.verb-preposition.001",
+                  "en": "You can depend on me.",
+                  "zh": "你可以依靠我。"
+                }
+              ]
+            },
+            {
+              "id": "words.prepositions-phrases.phrasal-verb",
+              "name": "短语动词",
+              "examples": [
+                {
+                  "id": "words.prepositions-phrases.phrasal-verb.001",
+                  "en": "Please turn off the light.",
+                  "zh": "请把灯关掉。"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "structure",
+      "name": "句子结构",
+      "subcategories": [
+        {
+          "id": "structure.constituents-patterns",
+          "name": "句子成分与基本句型",
+          "points": [
+            {
+              "id": "structure.constituents-patterns.sv",
+              "name": "主语加谓语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.sv.001",
+                  "en": "The baby smiled.",
+                  "zh": "宝宝笑了。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.svo",
+              "name": "主语加谓语加宾语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.svo.001",
+                  "en": "I need an English menu.",
+                  "zh": "我需要一份英文菜单。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.svc",
+              "name": "主语加系动词加表语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.svc.001",
+                  "en": "The room is quiet.",
+                  "zh": "房间很安静。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.svoo",
+              "name": "主语加谓语加间接宾语加直接宾语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.svoo.001",
+                  "en": "She gave me a dictionary.",
+                  "zh": "她给了我一本词典。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.svoc",
+              "name": "主语加谓语加宾语加宾语补足语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.svoc.001",
+                  "en": "The news made him happy.",
+                  "zh": "这个消息使他很高兴。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.sva",
+              "name": "主语加谓语加必需状语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.sva.001",
+                  "en": "She lives in Madrid.",
+                  "zh": "她住在马德里。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.svoa",
+              "name": "主语加谓语加宾语加必需状语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.svoa.001",
+                  "en": "He put the keys on the table.",
+                  "zh": "他把钥匙放在了桌上。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.postmodifier",
+              "name": "后置定语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.postmodifier.001",
+                  "en": "The woman in the red coat is my aunt.",
+                  "zh": "穿红色外套的那位女士是我姑姑。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.adverbial",
+              "name": "时间与地点状语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.adverbial.001",
+                  "en": "We met at the station yesterday.",
+                  "zh": "我们昨天在车站见了面。"
+                }
+              ]
+            },
+            {
+              "id": "structure.constituents-patterns.apposition",
+              "name": "同位语",
+              "examples": [
+                {
+                  "id": "structure.constituents-patterns.apposition.001",
+                  "en": "My brother, a doctor, works nearby.",
+                  "zh": "我哥哥是一名医生，在附近工作。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "structure.agreement",
+          "name": "主谓一致",
+          "points": [
+            {
+              "id": "structure.agreement.third-person-singular",
+              "name": "第三人称单数主语",
+              "examples": [
+                {
+                  "id": "structure.agreement.third-person-singular.001",
+                  "en": "He works in a library.",
+                  "zh": "他在图书馆工作。"
+                }
+              ]
+            },
+            {
+              "id": "structure.agreement.plural-subject",
+              "name": "复数主语",
+              "examples": [
+                {
+                  "id": "structure.agreement.plural-subject.001",
+                  "en": "The students are ready.",
+                  "zh": "学生们准备好了。"
+                }
+              ]
+            },
+            {
+              "id": "structure.agreement.and-subject",
+              "name": "and 连接的并列主语",
+              "examples": [
+                {
+                  "id": "structure.agreement.and-subject.001",
+                  "en": "Tom and Anna enjoy hiking.",
+                  "zh": "汤姆和安娜喜欢徒步旅行。"
+                }
+              ]
+            },
+            {
+              "id": "structure.agreement.indefinite-subject",
+              "name": "不定代词作主语",
+              "examples": [
+                {
+                  "id": "structure.agreement.indefinite-subject.001",
+                  "en": "Everyone needs a little help sometimes.",
+                  "zh": "每个人有时都需要一点帮助。"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verbs",
+      "name": "动词形式",
+      "subcategories": [
+        {
+          "id": "verbs.tense-aspect",
+          "name": "时态与体",
+          "points": [
+            {
+              "id": "verbs.tense-aspect.present-simple",
+              "name": "一般现在时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.present-simple.001",
+                  "en": "She drinks tea every morning.",
+                  "zh": "她每天早上喝茶。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.past-simple",
+              "name": "一般过去时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.past-simple.001",
+                  "en": "We visited the museum yesterday.",
+                  "zh": "我们昨天参观了博物馆。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.future-simple",
+              "name": "一般将来时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.future-simple.001",
+                  "en": "I will call you tomorrow.",
+                  "zh": "我明天会给你打电话。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.present-progressive",
+              "name": "现在进行时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.present-progressive.001",
+                  "en": "They are playing chess now.",
+                  "zh": "他们现在正在下国际象棋。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.past-progressive",
+              "name": "过去进行时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.past-progressive.001",
+                  "en": "I was cooking when you called.",
+                  "zh": "你打电话时，我正在做饭。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.future-progressive",
+              "name": "将来进行时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.future-progressive.001",
+                  "en": "This time tomorrow, we will be flying to Rome.",
+                  "zh": "明天这个时候，我们将正在飞往罗马的途中。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.present-perfect",
+              "name": "现在完成时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.present-perfect.001",
+                  "en": "I have already finished my homework.",
+                  "zh": "我已经做完作业了。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.past-perfect",
+              "name": "过去完成时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.past-perfect.001",
+                  "en": "The train had left before we reached the station.",
+                  "zh": "我们到达车站前，火车已经开走了。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.future-perfect",
+              "name": "将来完成时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.future-perfect.001",
+                  "en": "By Friday, she will have finished the report.",
+                  "zh": "到星期五，她将已经完成这份报告。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.present-perfect-progressive",
+              "name": "现在完成进行时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.present-perfect-progressive.001",
+                  "en": "I have been studying for two hours.",
+                  "zh": "我已经连续学习两个小时了。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.past-perfect-progressive",
+              "name": "过去完成进行时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.past-perfect-progressive.001",
+                  "en": "He had been waiting for an hour when the bus arrived.",
+                  "zh": "公共汽车到达时，他已经等了一个小时。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.tense-aspect.future-perfect-progressive",
+              "name": "将来完成进行时",
+              "examples": [
+                {
+                  "id": "verbs.tense-aspect.future-perfect-progressive.001",
+                  "en": "By June, she will have been teaching here for ten years.",
+                  "zh": "到六月，她在这里任教就满十年了。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "verbs.voice",
+          "name": "主动与被动语态",
+          "points": [
+            {
+              "id": "verbs.voice.active",
+              "name": "主动语态",
+              "examples": [
+                {
+                  "id": "verbs.voice.active.001",
+                  "en": "The chef prepared the meal.",
+                  "zh": "厨师准备了这顿饭。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.voice.simple-passive",
+              "name": "一般时态的被动语态",
+              "examples": [
+                {
+                  "id": "verbs.voice.simple-passive.001",
+                  "en": "The windows are cleaned every week.",
+                  "zh": "这些窗户每周都会被擦洗。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.voice.progressive-passive",
+              "name": "进行时态的被动语态",
+              "examples": [
+                {
+                  "id": "verbs.voice.progressive-passive.001",
+                  "en": "The bridge is being repaired.",
+                  "zh": "这座桥正在维修。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.voice.perfect-passive",
+              "name": "完成时态的被动语态",
+              "examples": [
+                {
+                  "id": "verbs.voice.perfect-passive.001",
+                  "en": "The invitations have been sent.",
+                  "zh": "邀请函已经寄出了。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "verbs.modality",
+          "name": "情态动词与相关表达",
+          "points": [
+            {
+              "id": "verbs.modality.ability",
+              "name": "能力",
+              "examples": [
+                {
+                  "id": "verbs.modality.ability.001",
+                  "en": "My sister can swim very well.",
+                  "zh": "我妹妹游泳游得很好。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.modality.permission",
+              "name": "许可",
+              "examples": [
+                {
+                  "id": "verbs.modality.permission.001",
+                  "en": "You may use my phone.",
+                  "zh": "你可以用我的手机。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.modality.obligation",
+              "name": "义务与必要性",
+              "examples": [
+                {
+                  "id": "verbs.modality.obligation.001",
+                  "en": "You must wear a seat belt.",
+                  "zh": "你必须系安全带。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.modality.advice",
+              "name": "建议",
+              "examples": [
+                {
+                  "id": "verbs.modality.advice.001",
+                  "en": "You should get some rest.",
+                  "zh": "你应该休息一下。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.modality.possibility",
+              "name": "可能性推测",
+              "examples": [
+                {
+                  "id": "verbs.modality.possibility.001",
+                  "en": "It might rain this afternoon.",
+                  "zh": "今天下午可能会下雨。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.modality.past-deduction",
+              "name": "对过去的推测",
+              "examples": [
+                {
+                  "id": "verbs.modality.past-deduction.001",
+                  "en": "She must have forgotten our meeting.",
+                  "zh": "她一定是忘了我们的约会。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "verbs.nonfinite",
+          "name": "非谓语动词",
+          "points": [
+            {
+              "id": "verbs.nonfinite.infinitive-object",
+              "name": "不定式作宾语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.infinitive-object.001",
+                  "en": "I hope to see you soon.",
+                  "zh": "我希望很快见到你。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.nonfinite.infinitive-purpose",
+              "name": "不定式作目的状语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.infinitive-purpose.001",
+                  "en": "She went to the library to study.",
+                  "zh": "她去图书馆学习。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.nonfinite.infinitive-object-complement",
+              "name": "不定式作宾语补足语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.infinitive-object-complement.001",
+                  "en": "The teacher asked us to wait outside.",
+                  "zh": "老师让我们在外面等候。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.nonfinite.gerund-subject",
+              "name": "动名词作主语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.gerund-subject.001",
+                  "en": "Reading improves your vocabulary.",
+                  "zh": "阅读能增加你的词汇量。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.nonfinite.gerund-object",
+              "name": "动名词作宾语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.gerund-object.001",
+                  "en": "He enjoys cooking for his family.",
+                  "zh": "他喜欢给家人做饭。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.nonfinite.present-participle-modifier",
+              "name": "现在分词作定语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.present-participle-modifier.001",
+                  "en": "The girl standing by the door is my cousin.",
+                  "zh": "站在门边的女孩是我表妹。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.nonfinite.past-participle-modifier",
+              "name": "过去分词作定语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.past-participle-modifier.001",
+                  "en": "The car parked outside belongs to my uncle.",
+                  "zh": "停在外面的那辆车是我叔叔的。"
+                }
+              ]
+            },
+            {
+              "id": "verbs.nonfinite.participle-adverbial",
+              "name": "分词作状语",
+              "examples": [
+                {
+                  "id": "verbs.nonfinite.participle-adverbial.001",
+                  "en": "Feeling tired, she went to bed early.",
+                  "zh": "因为觉得累，她早早就上床睡觉了。"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sentence-types",
+      "name": "句子类型",
+      "subcategories": [
+        {
+          "id": "sentence-types.purposes",
+          "name": "陈述、疑问、祈使与感叹",
+          "points": [
+            {
+              "id": "sentence-types.purposes.statement",
+              "name": "陈述句",
+              "examples": [
+                {
+                  "id": "sentence-types.purposes.statement.001",
+                  "en": "The shop closes at six.",
+                  "zh": "这家商店六点关门。"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.purposes.yes-no-question",
+              "name": "一般疑问句",
+              "examples": [
+                {
+                  "id": "sentence-types.purposes.yes-no-question.001",
+                  "en": "Do you speak English?",
+                  "zh": "你会说英语吗？"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.purposes.wh-question",
+              "name": "特殊疑问句",
+              "examples": [
+                {
+                  "id": "sentence-types.purposes.wh-question.001",
+                  "en": "Where did you buy this book?",
+                  "zh": "你在哪里买的这本书？"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.purposes.alternative-question",
+              "name": "选择疑问句",
+              "examples": [
+                {
+                  "id": "sentence-types.purposes.alternative-question.001",
+                  "en": "Would you like tea or coffee?",
+                  "zh": "你想喝茶还是咖啡？"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.purposes.imperative",
+              "name": "祈使句",
+              "examples": [
+                {
+                  "id": "sentence-types.purposes.imperative.001",
+                  "en": "Please open the window.",
+                  "zh": "请打开窗户。"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.purposes.exclamation",
+              "name": "感叹句",
+              "examples": [
+                {
+                  "id": "sentence-types.purposes.exclamation.001",
+                  "en": "What a beautiful garden this is!",
+                  "zh": "这是一个多么美丽的花园啊！"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sentence-types.polarity",
+          "name": "肯定与否定",
+          "points": [
+            {
+              "id": "sentence-types.polarity.affirmative",
+              "name": "肯定句",
+              "examples": [
+                {
+                  "id": "sentence-types.polarity.affirmative.001",
+                  "en": "She likes this song.",
+                  "zh": "她喜欢这首歌。"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.polarity.not-negative",
+              "name": "not 构成否定",
+              "examples": [
+                {
+                  "id": "sentence-types.polarity.not-negative.001",
+                  "en": "I do not agree with you.",
+                  "zh": "我不同意你的看法。"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.polarity.negative-word",
+              "name": "否定词构成否定",
+              "examples": [
+                {
+                  "id": "sentence-types.polarity.negative-word.001",
+                  "en": "Nobody answered the phone.",
+                  "zh": "没有人接电话。"
+                }
+              ]
+            },
+            {
+              "id": "sentence-types.polarity.partial-negation",
+              "name": "部分否定",
+              "examples": [
+                {
+                  "id": "sentence-types.polarity.partial-negation.001",
+                  "en": "Not all birds can fly.",
+                  "zh": "并非所有的鸟都会飞。"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clauses",
+      "name": "并列从句",
+      "subcategories": [
+        {
+          "id": "clauses.coordination",
+          "name": "并列结构",
+          "points": [
+            {
+              "id": "clauses.coordination.words",
+              "name": "词语并列",
+              "examples": [
+                {
+                  "id": "clauses.coordination.words.001",
+                  "en": "She bought bread and cheese.",
+                  "zh": "她买了面包和奶酪。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.coordination.addition",
+              "name": "分句并列：递进与补充",
+              "examples": [
+                {
+                  "id": "clauses.coordination.addition.001",
+                  "en": "I cooked dinner, and he washed the dishes.",
+                  "zh": "我做了晚饭，他洗了碗。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.coordination.contrast",
+              "name": "分句并列：转折",
+              "examples": [
+                {
+                  "id": "clauses.coordination.contrast.001",
+                  "en": "The task was difficult, but we finished it.",
+                  "zh": "任务很难，但我们完成了。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.coordination.choice",
+              "name": "分句并列：选择",
+              "examples": [
+                {
+                  "id": "clauses.coordination.choice.001",
+                  "en": "We can take the bus, or we can walk.",
+                  "zh": "我们可以坐公共汽车，也可以步行。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "clauses.nominal",
+          "name": "名词性从句",
+          "points": [
+            {
+              "id": "clauses.nominal.subject",
+              "name": "主语从句",
+              "examples": [
+                {
+                  "id": "clauses.nominal.subject.001",
+                  "en": "What she said surprised me.",
+                  "zh": "她说的话让我很惊讶。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.nominal.object",
+              "name": "宾语从句",
+              "examples": [
+                {
+                  "id": "clauses.nominal.object.001",
+                  "en": "I know that he is honest.",
+                  "zh": "我知道他很诚实。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.nominal.predicative",
+              "name": "表语从句",
+              "examples": [
+                {
+                  "id": "clauses.nominal.predicative.001",
+                  "en": "The problem is that we have no time.",
+                  "zh": "问题是我们没有时间。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.nominal.appositive",
+              "name": "同位语从句",
+              "examples": [
+                {
+                  "id": "clauses.nominal.appositive.001",
+                  "en": "The news that our team had won made us happy.",
+                  "zh": "我们队获胜的消息让我们很高兴。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "clauses.relative",
+          "name": "定语从句",
+          "points": [
+            {
+              "id": "clauses.relative.restrictive-person",
+              "name": "关系代词引导：修饰人",
+              "examples": [
+                {
+                  "id": "clauses.relative.restrictive-person.001",
+                  "en": "The woman who lives next door is a nurse.",
+                  "zh": "住在隔壁的那位女士是一名护士。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.relative.restrictive-thing",
+              "name": "关系代词引导：修饰事物",
+              "examples": [
+                {
+                  "id": "clauses.relative.restrictive-thing.001",
+                  "en": "The book that you lent me is useful.",
+                  "zh": "你借给我的那本书很有用。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.relative.nonrestrictive",
+              "name": "非限制性定语从句",
+              "examples": [
+                {
+                  "id": "clauses.relative.nonrestrictive.001",
+                  "en": "My father, who is retired, grows vegetables.",
+                  "zh": "我父亲已经退休了，他种蔬菜。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.relative.relative-adverb",
+              "name": "关系副词引导",
+              "examples": [
+                {
+                  "id": "clauses.relative.relative-adverb.001",
+                  "en": "This is the town where I grew up.",
+                  "zh": "这就是我长大的小镇。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "clauses.adverbial",
+          "name": "状语从句",
+          "points": [
+            {
+              "id": "clauses.adverbial.time",
+              "name": "时间状语从句",
+              "examples": [
+                {
+                  "id": "clauses.adverbial.time.001",
+                  "en": "I will call you when I arrive.",
+                  "zh": "我到了就给你打电话。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.adverbial.reason",
+              "name": "原因状语从句",
+              "examples": [
+                {
+                  "id": "clauses.adverbial.reason.001",
+                  "en": "We stayed inside because it was raining.",
+                  "zh": "因为下雨，我们待在室内。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.adverbial.condition",
+              "name": "条件状语从句",
+              "examples": [
+                {
+                  "id": "clauses.adverbial.condition.001",
+                  "en": "If it rains, we will stay home.",
+                  "zh": "如果下雨，我们就待在家里。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.adverbial.concession",
+              "name": "让步状语从句",
+              "examples": [
+                {
+                  "id": "clauses.adverbial.concession.001",
+                  "en": "Although he was tired, he kept working.",
+                  "zh": "虽然他很累，但他仍然继续工作。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.adverbial.purpose",
+              "name": "目的状语从句",
+              "examples": [
+                {
+                  "id": "clauses.adverbial.purpose.001",
+                  "en": "She spoke slowly so that everyone could understand her.",
+                  "zh": "她说得很慢，以便每个人都能听懂。"
+                }
+              ]
+            },
+            {
+              "id": "clauses.adverbial.result",
+              "name": "结果状语从句",
+              "examples": [
+                {
+                  "id": "clauses.adverbial.result.001",
+                  "en": "The box was so heavy that I could not lift it.",
+                  "zh": "箱子太重了，我提不起来。"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "name": "特殊句式",
+      "subcategories": [
+        {
+          "id": "special.inversion-emphasis-ellipsis",
+          "name": "倒装、强调与省略",
+          "points": [
+            {
+              "id": "special.inversion-emphasis-ellipsis.negative-inversion",
+              "name": "否定词置于句首的部分倒装",
+              "examples": [
+                {
+                  "id": "special.inversion-emphasis-ellipsis.negative-inversion.001",
+                  "en": "Never have I seen such a clear sky.",
+                  "zh": "我从未见过如此晴朗的天空。"
+                }
+              ]
+            },
+            {
+              "id": "special.inversion-emphasis-ellipsis.place-inversion",
+              "name": "地点状语置于句首的完全倒装",
+              "examples": [
+                {
+                  "id": "special.inversion-emphasis-ellipsis.place-inversion.001",
+                  "en": "On the hill stood an old castle.",
+                  "zh": "山上矗立着一座古老的城堡。"
+                }
+              ]
+            },
+            {
+              "id": "special.inversion-emphasis-ellipsis.so-inversion",
+              "name": "so 引导的倒装",
+              "examples": [
+                {
+                  "id": "special.inversion-emphasis-ellipsis.so-inversion.001",
+                  "en": "She likes tea, and so do I.",
+                  "zh": "她喜欢茶，我也喜欢。"
+                }
+              ]
+            },
+            {
+              "id": "special.inversion-emphasis-ellipsis.cleft",
+              "name": "it 强调句",
+              "examples": [
+                {
+                  "id": "special.inversion-emphasis-ellipsis.cleft.001",
+                  "en": "It was Tom who called me last night.",
+                  "zh": "昨晚给我打电话的是汤姆。"
+                }
+              ]
+            },
+            {
+              "id": "special.inversion-emphasis-ellipsis.emphatic-do",
+              "name": "do 加强语气",
+              "examples": [
+                {
+                  "id": "special.inversion-emphasis-ellipsis.emphatic-do.001",
+                  "en": "I do understand your concern.",
+                  "zh": "我确实理解你的担忧。"
+                }
+              ]
+            },
+            {
+              "id": "special.inversion-emphasis-ellipsis.ellipsis",
+              "name": "并列结构中的省略",
+              "examples": [
+                {
+                  "id": "special.inversion-emphasis-ellipsis.ellipsis.001",
+                  "en": "Tom ordered tea, and Anna coffee.",
+                  "zh": "汤姆点了茶，安娜点了咖啡。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "special.hypothetical",
+          "name": "条件、假设与虚拟表达",
+          "points": [
+            {
+              "id": "special.hypothetical.present-unreal",
+              "name": "与现在事实相反的假设",
+              "examples": [
+                {
+                  "id": "special.hypothetical.present-unreal.001",
+                  "en": "If I were you, I would take the job.",
+                  "zh": "如果我是你，我会接受这份工作。"
+                }
+              ]
+            },
+            {
+              "id": "special.hypothetical.past-unreal",
+              "name": "与过去事实相反的假设",
+              "examples": [
+                {
+                  "id": "special.hypothetical.past-unreal.001",
+                  "en": "If I had left earlier, I would have caught the train.",
+                  "zh": "如果我早点出发，就赶上那班火车了。"
+                }
+              ]
+            },
+            {
+              "id": "special.hypothetical.future-unlikely",
+              "name": "对将来可能性较小的假设",
+              "examples": [
+                {
+                  "id": "special.hypothetical.future-unlikely.001",
+                  "en": "If I won the lottery, I would buy a house.",
+                  "zh": "如果我中了彩票，我会买一套房子。"
+                }
+              ]
+            },
+            {
+              "id": "special.hypothetical.mixed-conditional",
+              "name": "混合时间条件句",
+              "examples": [
+                {
+                  "id": "special.hypothetical.mixed-conditional.001",
+                  "en": "If I had studied medicine, I would be a doctor now.",
+                  "zh": "如果我当初学了医学，我现在就是医生了。"
+                }
+              ]
+            },
+            {
+              "id": "special.hypothetical.wish",
+              "name": "wish 表达与现实不同的愿望",
+              "examples": [
+                {
+                  "id": "special.hypothetical.wish.001",
+                  "en": "I wish I knew the answer.",
+                  "zh": "我真希望自己知道答案。"
+                }
+              ]
+            },
+            {
+              "id": "special.hypothetical.mandative",
+              "name": "建议或要求后的虚拟表达",
+              "examples": [
+                {
+                  "id": "special.hypothetical.mandative.001",
+                  "en": "The doctor suggested that he rest for a few days.",
+                  "zh": "医生建议他休息几天。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "special.reporting-existence-it",
+          "name": "引语转换、存在句与形式主宾语",
+          "points": [
+            {
+              "id": "special.reporting-existence-it.direct-speech",
+              "name": "直接引语",
+              "examples": [
+                {
+                  "id": "special.reporting-existence-it.direct-speech.001",
+                  "en": "Anna said, \"I am tired.\"",
+                  "zh": "安娜说：“我累了。”"
+                }
+              ]
+            },
+            {
+              "id": "special.reporting-existence-it.reported-statement",
+              "name": "间接引语转述陈述",
+              "examples": [
+                {
+                  "id": "special.reporting-existence-it.reported-statement.001",
+                  "en": "Anna said that she was tired.",
+                  "zh": "安娜说她累了。"
+                }
+              ]
+            },
+            {
+              "id": "special.reporting-existence-it.reported-question",
+              "name": "间接引语转述疑问",
+              "examples": [
+                {
+                  "id": "special.reporting-existence-it.reported-question.001",
+                  "en": "He asked me where I lived.",
+                  "zh": "他问我住在哪里。"
+                }
+              ]
+            },
+            {
+              "id": "special.reporting-existence-it.existential",
+              "name": "there be 存在句",
+              "examples": [
+                {
+                  "id": "special.reporting-existence-it.existential.001",
+                  "en": "There is a book on the desk.",
+                  "zh": "桌上有一本书。"
+                }
+              ]
+            },
+            {
+              "id": "special.reporting-existence-it.formal-subject",
+              "name": "it 作形式主语",
+              "examples": [
+                {
+                  "id": "special.reporting-existence-it.formal-subject.001",
+                  "en": "It is important to get enough sleep.",
+                  "zh": "保证充足睡眠很重要。"
+                }
+              ]
+            },
+            {
+              "id": "special.reporting-existence-it.formal-object",
+              "name": "it 作形式宾语",
+              "examples": [
+                {
+                  "id": "special.reporting-existence-it.formal-object.001",
+                  "en": "I find it difficult to wake up early.",
+                  "zh": "我觉得早起很难。"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

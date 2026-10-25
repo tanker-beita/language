@@ -3968,6 +3968,107 @@
       display: none;
     }
 
+    .grammar-library-panel.library-settings-panel:not([hidden]) {
+      grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+      align-content: stretch;
+      overflow: hidden;
+    }
+
+    .grammar-library-filters {
+      display: grid;
+      grid-template-columns: repeat(3, auto minmax(0, 1fr));
+      gap: 5px;
+      align-items: center;
+    }
+
+    .grammar-library-filters select {
+      width: 100%;
+      min-width: 0;
+      height: 28px;
+      min-height: 28px;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+
+    .grammar-library-panel .grammar-library-filters label {
+      display: contents;
+      white-space: nowrap;
+    }
+
+    .grammar-library-filters label + label > span {
+      margin-left: 11px;
+    }
+
+    .grammar-library-panel .library-title-line h3 {
+      margin: 0;
+    }
+
+    .grammar-library-panel .grammar-library-search-row {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .grammar-library-search-row > span {
+      white-space: nowrap;
+    }
+
+    .grammar-library-search-row .library-search {
+      height: 28px;
+      min-height: 28px;
+      padding: 2px 6px;
+    }
+
+    .grammar-library-heading {
+      padding: 8px 9px;
+      background: color-mix(in srgb, var(--ink) 6%, var(--panel));
+      font-size: 12px;
+      overflow-wrap: anywhere;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
+
+    .grammar-library-row.library-sentence-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      padding: 0;
+      align-items: stretch;
+    }
+
+    .grammar-library-row.library-sentence-row + .grammar-library-row {
+      border-top: 1px solid color-mix(in srgb, var(--ink) 28%, transparent);
+    }
+
+    .grammar-library-row.library-sentence-row {
+      border-bottom: 0;
+    }
+
+    .grammar-library-example {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      padding: 8px 9px;
+      align-items: center;
+      overflow-wrap: anywhere;
+    }
+
+    .grammar-library-row .grammar-library-example .user-sentence-load-button {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .grammar-library-footer {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      .grammar-library-filters { grid-template-columns: 1fr; gap: 4px; }
+      .grammar-library-panel .grammar-library-filters label { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; }
+      .grammar-library-filters label + label > span { margin-left: 0; }
+    }
+
     .library-settings-panel {
       align-content: start;
       gap: 10px;

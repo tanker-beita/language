@@ -3917,7 +3917,7 @@
 
     .library-layout {
       display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
+      grid-template-columns: 150px minmax(0, 1fr);
       min-height: 0;
     }
 
@@ -4025,11 +4025,11 @@
       overflow-wrap: anywhere;
       align-self: stretch;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .grammar-library-row.library-sentence-row {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1fr);
       gap: 0;
       padding: 0;
       align-items: stretch;
@@ -4047,14 +4047,22 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 8px;
-      padding: 8px 9px;
+      padding: 1px 9px;
       align-items: center;
       overflow-wrap: anywhere;
+    }
+
+    .grammar-library-examples {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      min-width: 0;
     }
 
     .grammar-library-row .grammar-library-example .user-sentence-load-button {
       grid-column: 2;
       grid-row: 1;
+      height: 20px;
+      min-height: 20px;
     }
 
     .grammar-library-footer {

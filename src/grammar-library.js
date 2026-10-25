@@ -1,7 +1,7 @@
 /* Hierarchical, manually editable grammar material; no AI requests or user-data writes. */
 (() => {
   "use strict";
-  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json";
+  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json?v=20261026-1";
 
   function parse(data) {
     const ids = new Set();
@@ -33,6 +33,7 @@
               id: example.id, libraryId: data.id, text: example.en, translation: example.zh,
               categoryId: category.id, subcategoryId: subcategory.id, pointId: point.id,
               category: `${ci + 1}：${category.name}`,
+              categoryOption: `${ci + 1}：${category.name}${typeof category.description === "string" && category.description.trim() ? ` (${category.description.trim()})` : ""}`,
               subcategory: `${ci + 1}-${si + 1}：${subcategory.name}`,
               point: `${ci + 1}-${si + 1}-${pi + 1}：${point.name}`
             });
@@ -55,10 +56,10 @@
 
   let pending;
   let cached;
-  async function load() {
-    if (cached) return cached;
+  async function load({ refresh = false } = {}) {
+    if (cached && !refresh) return cached;
     if (!pending) pending = (async () => {
-      const response = await fetch(URL);
+      const response = await fetch(URL, { cache: "no-cache" });
       if (!response.ok) throw new Error(`读取失败（${response.status}）`);
       const data = await response.json();
       const rows = parse(data);
@@ -105,15 +106,23 @@
         empty.textContent = !isEnglish() ? "这份句库是英语材料，请切换到英语后使用。" : "没有找到匹配的句子。";
         list.append(empty);
       }
+      const groups = new Map();
       visible.forEach(row => {
-        const element = document.createElement("div");
-        element.className = "library-sentence-row grammar-library-row";
-        const heading = document.createElement("div");
-        heading.className = "grammar-library-heading";
-        const [number, ...pointName] = row.point.split("：");
-        const name = label => label.slice(label.indexOf("：") + 1);
-        heading.textContent = `${number}：${name(row.category)} - ${name(row.subcategory)} - ${pointName.join("：")}`;
-        element.append(heading);
+        let examples = groups.get(row.pointId);
+        if (!examples) {
+          const element = document.createElement("div");
+          element.className = "library-sentence-row grammar-library-row";
+          const heading = document.createElement("div");
+          heading.className = "grammar-library-heading";
+          const [number, ...pointName] = row.point.split("：");
+          const name = label => label.slice(label.indexOf("：") + 1);
+          heading.textContent = `${number}：${name(row.category)} - ${name(row.subcategory)} - ${pointName.join("：")}`;
+          examples = document.createElement("div");
+          examples.className = "grammar-library-examples";
+          element.append(heading, examples);
+          list.append(element);
+          groups.set(row.pointId, examples);
+        }
         const sentence = document.createElement("div");
         sentence.className = "grammar-library-example";
         const english = document.createElement("span");
@@ -128,14 +137,13 @@
         button.setAttribute("aria-label", `练习：${row.text}`);
         button.addEventListener("click", () => { if (isEnglish()) onUse(visible, row.id); });
         sentence.append(button);
-        element.append(sentence);
-        list.append(element);
+        examples.append(sentence);
       });
       if (enabled) status.textContent = `共 ${rows.length} 句 · 当前 ${visible.length} 句`;
       list.scrollTop = 0;
     }
     function refreshOptions() {
-      options(category, unique(rows, "categoryId", "category"), "全部大类");
+      options(category, unique(rows, "categoryId", "categoryOption"), "全部大类");
       const categoryRows = filter(rows, { category: category.value });
       options(subcategory, unique(categoryRows, "subcategoryId", "subcategory"), "全部小类");
       options(point, unique(filter(categoryRows, { subcategory: subcategory.value }), "pointId", "point"), "全部语法点");
@@ -152,7 +160,7 @@
       use.disabled = true;
       status.textContent = "正在加载语法句库…";
       try {
-        const result = await load();
+        const result = await load({ refresh: true });
         if (request !== generation || !isEnglish()) return;
         rows = result.rows;
         const subs = result.data.categories.flatMap(c => c.subcategories);

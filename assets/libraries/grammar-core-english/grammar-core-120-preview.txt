@@ -1,509 +1,3749 @@
 英语核心语法例句
-教学分类草案：6 大类、20 小类、120 个核心语法点，每点 1 句。分类可扩展，不代表语法的固定总数。
+6 大类、20 小类、120 个核心语法点，每点 10 句，共 1,200 句中英对照。分类可扩展，不代表语法的固定总数。
 
-1：词语短语
+1：词语短语 (词语用法与常见搭配)
   1-1：词类与构词
     1-1-1：名词表示人或事物
-      The teacher opened the window.
-      老师打开了窗户。
+      1：The teacher opened the window.
+         老师打开了窗户。
+
+      2：The farmer feeds the chickens.
+         农夫喂鸡。
+
+      3：A bicycle stood beside the gate.
+         一辆自行车停在大门旁。
+
+      4：Her daughter loves music.
+         她的女儿喜欢音乐。
+
+      5：The river flows through the village.
+         这条河流经村庄。
+
+      6：Our neighbor owns a bakery.
+         我们的邻居开了一家面包店。
+
+      7：The suitcase is under the bed.
+         手提箱在床底下。
+
+      8：A nurse checked my temperature.
+         一名护士给我量了体温。
+
+      9：The library closes on Sundays.
+         图书馆星期日闭馆。
+
+      10：Friendship matters more than money.
+         友谊比金钱更重要。
 
     1-1-2：动词表示动作
-      The children laughed.
-      孩子们笑了。
+      1：The children laughed.
+         孩子们笑了。
+
+      2：The dog barked loudly.
+         那只狗大声叫了起来。
+
+      3：She opened her notebook.
+         她打开了笔记本。
+
+      4：We walked along the beach.
+         我们沿着海滩散步。
+
+      5：He repaired the broken chair.
+         他修好了坏椅子。
+
+      6：The horse jumped over the fence.
+         那匹马跳过了栅栏。
+
+      7：They carried the boxes upstairs.
+         他们把箱子搬上了楼。
+
+      8：I washed the dishes after dinner.
+         晚饭后我洗了碗。
+
+      9：The audience clapped enthusiastically.
+         观众热情地鼓掌。
+
+      10：My father planted a tree.
+         我父亲种了一棵树。
 
     1-1-3：形容词描述性质
-      The soup is hot.
-      汤很烫。
+      1：The soup is hot.
+         汤很烫。
+
+      2：The blanket feels soft.
+         这条毯子摸起来很柔软。
+
+      3：Her explanation was clear.
+         她的解释很清楚。
+
+      4：The mountain air is fresh.
+         山里的空气很清新。
+
+      5：This exercise seems easy.
+         这道练习题看起来很简单。
+
+      6：The children looked sleepy.
+         孩子们看起来很困。
+
+      7：His hands were cold.
+         他的双手冰凉。
+
+      8：The street became noisy.
+         街道变得嘈杂起来。
+
+      9：Your idea sounds interesting.
+         你的想法听起来很有趣。
+
+      10：The kitchen smells wonderful.
+         厨房里香气扑鼻。
 
     1-1-4：副词修饰动作
-      She answered politely.
-      她礼貌地作了回答。
+      1：She answered politely.
+         她礼貌地作了回答。
+
+      2：He closed the door gently.
+         他轻轻地关上了门。
+
+      3：The baby slept peacefully.
+         宝宝睡得很安稳。
+
+      4：She explained the rules clearly.
+         她清楚地解释了规则。
+
+      5：We waited patiently outside.
+         我们耐心地在外面等候。
+
+      6：The team worked efficiently.
+         团队高效地开展了工作。
+
+      7：He listened carefully to the instructions.
+         他认真听了操作说明。
+
+      8：The dog followed us quietly.
+         那只狗静静地跟着我们。
+
+      9：She smiled warmly at the visitors.
+         她热情地向来访者微笑。
+
+      10：They moved quickly through the crowd.
+         他们迅速穿过了人群。
 
     1-1-5：派生构词
-      His kindness touched everyone.
-      他的善良感动了所有人。
+      1：His kindness touched everyone.
+         他的善良感动了所有人。
+
+      2：Her happiness was obvious.
+         她的喜悦显而易见。
+
+      3：The instructions were helpful.
+         这些说明很有帮助。
+
+      4：His explanation was unnecessary.
+         他的解释没有必要。
+
+      5：We admired her creativity.
+         我们钦佩她的创造力。
+
+      6：The driver was careless.
+         那个司机很粗心。
+
+      7：Their disagreement lasted for days.
+         他们的分歧持续了好几天。
+
+      8：The teacher encouraged independent learning.
+         老师鼓励自主学习。
+
+      9：This bottle is reusable.
+         这个瓶子可以重复使用。
+
+      10：She spoke with confidence.
+         她充满自信地说话。
 
     1-1-6：复合构词
-      I left my notebook at home.
-      我把笔记本忘在家里了。
+      1：I left my notebook at home.
+         我把笔记本忘在家里了。
+
+      2：The postman brought a package.
+         邮递员送来了一个包裹。
+
+      3：I bought a new toothbrush.
+         我买了一把新牙刷。
+
+      4：The classroom was empty.
+         教室里空无一人。
+
+      5：We watched the sunset together.
+         我们一起看了日落。
+
+      6：Her bedroom faces the garden.
+         她的卧室朝向花园。
+
+      7：The football rolled into the road.
+         足球滚到了马路上。
+
+      8：He wore a raincoat to school.
+         他穿着雨衣去上学。
+
+      9：My grandparents live nearby.
+         我的祖父母住在附近。
+
+      10：The bookshelf is full.
+         书架上摆满了书。
 
   1-2：名词与代词
     1-2-1：名词规则复数
-      There are three apples in the bowl.
-      碗里有三个苹果。
+      1：There are three apples in the bowl.
+         碗里有三个苹果。
+
+      2：Two cats slept on the sofa.
+         两只猫睡在沙发上。
+
+      3：She washed the dishes carefully.
+         她仔细地洗了盘子。
+
+      4：The boxes are in the garage.
+         箱子在车库里。
+
+      5：We planted roses near the wall.
+         我们在墙边种了玫瑰。
+
+      6：The babies were sleeping.
+         婴儿们正在睡觉。
+
+      7：Five buses stopped outside the school.
+         五辆公共汽车停在学校外面。
+
+      8：The students carried their bags.
+         学生们提着自己的包。
+
+      9：He put the glasses on a tray.
+         他把玻璃杯放在了托盘上。
+
+      10：The cities have different histories.
+         这些城市有着不同的历史。
 
     1-2-2：名词不规则复数
-      The children brushed their teeth.
-      孩子们刷了牙。
+      1：The children brushed their teeth.
+         孩子们刷了牙。
+
+      2：The women are waiting outside.
+         那些女士正在外面等候。
+
+      3：Three men carried the piano.
+         三个男人搬了那架钢琴。
+
+      4：My feet hurt after the walk.
+         走完那段路后，我的脚很疼。
+
+      5：Two mice hid behind the cupboard.
+         两只老鼠躲在橱柜后面。
+
+      6：The geese swam across the lake.
+         那群鹅游过了湖面。
+
+      7：Several sheep stood near the fence.
+         几只羊站在栅栏旁。
+
+      8：We saw five deer in the forest.
+         我们在森林里看到了五只鹿。
+
+      9：The leaves turned yellow in autumn.
+         树叶在秋天变黄了。
+
+      10：The shelves need cleaning.
+         这些架子需要清理。
 
     1-2-3：不可数名词
-      I need some information about the course.
-      我需要一些关于这门课程的信息。
+      1：I need some information about the course.
+         我需要一些关于这门课程的信息。
+
+      2：This luggage is very heavy.
+         这件行李很重。
+
+      3：She gave me some useful advice.
+         她给了我一些有用的建议。
+
+      4：There is too much furniture here.
+         这里的家具太多了。
+
+      5：We need more equipment for the trip.
+         这次旅行我们需要更多装备。
+
+      6：The news was encouraging.
+         这个消息令人鼓舞。
+
+      7：I do not have enough money.
+         我的钱不够。
+
+      8：The bread smells fresh.
+         面包闻起来很新鲜。
+
+      9：There is little traffic this morning.
+         今天早上路上的车很少。
+
+      10：He has made great progress.
+         他取得了很大的进步。
 
     1-2-4：名词所有格
-      This is my sister's bicycle.
-      这是我姐姐的自行车。
+      1：This is my sister's bicycle.
+         这是我姐姐的自行车。
+
+      2：The boy's jacket is blue.
+         那个男孩的夹克是蓝色的。
+
+      3：My parents' house is near the sea.
+         我父母的房子在海边。
+
+      4：The children's toys covered the floor.
+         孩子们的玩具铺满了地板。
+
+      5：Anna's phone rang during lunch.
+         安娜的手机在午饭时响了。
+
+      6：The dog's bowl is empty.
+         狗的食盆空了。
+
+      7：The teachers' office is upstairs.
+         教师办公室在楼上。
+
+      8：Today's lesson was useful.
+         今天的课很有用。
+
+      9：We visited my uncle's farm.
+         我们参观了我叔叔的农场。
+
+      10：The company's website is easy to use.
+         这家公司的网站很容易使用。
 
     1-2-5：人称代词的主格与宾格
-      She invited me to dinner.
-      她邀请我吃晚饭。
+      1：She invited me to dinner.
+         她邀请我吃晚饭。
+
+      2：He sent us a postcard.
+         他给我们寄了一张明信片。
+
+      3：They asked her for directions.
+         他们向她问路。
+
+      4：We saw him at the station.
+         我们在车站看见了他。
+
+      5：I will help them tomorrow.
+         我明天会帮助他们。
+
+      6：She showed it to me.
+         她把它给我看了。
+
+      7：You can sit beside us.
+         你可以坐在我们旁边。
+
+      8：He and I work together.
+         他和我一起工作。
+
+      9：The teacher spoke to you and me.
+         老师和你我谈了话。
+
+      10：They thanked him for his help.
+         他们感谢他的帮助。
 
     1-2-6：反身代词
-      He taught himself Spanish.
-      他自学了西班牙语。
+      1：He taught himself Spanish.
+         他自学了西班牙语。
+
+      2：I cut myself while cooking.
+         我做饭时割伤了自己。
+
+      3：She looked at herself in the mirror.
+         她看着镜子里的自己。
+
+      4：We introduced ourselves to the neighbors.
+         我们向邻居作了自我介绍。
+
+      5：They built the shelves themselves.
+         他们自己做了这些架子。
+
+      6：Please help yourself to some soup.
+         请随意喝点汤。
+
+      7：The door closed by itself.
+         门自己关上了。
+
+      8：He blamed himself for the mistake.
+         他为那个错误责备自己。
+
+      9：You should be proud of yourself.
+         你应该为自己感到骄傲。
+
+      10：The children dressed themselves.
+         孩子们自己穿好了衣服。
 
   1-3：冠词与限定词
     1-3-1：不定冠词 a 与 an
-      She bought a notebook and an umbrella.
-      她买了一本笔记本和一把雨伞。
+      1：She bought a notebook and an umbrella.
+         她买了一本笔记本和一把雨伞。
+
+      2：I saw an owl in a tree.
+         我看见树上有一只猫头鹰。
+
+      3：He works in a hospital.
+         他在一家医院工作。
+
+      4：She is an engineer.
+         她是一名工程师。
+
+      5：We waited for an hour.
+         我们等了一个小时。
+
+      6：He bought a used car.
+         他买了一辆二手车。
+
+      7：I need a pen to sign this form.
+         我需要一支笔来签这张表。
+
+      8：An old friend called me today.
+         今天一位老朋友给我打了电话。
+
+      9：There is a university near my house.
+         我家附近有一所大学。
+
+      10：She gave me an interesting idea.
+         她给了我一个有趣的想法。
 
     1-3-2：定冠词 the
-      Please close the door behind you.
-      请随手关上你身后的门。
+      1：Please close the door behind you.
+         请随手关上你身后的门。
+
+      2：The moon looks bright tonight.
+         今晚的月亮看起来很明亮。
+
+      3：I liked the film we watched yesterday.
+         我喜欢我们昨天看的那部电影。
+
+      4：Please pass me the salt.
+         请把盐递给我。
+
+      5：The woman at the counter helped us.
+         柜台旁的那位女士帮助了我们。
+
+      6：He put the receipt in his pocket.
+         他把收据放进了口袋。
+
+      7：We took the first train home.
+         我们乘第一班火车回了家。
+
+      8：The sun was setting behind the hills.
+         太阳正在群山后落下。
+
+      9：Who left the kitchen window open?
+         谁没关厨房的窗户？
+
+      10：The answer to this question is simple.
+         这道题的答案很简单。
 
     1-3-3：零冠词
-      Water is essential for life.
-      水对生命至关重要。
+      1：Water is essential for life.
+         水对生命至关重要。
+
+      2：Children need time to play.
+         孩子们需要玩耍的时间。
+
+      3：She studies chemistry at university.
+         她在大学学习化学。
+
+      4：We have breakfast at seven.
+         我们七点吃早饭。
+
+      5：Dogs often enjoy running.
+         狗通常喜欢奔跑。
+
+      6：He speaks French fluently.
+         他的法语说得很流利。
+
+      7：Music helps me relax.
+         音乐能帮助我放松。
+
+      8：I usually go to work by bus.
+         我通常乘公共汽车上班。
+
+      9：Honesty builds trust.
+         诚实能建立信任。
+
+      10：Rice is a common food here.
+         大米是这里常见的食物。
 
     1-3-4：指示限定词
-      These shoes are more comfortable than those boots.
-      这几双鞋比那几双靴子更舒服。
+      1：These shoes are more comfortable than those boots.
+         这几双鞋比那几双靴子更舒服。
+
+      2：This chair is broken.
+         这把椅子坏了。
+
+      3：That building used to be a bank.
+         那栋楼以前是一家银行。
+
+      4：These flowers smell lovely.
+         这些花闻起来很香。
+
+      5：Those mountains are covered with snow.
+         那些山被白雪覆盖着。
+
+      6：I prefer this jacket to that coat.
+         比起那件大衣，我更喜欢这件夹克。
+
+      7：These questions are easier than those exercises.
+         这些问题比那些练习容易。
+
+      8：That noise is coming from upstairs.
+         那阵噪声是从楼上传来的。
+
+      9：This coffee tastes bitter.
+         这杯咖啡喝起来很苦。
+
+      10：Please put those books on this shelf.
+         请把那些书放在这个架子上。
 
     1-3-5：物主限定词
-      Our teacher checked their homework.
-      我们的老师检查了他们的作业。
+      1：Our teacher checked their homework.
+         我们的老师检查了他们的作业。
+
+      2：My keys are on the desk.
+         我的钥匙在书桌上。
+
+      3：Your coat is still wet.
+         你的外套还湿着。
+
+      4：His bicycle needs a new tire.
+         他的自行车需要换一个新轮胎。
+
+      5：Her brother lives in Canada.
+         她哥哥住在加拿大。
+
+      6：The bird spread its wings.
+         那只鸟展开了翅膀。
+
+      7：Our neighbors invited us over.
+         我们的邻居邀请我们去做客。
+
+      8：Their garden is full of flowers.
+         他们的花园里开满了花。
+
+      9：Please write your name here.
+         请把你的名字写在这里。
+
+      10：My sister forgot her umbrella.
+         我姐姐忘带她的雨伞了。
 
     1-3-6：数量限定词
-      We have a few eggs but little milk.
-      我们有几个鸡蛋，但牛奶很少。
+      1：We have a few eggs but little milk.
+         我们有几个鸡蛋，但牛奶很少。
+
+      2：There are many stars tonight.
+         今晚有很多星星。
+
+      3：We do not have much time.
+         我们没有多少时间。
+
+      4：She added a little sugar.
+         她加了一点糖。
+
+      5：Few people knew the answer.
+         很少有人知道答案。
+
+      6：Several students stayed after class.
+         几个学生课后留了下来。
+
+      7：Both windows were open.
+         两扇窗户都开着。
+
+      8：Each child received a gift.
+         每个孩子都收到了一份礼物。
+
+      9：Do you have any questions?
+         你有什么问题吗？
+
+      10：There is enough food for everyone.
+         食物足够大家吃。
 
   1-4：形容词、副词与比较等级
     1-4-1：形容词作定语
-      A small dog followed us home.
-      一只小狗跟着我们回了家。
+      1：A small dog followed us home.
+         一只小狗跟着我们回了家。
+
+      2：She wore a yellow scarf.
+         她戴着一条黄色围巾。
+
+      3：We found an empty table.
+         我们找到了一张空桌子。
+
+      4：He lives in a quiet village.
+         他住在一个安静的村庄里。
+
+      5：A cold wind blew across the field.
+         一阵冷风吹过田野。
+
+      6：The old bridge needs repairs.
+         那座旧桥需要修缮。
+
+      7：I heard a strange sound.
+         我听到了一种奇怪的声音。
+
+      8：They bought fresh vegetables.
+         他们买了新鲜蔬菜。
+
+      9：The new student sat beside me.
+         新来的学生坐在我旁边。
+
+      10：She gave me a friendly smile.
+         她对我友好地笑了笑。
 
     1-4-2：形容词作表语
-      The garden looks beautiful.
-      花园看起来很美。
+      1：The garden looks beautiful.
+         花园看起来很美。
+
+      2：The milk smells sour.
+         牛奶闻起来酸了。
+
+      3：His explanation sounds reasonable.
+         他的解释听起来很合理。
+
+      4：The floor is slippery.
+         地板很滑。
+
+      5：She became nervous before the interview.
+         面试前她变得紧张起来。
+
+      6：The weather stayed warm all week.
+         整个星期天气都很暖和。
+
+      7：This pillow feels comfortable.
+         这个枕头感觉很舒服。
+
+      8：The children grew quiet.
+         孩子们安静了下来。
+
+      9：Your suggestion seems practical.
+         你的建议似乎很实用。
+
+      10：The apples taste sweet.
+         这些苹果吃起来很甜。
 
     1-4-3：频率副词的位置
-      She usually walks to work.
-      她通常步行上班。
+      1：She usually walks to work.
+         她通常步行上班。
+
+      2：He always checks the weather.
+         他总会查看天气预报。
+
+      3：I often read before bed.
+         我经常在睡前读书。
+
+      4：They rarely eat out.
+         他们很少在外面吃饭。
+
+      5：She is never late for class.
+         她上课从不迟到。
+
+      6：We sometimes visit the market.
+         我们有时去市场。
+
+      7：He has often helped us.
+         他经常帮助我们。
+
+      8：The bus is usually crowded.
+         这班公共汽车通常很拥挤。
+
+      9：You should always lock the door.
+         你应该每次都锁好门。
+
+      10：I seldom drink coffee at night.
+         我晚上很少喝咖啡。
 
     1-4-4：比较级
-      This road is wider than that one.
-      这条路比那条路宽。
+      1：This road is wider than that one.
+         这条路比那条路宽。
+
+      2：My bag is lighter than yours.
+         我的包比你的轻。
+
+      3：She runs faster than her brother.
+         她比她哥哥跑得快。
+
+      4：This chair is more comfortable than that one.
+         这把椅子比那把更舒服。
+
+      5：Today is colder than yesterday.
+         今天比昨天冷。
+
+      6：His new job is better than his old one.
+         他的新工作比原来的工作好。
+
+      7：The station is farther away than I thought.
+         车站比我想的更远。
+
+      8：This task is less difficult than the last one.
+         这项任务没有上一项那么难。
+
+      9：Her handwriting is neater than mine.
+         她的字写得比我工整。
+
+      10：We arrived earlier than the others.
+         我们比其他人到得早。
 
     1-4-5：最高级
-      She is the tallest student in our class.
-      她是我们班最高的学生。
+      1：She is the tallest student in our class.
+         她是我们班最高的学生。
+
+      2：This is the oldest house in the village.
+         这是村里最老的房子。
+
+      3：He is the youngest member of the team.
+         他是队里最年轻的成员。
+
+      4：That was the best meal of the trip.
+         那是这次旅行中最好的一餐。
+
+      5：She chose the cheapest ticket.
+         她选了最便宜的票。
+
+      6：This is the most useful tool I own.
+         这是我拥有的最有用的工具。
+
+      7：August is usually the hottest month here.
+         八月通常是这里最热的月份。
+
+      8：He ran the fastest of all the boys.
+         在所有男孩中，他跑得最快。
+
+      9：It was the worst storm of the year.
+         那是这一年最严重的暴风雨。
+
+      10：This is the least expensive option.
+         这是最便宜的选择。
 
     1-4-6：同级比较
-      This bag is as heavy as that one.
-      这个包和那个包一样重。
+      1：This bag is as heavy as that one.
+         这个包和那个包一样重。
+
+      2：She is as tall as her mother.
+         她和她母亲一样高。
+
+      3：This train is as fast as that one.
+         这列火车和那列一样快。
+
+      4：He speaks as clearly as his teacher.
+         他说话和他的老师一样清楚。
+
+      5：The blue shirt is as expensive as the white one.
+         蓝衬衫和白衬衫一样贵。
+
+      6：My room is not as large as yours.
+         我的房间没有你的大。
+
+      7：We arrived as early as the guide.
+         我们和导游到得一样早。
+
+      8：This exercise is as difficult as the last one.
+         这道练习题和上一道一样难。
+
+      9：Her second book is as interesting as her first.
+         她的第二本书和第一本一样有趣。
+
+      10：I cannot swim as well as you.
+         我游泳没有你游得好。
 
   1-5：介词与短语搭配
     1-5-1：时间介词
-      The meeting starts at nine on Monday.
-      会议在星期一九点开始。
+      1：The meeting starts at nine on Monday.
+         会议在星期一九点开始。
+
+      2：We will meet in the afternoon.
+         我们下午见。
+
+      3：Her birthday is in May.
+         她的生日在五月。
+
+      4：The shop closes at midnight.
+         这家商店午夜关门。
+
+      5：I visited them on Sunday.
+         我星期日去看了他们。
+
+      6：He finished the work before lunch.
+         他午饭前完成了工作。
+
+      7：They rested during the break.
+         他们在休息时间休息了。
+
+      8：We stayed there for a week.
+         我们在那里待了一个星期。
+
+      9：She has lived here since 2020.
+         她从2020年起一直住在这里。
+
+      10：Please send the form by Friday.
+         请最迟在星期五寄出这张表。
 
     1-5-2：地点介词
-      The keys are under the sofa.
-      钥匙在沙发下面。
+      1：The keys are under the sofa.
+         钥匙在沙发下面。
+
+      2：The picture hangs above the fireplace.
+         那幅画挂在壁炉上方。
+
+      3：My wallet is in the drawer.
+         我的钱包在抽屉里。
+
+      4：A lamp stands beside the bed.
+         床旁放着一盏灯。
+
+      5：The bank is opposite the station.
+         银行在车站对面。
+
+      6：He sat between his parents.
+         他坐在父母中间。
+
+      7：The cat hid behind the curtain.
+         那只猫藏在窗帘后面。
+
+      8：We waited outside the theater.
+         我们在剧院外面等候。
+
+      9：The village lies below the castle.
+         村庄位于城堡下方。
+
+      10：There is a bakery near the bridge.
+         桥附近有一家面包店。
 
     1-5-3：方向介词
-      She walked into the kitchen.
-      她走进了厨房。
+      1：She walked into the kitchen.
+         她走进了厨房。
+
+      2：The dog ran across the road.
+         那只狗跑过了马路。
+
+      3：We drove through a long tunnel.
+         我们开车穿过了一条长隧道。
+
+      4：He jumped over the wall.
+         他跳过了那堵墙。
+
+      5：She climbed up the ladder.
+         她爬上了梯子。
+
+      6：The children ran out of the classroom.
+         孩子们跑出了教室。
+
+      7：They walked toward the river.
+         他们朝河边走去。
+
+      8：The ball rolled down the hill.
+         球滚下了山坡。
+
+      9：We cycled along the coast.
+         我们沿着海岸骑车。
+
+      10：He stepped onto the platform.
+         他走上了站台。
 
     1-5-4：介词后接名词或动名词
-      He left without saying goodbye.
-      他没有道别就离开了。
+      1：He left without saying goodbye.
+         他没有道别就离开了。
+
+      2：She is interested in painting.
+         她对绘画感兴趣。
+
+      3：We talked about the journey.
+         我们谈论了这次旅程。
+
+      4：Thank you for helping me.
+         谢谢你帮助我。
+
+      5：He is good at solving puzzles.
+         他擅长解谜题。
+
+      6：They left after finishing breakfast.
+         他们吃完早饭后离开了。
+
+      7：I look forward to meeting your family.
+         我期待见到你的家人。
+
+      8：She insisted on paying the bill.
+         她坚持要付账。
+
+      9：We learned a lot from our mistakes.
+         我们从错误中学到了很多。
+
+      10：He apologized for being late.
+         他为迟到道了歉。
 
     1-5-5：动词与介词搭配
-      You can depend on me.
-      你可以依靠我。
+      1：You can depend on me.
+         你可以依靠我。
+
+      2：Please listen to the announcement.
+         请听广播通知。
+
+      3：She applied for a teaching job.
+         她申请了一份教师工作。
+
+      4：We agreed on a meeting time.
+         我们商定了见面时间。
+
+      5：He apologized to his neighbor.
+         他向邻居道了歉。
+
+      6：This bag belongs to my friend.
+         这个包是我朋友的。
+
+      7：I believe in your ability.
+         我相信你的能力。
+
+      8：They complained about the noise.
+         他们抱怨噪声太大。
+
+      9：She suffers from frequent headaches.
+         她经常受头痛困扰。
+
+      10：We waited for the next train.
+         我们等候下一班火车。
 
     1-5-6：短语动词
-      Please turn off the light.
-      请把灯关掉。
+      1：Please turn off the light.
+         请把灯关掉。
 
-2：句子结构
+      2：He picked up the fallen book.
+         他捡起了掉在地上的书。
+
+      3：Please fill out this application.
+         请填写这份申请表。
+
+      4：She gave up smoking last year.
+         她去年戒烟了。
+
+      5：We ran out of bread.
+         我们的面包吃完了。
+
+      6：The plane took off on time.
+         飞机准时起飞了。
+
+      7：He put on his jacket.
+         他穿上了夹克。
+
+      8：Please look up this word.
+         请查一下这个词。
+
+      9：They called off the meeting.
+         他们取消了会议。
+
+      10：I will turn down the music.
+         我会把音乐调小声。
+
+2：句子结构 (句子成分与基本句型)
   2-1：句子成分与基本句型
     2-1-1：主语加谓语
-      The baby smiled.
-      宝宝笑了。
+      1：The baby smiled.
+         宝宝笑了。
+
+      2：The sun rose.
+         太阳升起来了。
+
+      3：The dog slept.
+         那只狗睡着了。
+
+      4：The audience laughed.
+         观众笑了。
+
+      5：The door creaked.
+         门吱呀作响。
+
+      6：The bell rang.
+         铃响了。
+
+      7：The guests arrived.
+         客人们到了。
+
+      8：The flowers bloomed.
+         花开了。
+
+      9：The engine stopped.
+         发动机停了。
+
+      10：The crowd cheered.
+         人群欢呼起来。
 
     2-1-2：主语加谓语加宾语
-      I need an English menu.
-      我需要一份英文菜单。
+      1：I need an English menu.
+         我需要一份英文菜单。
+
+      2：She opened the letter.
+         她打开了那封信。
+
+      3：We enjoyed the concert.
+         我们很喜欢那场音乐会。
+
+      4：He repaired my bicycle.
+         他修好了我的自行车。
+
+      5：The boy caught the ball.
+         那个男孩接住了球。
+
+      6：I remember your name.
+         我记得你的名字。
+
+      7：They bought fresh bread.
+         他们买了新鲜面包。
+
+      8：Her story surprised everyone.
+         她的故事让所有人感到惊讶。
+
+      9：The farmer grows potatoes.
+         那个农夫种土豆。
+
+      10：We need more chairs.
+         我们需要更多椅子。
 
     2-1-3：主语加系动词加表语
-      The room is quiet.
-      房间很安静。
+      1：The room is quiet.
+         房间很安静。
+
+      2：My brother is a nurse.
+         我哥哥是一名护士。
+
+      3：The soup tastes delicious.
+         这汤味道很好。
+
+      4：Her idea sounds sensible.
+         她的想法听起来很合理。
+
+      5：The children became restless.
+         孩子们变得坐立不安。
+
+      6：The sky turned pink.
+         天空变成了粉红色。
+
+      7：This fabric feels smooth.
+         这种布料摸起来很光滑。
+
+      8：The answer seems obvious.
+         答案似乎很明显。
+
+      9：His father remained calm.
+         他的父亲始终很镇定。
+
+      10：The bread smells wonderful.
+         面包闻起来很香。
 
     2-1-4：主语加谓语加间接宾语加直接宾语
-      She gave me a dictionary.
-      她给了我一本词典。
+      1：She gave me a dictionary.
+         她给了我一本词典。
+
+      2：He sent his mother a postcard.
+         他给母亲寄了一张明信片。
+
+      3：My aunt bought me a scarf.
+         我姑姑给我买了一条围巾。
+
+      4：The teacher told us a story.
+         老师给我们讲了一个故事。
+
+      5：She offered her guest some tea.
+         她给客人端了一些茶。
+
+      6：I lent my neighbor a ladder.
+         我借给邻居一架梯子。
+
+      7：We showed the visitors our garden.
+         我们带来访者看了我们的花园。
+
+      8：He taught his daughter a song.
+         他教女儿唱了一首歌。
+
+      9：Please pass me the butter.
+         请把黄油递给我。
+
+      10：The hotel gave us a quiet room.
+         酒店给我们安排了一间安静的房间。
 
     2-1-5：主语加谓语加宾语加宾语补足语
-      The news made him happy.
-      这个消息使他很高兴。
+      1：The news made him happy.
+         这个消息使他很高兴。
+
+      2：We painted the fence white.
+         我们把栅栏漆成了白色。
+
+      3：They elected her captain.
+         他们选她当队长。
+
+      4：I found the instructions confusing.
+         我觉得这些说明令人费解。
+
+      5：Please keep your hands clean.
+         请保持双手清洁。
+
+      6：The noise drove me crazy.
+         那噪声让我快受不了了。
+
+      7：She named her daughter Alice.
+         她给女儿取名叫爱丽丝。
+
+      8：The judge declared him innocent.
+         法官宣布他无罪。
+
+      9：We consider this plan practical.
+         我们认为这个计划切实可行。
+
+      10：He left the window open.
+         他让窗户开着。
 
     2-1-6：主语加谓语加必需状语
-      She lives in Madrid.
-      她住在马德里。
+      1：She lives in Madrid.
+         她住在马德里。
+
+      2：The keys are on the shelf.
+         钥匙在架子上。
+
+      3：The meeting lasted for two hours.
+         会议持续了两个小时。
+
+      4：My grandparents live near the river.
+         我的祖父母住在河边。
+
+      5：The museum lies beside the park.
+         博物馆位于公园旁边。
+
+      6：The concert is at the town hall.
+         音乐会在市政厅举行。
+
+      7：The cabin stands on a hill.
+         小屋坐落在山丘上。
+
+      8：The path leads to the beach.
+         这条小路通向海滩。
+
+      9：The painting dates from the nineteenth century.
+         这幅画创作于十九世纪。
+
+      10：This suitcase belongs in the closet.
+         这个手提箱应当放在壁橱里。
 
     2-1-7：主语加谓语加宾语加必需状语
-      He put the keys on the table.
-      他把钥匙放在了桌上。
+      1：He put the keys on the table.
+         他把钥匙放在了桌上。
+
+      2：She placed the vase beside the window.
+         她把花瓶放在了窗边。
+
+      3：We put the bags under the seats.
+         我们把包放在了座位下面。
+
+      4：He laid the baby on the bed.
+         他把宝宝放在了床上。
+
+      5：They set the chairs around the table.
+         他们把椅子摆在了桌子周围。
+
+      6：I kept the documents in a safe.
+         我把文件存放在保险箱里。
+
+      7：She hung the picture above the sofa.
+         她把画挂在了沙发上方。
+
+      8：He slipped the note into his pocket.
+         他把纸条悄悄塞进了口袋。
+
+      9：We positioned the camera near the door.
+         我们把摄像机安放在门旁。
+
+      10：The guide led us through the forest.
+         导游带我们穿过了森林。
 
     2-1-8：后置定语
-      The woman in the red coat is my aunt.
-      穿红色外套的那位女士是我姑姑。
+      1：The woman in the red coat is my aunt.
+         穿红色外套的那位女士是我姑姑。
+
+      2：The books on the top shelf are mine.
+         最上面一层架子上的书是我的。
+
+      3：The man with the umbrella waved.
+         那个撑伞的男人挥了挥手。
+
+      4：I chose the seat by the window.
+         我选了靠窗的座位。
+
+      5：The road to the village is narrow.
+         通往村庄的路很窄。
+
+      6：Someone in the next room is singing.
+         隔壁房间里有人在唱歌。
+
+      7：The house across the street is empty.
+         街对面的那栋房子空着。
+
+      8：The girl beside my sister is Anna.
+         我姐姐旁边的女孩是安娜。
+
+      9：The letter from my uncle arrived today.
+         我叔叔寄来的信今天到了。
+
+      10：The entrance at the back is locked.
+         后面的入口锁着。
 
     2-1-9：时间与地点状语
-      We met at the station yesterday.
-      我们昨天在车站见了面。
+      1：We met at the station yesterday.
+         我们昨天在车站见了面。
+
+      2：She studied in the library last night.
+         她昨晚在图书馆学习了。
+
+      3：We had lunch in the garden today.
+         我们今天在花园里吃了午饭。
+
+      4：He called me from the airport this morning.
+         他今天早上从机场给我打了电话。
+
+      5：They played football in the park on Saturday.
+         他们星期六在公园踢了足球。
+
+      6：I left my umbrella at the office yesterday.
+         我昨天把雨伞落在了办公室。
+
+      7：The children practiced outside after school.
+         孩子们放学后在外面练习了。
+
+      8：We watched the sunrise on the beach this morning.
+         我们今天早上在海滩看了日出。
+
+      9：She worked at home all afternoon.
+         她整个下午都在家工作。
+
+      10：They celebrated in the square last night.
+         他们昨晚在广场庆祝了。
 
     2-1-10：同位语
-      My brother, a doctor, works nearby.
-      我哥哥是一名医生，在附近工作。
+      1：My brother, a doctor, works nearby.
+         我哥哥是一名医生，在附近工作。
+
+      2：Paris, the capital of France, attracts many visitors.
+         巴黎是法国的首都，吸引着许多游客。
+
+      3：Our neighbor, Mrs. Green, grows roses.
+         我们的邻居格林太太种玫瑰。
+
+      4：My favorite sport, tennis, requires practice.
+         我最喜欢的运动是网球，它需要练习。
+
+      5：Her son, a talented musician, plays the violin.
+         她的儿子是一位有才华的音乐家，会拉小提琴。
+
+      6：We visited Oxford, a famous university city.
+         我们参观了牛津这座著名的大学城。
+
+      7：His latest book, a travel diary, is fascinating.
+         他的最新作品是一部旅行日记，很引人入胜。
+
+      8：Our guide, a local teacher, knew every street.
+         我们的导游是一位当地老师，熟悉每一条街道。
+
+      9：My friend Anna, an architect, designed this house.
+         我的朋友安娜是一名建筑师，设计了这栋房子。
+
+      10：We met on Monday, the first day of the course.
+         我们在星期一，也就是课程第一天见了面。
 
   2-2：主谓一致
     2-2-1：第三人称单数主语
-      He works in a library.
-      他在图书馆工作。
+      1：He works in a library.
+         他在图书馆工作。
+
+      2：She reads before breakfast.
+         她早饭前读书。
+
+      3：My brother studies engineering.
+         我哥哥学习工程学。
+
+      4：The train leaves at eight.
+         火车八点发车。
+
+      5：This machine makes a strange noise.
+         这台机器会发出奇怪的声音。
+
+      6：Her father teaches history.
+         她父亲教历史。
+
+      7：The child wants another story.
+         那个孩子还想再听一个故事。
+
+      8：Our dog likes long walks.
+         我们的狗喜欢长距离散步。
+
+      9：The restaurant serves breakfast all day.
+         这家餐厅全天供应早餐。
+
+      10：He has a small vegetable garden.
+         他有一个小菜园。
 
     2-2-2：复数主语
-      The students are ready.
-      学生们准备好了。
+      1：The students are ready.
+         学生们准备好了。
+
+      2：My friends live near the station.
+         我的朋友们住在车站附近。
+
+      3：The windows need cleaning.
+         这些窗户需要清洗。
+
+      4：These shoes fit perfectly.
+         这几双鞋非常合脚。
+
+      5：The children have new bicycles.
+         孩子们有了新自行车。
+
+      6：Your ideas sound interesting.
+         你的想法听起来很有趣。
+
+      7：The flowers smell sweet.
+         这些花闻起来很香。
+
+      8：Our neighbors grow tomatoes.
+         我们的邻居种番茄。
+
+      9：The buses arrive every ten minutes.
+         公共汽车每十分钟来一班。
+
+      10：Those houses belong to the city.
+         那些房屋归市政府所有。
 
     2-2-3：and 连接的并列主语
-      Tom and Anna enjoy hiking.
-      汤姆和安娜喜欢徒步旅行。
+      1：Tom and Anna enjoy hiking.
+         汤姆和安娜喜欢徒步旅行。
+
+      2：My brother and sister are teachers.
+         我的哥哥和姐姐都是教师。
+
+      3：The cat and the dog sleep downstairs.
+         猫和狗都在楼下睡觉。
+
+      4：Anna and I have the same book.
+         安娜和我有同一本书。
+
+      5：The kitchen and the bathroom need painting.
+         厨房和浴室都需要粉刷。
+
+      6：His mother and father work at the hospital.
+         他的母亲和父亲都在医院工作。
+
+      7：The manager and her assistant are waiting.
+         经理和她的助理正在等候。
+
+      8：Tea and coffee are available.
+         有茶和咖啡供应。
+
+      9：The driver and the passengers were safe.
+         司机和乘客们都安然无恙。
+
+      10：The red shirt and the blue jacket cost the same.
+         红衬衫和蓝夹克的价格相同。
 
     2-2-4：不定代词作主语
-      Everyone needs a little help sometimes.
-      每个人有时都需要一点帮助。
+      1：Everyone needs a little help sometimes.
+         每个人有时都需要一点帮助。
 
-3：动词形式
+      2：Everybody knows her name.
+         每个人都知道她的名字。
+
+      3：Someone is knocking at the door.
+         有人正在敲门。
+
+      4：Nobody wants to leave early.
+         没有人想提前离开。
+
+      5：Everything looks different now.
+         现在一切看起来都不一样了。
+
+      6：Each of the rooms has a balcony.
+         每个房间都有一个阳台。
+
+      7：Neither of the answers is correct.
+         这两个答案都不正确。
+
+      8：Either of these routes takes an hour.
+         走这两条路线中的任何一条都需要一小时。
+
+      9：Nothing seems impossible to him.
+         对他来说，似乎没有什么是不可能的。
+
+      10：Everyone in the office has a key.
+         办公室里的每个人都有一把钥匙。
+
+3：动词形式 (时态、语态与非谓语)
   3-1：时态与体
     3-1-1：一般现在时
-      She drinks tea every morning.
-      她每天早上喝茶。
+      1：She drinks tea every morning.
+         她每天早上喝茶。
+
+      2：The earth moves around the sun.
+         地球绕着太阳转。
+
+      3：I take the bus to work.
+         我乘公共汽车上班。
+
+      4：He teaches English on Fridays.
+         他每周五教英语。
+
+      5：We usually eat dinner at seven.
+         我们通常七点吃晚饭。
+
+      6：This shop sells local cheese.
+         这家商店卖当地奶酪。
+
+      7：My parents live in a small town.
+         我父母住在一个小镇上。
+
+      8：Water freezes at zero degrees Celsius.
+         水在零摄氏度结冰。
+
+      9：She does not eat meat.
+         她不吃肉。
+
+      10：Do they open the museum on Mondays?
+         他们星期一开放博物馆吗？
 
     3-1-2：一般过去时
-      We visited the museum yesterday.
-      我们昨天参观了博物馆。
+      1：We visited the museum yesterday.
+         我们昨天参观了博物馆。
+
+      2：She called me last night.
+         她昨晚给我打了电话。
+
+      3：I lost my wallet yesterday.
+         我昨天丢了钱包。
+
+      4：They moved here in 2019.
+         他们2019年搬到了这里。
+
+      5：He cooked dinner for us on Sunday.
+         他星期日给我们做了晚饭。
+
+      6：We saw a rainbow after the storm.
+         暴风雨后我们看见了一道彩虹。
+
+      7：The lesson ended ten minutes ago.
+         那节课十分钟前结束了。
+
+      8：My father bought this table last year.
+         我父亲去年买了这张桌子。
+
+      9：She did not come to the meeting.
+         她没有来参加会议。
+
+      10：Did you sleep well last night?
+         你昨晚睡得好吗？
 
     3-1-3：一般将来时
-      I will call you tomorrow.
-      我明天会给你打电话。
+      1：I will call you tomorrow.
+         我明天会给你打电话。
+
+      2：We will meet you at the entrance.
+         我们会在入口处与你见面。
+
+      3：She will be eighteen next month.
+         她下个月就十八岁了。
+
+      4：I will carry that bag for you.
+         我来帮你拿那个包。
+
+      5：The weather will improve tomorrow.
+         明天天气会好转。
+
+      6：They will arrive before dinner.
+         他们会在晚饭前到达。
+
+      7：He will explain the plan later.
+         他稍后会解释这个计划。
+
+      8：I will not forget your kindness.
+         我不会忘记你的好意。
+
+      9：Will you join us for lunch?
+         你愿意和我们一起吃午饭吗？
+
+      10：The repairs will cost a lot.
+         维修会花很多钱。
 
     3-1-4：现在进行时
-      They are playing chess now.
-      他们现在正在下国际象棋。
+      1：They are playing chess now.
+         他们现在正在下国际象棋。
+
+      2：I am reading your message now.
+         我现在正在读你的消息。
+
+      3：She is talking to the manager.
+         她正在和经理谈话。
+
+      4：We are waiting for the bus.
+         我们正在等公共汽车。
+
+      5：The children are building a sandcastle.
+         孩子们正在堆沙堡。
+
+      6：He is staying with his aunt this week.
+         他这周暂住在姑姑家。
+
+      7：The weather is getting warmer.
+         天气正在变暖。
+
+      8：They are not listening to the radio.
+         他们没有在听广播。
+
+      9：Are you using this chair?
+         你正在用这把椅子吗？
+
+      10：Someone is playing the piano upstairs.
+         楼上有人正在弹钢琴。
 
     3-1-5：过去进行时
-      I was cooking when you called.
-      你打电话时，我正在做饭。
+      1：I was cooking when you called.
+         你打电话时，我正在做饭。
+
+      2：She was reading when the lights went out.
+         灯熄灭时，她正在读书。
+
+      3：We were driving home at six yesterday.
+         昨天六点时，我们正在开车回家。
+
+      4：The children were sleeping when I arrived.
+         我到的时候，孩子们正在睡觉。
+
+      5：He was repairing his bike all morning.
+         他一上午都在修自行车。
+
+      6：It was snowing when we left.
+         我们离开时正在下雪。
+
+      7：They were talking while I was cooking.
+         我做饭时，他们正在聊天。
+
+      8：I was not paying attention at that moment.
+         那个时候我没有在留心听。
+
+      9：Were you working at midnight?
+         午夜时你还在工作吗？
+
+      10：The dog was barking outside at dawn.
+         黎明时，那只狗正在外面叫。
 
     3-1-6：将来进行时
-      This time tomorrow, we will be flying to Rome.
-      明天这个时候，我们将正在飞往罗马的途中。
+      1：This time tomorrow, we will be flying to Rome.
+         明天这个时候，我们将正在飞往罗马的途中。
+
+      2：At eight tonight, I will be studying.
+         今晚八点，我将正在学习。
+
+      3：She will be working when you arrive.
+         你到的时候，她将正在工作。
+
+      4：We will be waiting outside the theater.
+         我们到时会在剧院外等候。
+
+      5：They will be traveling all day tomorrow.
+         他们明天一整天都将在旅途中。
+
+      6：This time next week, he will be relaxing by the sea.
+         下周这个时候，他将正在海边休息。
+
+      7：I will be teaching from nine to eleven tomorrow.
+         明天九点到十一点，我将正在上课。
+
+      8：The children will be sleeping by then.
+         到那时，孩子们将正在睡觉。
+
+      9：Will you be using the car this evening?
+         你今晚会用车吗？
+
+      10：At noon tomorrow, we will be crossing the border.
+         明天中午，我们将正在过境。
 
     3-1-7：现在完成时
-      I have already finished my homework.
-      我已经做完作业了。
+      1：I have already finished my homework.
+         我已经做完作业了。
+
+      2：She has just left the office.
+         她刚刚离开办公室。
+
+      3：We have visited that museum twice.
+         我们已经去过那家博物馆两次了。
+
+      4：He has lost his keys.
+         他的钥匙丢了。
+
+      5：I have never tried skiing.
+         我从未尝试过滑雪。
+
+      6：They have lived here for five years.
+         他们在这里已经住了五年。
+
+      7：The rain has stopped.
+         雨已经停了。
+
+      8：Have you seen my glasses?
+         你看到我的眼镜了吗？
+
+      9：She has not replied yet.
+         她还没有回复。
+
+      10：Our team has won three games this season.
+         我们队本赛季已经赢了三场比赛。
 
     3-1-8：过去完成时
-      The train had left before we reached the station.
-      我们到达车站前，火车已经开走了。
+      1：The train had left before we reached the station.
+         我们到达车站前，火车已经开走了。
+
+      2：She had finished cooking when we arrived.
+         我们到时，她已经做好饭了。
+
+      3：I realized that I had forgotten my passport.
+         我意识到自己忘带护照了。
+
+      4：They had never flown before that trip.
+         那次旅行之前，他们从未坐过飞机。
+
+      5：By midnight, everyone had gone home.
+         到午夜时，所有人都已经回家了。
+
+      6：He recognized the song because he had heard it before.
+         他认出了那首歌，因为以前听过。
+
+      7：The film had already started when I sat down.
+         我坐下时，电影已经开始了。
+
+      8：We had not met before the conference.
+         那次会议之前，我们没有见过面。
+
+      9：Had you booked a room before you left?
+         你出发前订好房间了吗？
+
+      10：The ground was wet because it had rained overnight.
+         地面是湿的，因为夜里下过雨。
 
     3-1-9：将来完成时
-      By Friday, she will have finished the report.
-      到星期五，她将已经完成这份报告。
+      1：By Friday, she will have finished the report.
+         到星期五，她将已经完成这份报告。
+
+      2：By noon, I will have sent all the invitations.
+         到中午，我将已经寄出所有邀请函。
+
+      3：She will have graduated by next summer.
+         到明年夏天，她将已经毕业。
+
+      4：We will have saved enough money by December.
+         到十二月，我们将已经存够钱。
+
+      5：The train will have left by the time you arrive.
+         等你到时，火车将已经开走了。
+
+      6：He will have read the book before our next lesson.
+         下次上课前，他将已经读完那本书。
+
+      7：By tonight, they will have painted every room.
+         到今晚，他们将已经粉刷完所有房间。
+
+      8：I will not have finished by five.
+         到五点时，我还完成不了。
+
+      9：Will you have completed the course by June?
+         到六月，你会已经完成这门课程吗？
+
+      10：By the end of this month, we will have lived here for a year.
+         到本月底，我们住在这里就满一年了。
 
     3-1-10：现在完成进行时
-      I have been studying for two hours.
-      我已经连续学习两个小时了。
+      1：I have been studying for two hours.
+         我已经连续学习两个小时了。
+
+      2：She has been working since dawn.
+         她从黎明开始一直工作到现在。
+
+      3：We have been waiting for the bus for thirty minutes.
+         我们已经等公共汽车三十分钟了。
+
+      4：It has been raining all morning.
+         整个上午一直在下雨。
+
+      5：He has been learning Japanese for a year.
+         他学习日语已经一年了。
+
+      6：They have been repairing the road this week.
+         他们这周一直在修路。
+
+      7：I have been looking for my keys.
+         我一直在找钥匙。
+
+      8：The baby has been crying for ten minutes.
+         宝宝已经哭了十分钟了。
+
+      9：Have you been sleeping well lately?
+         你最近睡得好吗？
+
+      10：She has not been feeling well recently.
+         她最近一直感觉不舒服。
 
     3-1-11：过去完成进行时
-      He had been waiting for an hour when the bus arrived.
-      公共汽车到达时，他已经等了一个小时。
+      1：He had been waiting for an hour when the bus arrived.
+         公共汽车到达时，他已经等了一个小时。
+
+      2：I had been studying for three hours when she called.
+         她打电话时，我已经连续学习三个小时了。
+
+      3：They had been driving all night before they stopped.
+         停车休息前，他们已经开了一整夜的车。
+
+      4：She was tired because she had been gardening.
+         她很累，因为此前一直在园子里干活。
+
+      5：We had been living there for a year when the factory closed.
+         工厂关闭时，我们已经在那里住了一年。
+
+      6：He had been practicing for weeks before the concert.
+         音乐会之前，他已经练习了好几个星期。
+
+      7：It had been snowing for hours when the roads closed.
+         道路封闭时，雪已经下了好几个小时。
+
+      8：The children had been playing outside before dinner.
+         吃晚饭前，孩子们一直在外面玩。
+
+      9：Had you been waiting long when the doctor arrived?
+         医生到时，你已经等了很久吗？
+
+      10：My eyes hurt because I had been reading in dim light.
+         我的眼睛疼，因为此前一直在昏暗的光线下阅读。
 
     3-1-12：将来完成进行时
-      By June, she will have been teaching here for ten years.
-      到六月，她在这里任教就满十年了。
+      1：By June, she will have been teaching here for ten years.
+         到六月，她在这里任教就满十年了。
+
+      2：By noon, I will have been working for six hours.
+         到中午，我就已经连续工作六个小时了。
+
+      3：By next month, he will have been studying French for two years.
+         到下个月，他学习法语就满两年了。
+
+      4：When we arrive, they will have been waiting for an hour.
+         我们到时，他们就已经等了一个小时了。
+
+      5：By sunset, we will have been walking for eight hours.
+         到日落时，我们就已经连续走了八个小时了。
+
+      6：By Friday, the team will have been testing the software for a week.
+         到星期五，团队测试这款软件就满一周了。
+
+      7：By July, she will have been living abroad for five years.
+         到七月，她在国外生活就满五年了。
+
+      8：At ten tonight, he will have been driving for four hours.
+         今晚十点时，他就已经连续开车四个小时了。
+
+      9：By the end of the season, they will have been training together for nine months.
+         到赛季结束时，他们一起训练就满九个月了。
+
+      10：By tomorrow morning, it will have been raining for two days.
+         到明天早上，雨就已经连续下了两天了。
 
   3-2：主动与被动语态
     3-2-1：主动语态
-      The chef prepared the meal.
-      厨师准备了这顿饭。
+      1：The chef prepared the meal.
+         厨师准备了这顿饭。
+
+      2：The gardener watered the flowers.
+         园丁给花浇了水。
+
+      3：My sister wrote this poem.
+         我妹妹写了这首诗。
+
+      4：The wind broke a window.
+         风刮坏了一扇窗户。
+
+      5：Someone has moved my chair.
+         有人挪了我的椅子。
+
+      6：The workers are building a school.
+         工人们正在建一所学校。
+
+      7：Our teacher explains the rules clearly.
+         我们的老师清楚地解释规则。
+
+      8：The dog chased the ball.
+         那只狗追着球跑。
+
+      9：They will deliver the furniture tomorrow.
+         他们明天会送来家具。
+
+      10：The storm damaged several roofs.
+         暴风雨损坏了几个屋顶。
 
     3-2-2：一般时态的被动语态
-      The windows are cleaned every week.
-      这些窗户每周都会被擦洗。
+      1：The windows are cleaned every week.
+         这些窗户每周都会被擦洗。
+
+      2：This room is used for meetings.
+         这个房间用于开会。
+
+      3：The letter was sent yesterday.
+         那封信昨天寄出了。
+
+      4：Rice is grown in this region.
+         这个地区种植水稻。
+
+      5：The museum was opened in 1980.
+         这家博物馆于1980年开放。
+
+      6：The results will be announced tomorrow.
+         结果将在明天公布。
+
+      7：These shoes are made by hand.
+         这些鞋是手工制作的。
+
+      8：The road was closed after the accident.
+         事故发生后，道路被封闭了。
+
+      9：English is spoken in many countries.
+         许多国家都使用英语。
+
+      10：The package will be delivered on Monday.
+         包裹将在星期一送达。
 
     3-2-3：进行时态的被动语态
-      The bridge is being repaired.
-      这座桥正在维修。
+      1：The bridge is being repaired.
+         这座桥正在维修。
+
+      2：The rooms are being painted.
+         这些房间正在粉刷。
+
+      3：My car is being serviced today.
+         我的车今天正在保养。
+
+      4：The documents are being checked.
+         这些文件正在审核。
+
+      5：The road was being widened when we moved here.
+         我们搬到这里时，这条路正在拓宽。
+
+      6：Dinner was being prepared when the guests arrived.
+         客人到时，晚饭正在准备中。
+
+      7：The students are being shown around the museum.
+         学生们正被带领着参观博物馆。
+
+      8：A new hospital is being built nearby.
+         附近正在建一所新医院。
+
+      9：The suspect was being questioned at noon.
+         中午时，嫌疑人正在接受讯问。
+
+      10：The old computers are being replaced.
+         那些旧电脑正在被更换。
 
     3-2-4：完成时态的被动语态
-      The invitations have been sent.
-      邀请函已经寄出了。
+      1：The invitations have been sent.
+         邀请函已经寄出了。
+
+      2：The work has been completed.
+         工作已经完成了。
+
+      3：All the tickets have been sold.
+         所有票都已经售出了。
+
+      4：The door had been locked before we arrived.
+         我们到达之前，门就已经锁上了。
+
+      5：The report has been translated into Chinese.
+         报告已经翻译成中文了。
+
+      6：The mistake had been corrected by noon.
+         到中午时，那个错误已经纠正了。
+
+      7：The bridge will have been finished by December.
+         到十二月，这座桥将已经建成。
+
+      8：My wallet has been found.
+         我的钱包已经找到了。
+
+      9：The room had been cleaned before the visitors came.
+         来访者到来前，房间已经打扫干净了。
+
+      10：The repairs will have been completed by Friday.
+         到星期五，维修将已经完成。
 
   3-3：情态动词与相关表达
     3-3-1：能力
-      My sister can swim very well.
-      我妹妹游泳游得很好。
+      1：My sister can swim very well.
+         我妹妹游泳游得很好。
+
+      2：I can read simple French texts.
+         我能读懂简单的法语文章。
+
+      3：He can lift this box alone.
+         他能独自抬起这个箱子。
+
+      4：They can solve the problem together.
+         他们能一起解决这个问题。
+
+      5：She could ride a bike at five.
+         她五岁时就会骑自行车了。
+
+      6：My grandfather could speak four languages.
+         我祖父会说四种语言。
+
+      7：We cannot hear you from here.
+         我们在这里听不到你说话。
+
+      8：Can your brother play the guitar?
+         你哥哥会弹吉他吗？
+
+      9：After the operation, she was able to walk again.
+         手术后，她又能走路了。
+
+      10：With practice, you will be able to type faster.
+         经过练习，你将能打字打得更快。
 
     3-3-2：许可
-      You may use my phone.
-      你可以用我的手机。
+      1：You may use my phone.
+         你可以用我的手机。
+
+      2：May I open the window?
+         我可以打开窗户吗？
+
+      3：You can borrow my dictionary.
+         你可以借我的词典。
+
+      4：Could I leave a little early today?
+         我今天可以早走一会儿吗？
+
+      5：Students may use the library after class.
+         学生们课后可以使用图书馆。
+
+      6：You may sit wherever you like.
+         你可以坐在任何你喜欢的位置。
+
+      7：Can we park here overnight?
+         我们可以在这里停一夜车吗？
+
+      8：You may not enter this room.
+         你不可以进入这个房间。
+
+      9：Visitors are allowed to take photos here.
+         游客可以在这里拍照。
+
+      10：We were allowed to leave after lunch.
+         我们获准在午饭后离开。
 
     3-3-3：义务与必要性
-      You must wear a seat belt.
-      你必须系安全带。
+      1：You must wear a seat belt.
+         你必须系安全带。
+
+      2：You have to show your ticket.
+         你必须出示车票。
+
+      3：We must finish this before noon.
+         我们必须在中午前完成这件事。
+
+      4：She needs to renew her passport.
+         她需要换发护照。
+
+      5：All visitors must sign in.
+         所有来访者都必须登记。
+
+      6：I had to work late yesterday.
+         我昨天不得不工作到很晚。
+
+      7：You must not touch those wires.
+         你绝对不能碰那些电线。
+
+      8：We do not have to leave yet.
+         我们还不必离开。
+
+      9：He will have to take the exam again.
+         他将不得不重新参加考试。
+
+      10：You need not bring your own towel.
+         你不必自带毛巾。
 
     3-3-4：建议
-      You should get some rest.
-      你应该休息一下。
+      1：You should get some rest.
+         你应该休息一下。
+
+      2：You should drink more water.
+         你应该多喝水。
+
+      3：He ought to apologize to her.
+         他应该向她道歉。
+
+      4：We should check the map first.
+         我们应该先查看地图。
+
+      5：You had better take an umbrella.
+         你最好带把雨伞。
+
+      6：She should not work so late.
+         她不应该工作到那么晚。
+
+      7：You ought to keep a copy of the receipt.
+         你应该保留一份收据副本。
+
+      8：We had better leave before the traffic gets worse.
+         我们最好趁交通更拥堵之前出发。
+
+      9：You should ask for help if you need it.
+         如果需要，你应该寻求帮助。
+
+      10：He had better not miss the last train.
+         他最好别错过末班火车。
 
     3-3-5：可能性推测
-      It might rain this afternoon.
-      今天下午可能会下雨。
+      1：It might rain this afternoon.
+         今天下午可能会下雨。
+
+      2：She may be at the library.
+         她可能在图书馆。
+
+      3：This could be the answer.
+         这可能就是答案。
+
+      4：They might arrive before lunch.
+         他们可能午饭前到。
+
+      5：He must be tired after the journey.
+         旅途结束后，他一定很累。
+
+      6：That cannot be the right address.
+         那个地址不可能是对的。
+
+      7：The keys may be in your coat pocket.
+         钥匙可能在你的外套口袋里。
+
+      8：We could get lost without a map.
+         没有地图，我们可能会迷路。
+
+      9：There might be another entrance.
+         可能还有另一个入口。
+
+      10：The lights are on, so someone must be home.
+         灯亮着，所以一定有人在家。
 
     3-3-6：对过去的推测
-      She must have forgotten our meeting.
-      她一定是忘了我们的约会。
+      1：She must have forgotten our meeting.
+         她一定是忘了我们的约会。
+
+      2：He must have missed the bus.
+         他一定是没赶上公共汽车。
+
+      3：They may have taken a different route.
+         他们可能走了另一条路。
+
+      4：I might have left my notebook at school.
+         我可能把笔记本落在学校了。
+
+      5：She cannot have finished already.
+         她不可能已经完成了。
+
+      6：Someone must have moved the furniture.
+         一定有人移动过家具。
+
+      7：We could have misunderstood the instructions.
+         我们可能误解了说明。
+
+      8：The package may have arrived yesterday.
+         包裹可能昨天就到了。
+
+      9：He could not have seen us in the dark.
+         天那么黑，他不可能看见了我们。
+
+      10：The dog must have eaten the sandwich.
+         一定是那只狗吃了三明治。
 
   3-4：非谓语动词
     3-4-1：不定式作宾语
-      I hope to see you soon.
-      我希望很快见到你。
+      1：I hope to see you soon.
+         我希望很快见到你。
+
+      2：She decided to study abroad.
+         她决定出国留学。
+
+      3：We plan to visit the coast.
+         我们计划去海边游玩。
+
+      4：He refused to answer the question.
+         他拒绝回答那个问题。
+
+      5：I want to learn the piano.
+         我想学钢琴。
+
+      6：They agreed to meet at noon.
+         他们同意中午见面。
+
+      7：She promised to send the photos.
+         她答应把照片发过来。
+
+      8：He managed to repair the radio.
+         他设法修好了收音机。
+
+      9：We expect to arrive before dark.
+         我们预计天黑前到达。
+
+      10：I cannot afford to buy a new car.
+         我买不起新车。
 
     3-4-2：不定式作目的状语
-      She went to the library to study.
-      她去图书馆学习。
+      1：She went to the library to study.
+         她去图书馆学习。
+
+      2：He saved money to buy a bicycle.
+         他存钱是为了买一辆自行车。
+
+      3：We stopped to ask for directions.
+         我们停下来问路。
+
+      4：She opened the window to let in fresh air.
+         她打开窗户让新鲜空气进来。
+
+      5：I called to confirm the reservation.
+         我打电话是为了确认预订。
+
+      6：They left early to avoid the traffic.
+         他们早早出发，以避开交通拥堵。
+
+      7：He wore gloves to protect his hands.
+         他戴手套来保护双手。
+
+      8：We use this app to practice English.
+         我们用这个应用练习英语。
+
+      9：She went outside to make a phone call.
+         她出去打了个电话。
+
+      10：I set an alarm to wake up on time.
+         我设了闹钟，以便准时起床。
 
     3-4-3：不定式作宾语补足语
-      The teacher asked us to wait outside.
-      老师让我们在外面等候。
+      1：The teacher asked us to wait outside.
+         老师让我们在外面等候。
+
+      2：She wants me to stay.
+         她想让我留下。
+
+      3：We invited them to join us.
+         我们邀请他们加入我们。
+
+      4：He reminded her to lock the door.
+         他提醒她锁门。
+
+      5：The doctor advised him to rest.
+         医生建议他休息。
+
+      6：I expect you to be on time.
+         我希望你准时到。
+
+      7：They allowed us to use the kitchen.
+         他们允许我们使用厨房。
+
+      8：My parents encouraged me to apply.
+         我父母鼓励我申请。
+
+      9：She taught her son to swim.
+         她教儿子游泳。
+
+      10：The guard ordered everyone to leave.
+         警卫命令所有人离开。
 
     3-4-4：动名词作主语
-      Reading improves your vocabulary.
-      阅读能增加你的词汇量。
+      1：Reading improves your vocabulary.
+         阅读能增加你的词汇量。
+
+      2：Swimming keeps me healthy.
+         游泳让我保持健康。
+
+      3：Learning a language takes patience.
+         学习一门语言需要耐心。
+
+      4：Walking after dinner helps digestion.
+         晚饭后散步有助于消化。
+
+      5：Cooking for friends makes her happy.
+         给朋友做饭让她开心。
+
+      6：Smoking damages your lungs.
+         吸烟损害肺部。
+
+      7：Traveling alone builds confidence.
+         独自旅行能增强自信。
+
+      8：Getting enough sleep improves concentration.
+         睡眠充足能提高注意力。
+
+      9：Listening carefully prevents mistakes.
+         仔细听能避免错误。
+
+      10：Growing vegetables saves us money.
+         种菜能帮我们省钱。
 
     3-4-5：动名词作宾语
-      He enjoys cooking for his family.
-      他喜欢给家人做饭。
+      1：He enjoys cooking for his family.
+         他喜欢给家人做饭。
+
+      2：She avoids driving at night.
+         她避免在夜间开车。
+
+      3：I finished reading the article.
+         我读完了那篇文章。
+
+      4：We considered moving to the country.
+         我们考虑过搬到乡下。
+
+      5：He admitted breaking the window.
+         他承认打破了窗户。
+
+      6：They suggested taking a taxi.
+         他们建议坐出租车。
+
+      7：She practices speaking English daily.
+         她每天练习说英语。
+
+      8：I miss walking by the sea.
+         我怀念在海边散步的日子。
+
+      9：Would you mind opening the door?
+         你介意开一下门吗？
+
+      10：He denied taking the money.
+         他否认拿了那笔钱。
 
     3-4-6：现在分词作定语
-      The girl standing by the door is my cousin.
-      站在门边的女孩是我表妹。
+      1：The girl standing by the door is my cousin.
+         站在门边的女孩是我表妹。
+
+      2：The boy carrying the red bag is my brother.
+         背着红色书包的男孩是我弟弟。
+
+      3：I heard a crying baby.
+         我听到了一个正在哭的宝宝。
+
+      4：The people waiting outside looked cold.
+         在外面等候的人看起来很冷。
+
+      5：The dog sleeping on the sofa is old.
+         睡在沙发上的那只狗年纪大了。
+
+      6：We watched the rising sun.
+         我们看着正在升起的太阳。
+
+      7：The woman talking to the teacher is my mother.
+         正在和老师谈话的女士是我母亲。
+
+      8：Please stay away from the moving train.
+         请远离正在行驶的火车。
+
+      9：The students working in pairs finished first.
+         两人一组做题的学生最先完成了。
+
+      10：He picked up a burning stick.
+         他捡起了一根正在燃烧的木棍。
 
     3-4-7：过去分词作定语
-      The car parked outside belongs to my uncle.
-      停在外面的那辆车是我叔叔的。
+      1：The car parked outside belongs to my uncle.
+         停在外面的那辆车是我叔叔的。
+
+      2：The letter written in blue ink is mine.
+         用蓝墨水写的那封信是我的。
+
+      3：We replaced the broken window.
+         我们更换了那扇破窗户。
+
+      4：The meal prepared by my father was delicious.
+         我父亲做的饭很好吃。
+
+      5：She found a lost kitten.
+         她发现了一只走失的小猫。
+
+      6：The books borrowed yesterday are on the desk.
+         昨天借的书在书桌上。
+
+      7：He collected the fallen leaves.
+         他收集了落叶。
+
+      8：The bridge built last year is already busy.
+         去年建的那座桥已经很繁忙了。
+
+      9：I prefer freshly baked bread.
+         我更喜欢刚烤好的面包。
+
+      10：The documents signed by the manager are ready.
+         经理签过字的文件已经准备好了。
 
     3-4-8：分词作状语
-      Feeling tired, she went to bed early.
-      因为觉得累，她早早就上床睡觉了。
+      1：Feeling tired, she went to bed early.
+         因为觉得累，她早早就上床睡觉了。
 
-4：句子类型
+      2：Walking home, I met an old friend.
+         我走路回家时遇到了一位老朋友。
+
+      3：Not knowing the answer, he stayed silent.
+         因为不知道答案，他没有说话。
+
+      4：Having finished her work, she went outside.
+         完成工作后，她去了外面。
+
+      5：Seen from above, the lake looks like a heart.
+         从上面看，这个湖像一颗心。
+
+      6：Surprised by the news, I called my sister.
+         因为对这个消息感到惊讶，我给姐姐打了电话。
+
+      7：Holding a map, he approached the station.
+         他拿着地图朝车站走去。
+
+      8：Having missed the bus, we walked home.
+         因为没赶上公共汽车，我们走回了家。
+
+      9：Given enough time, I can finish the task.
+         如果有足够的时间，我能完成这项任务。
+
+      10：Smiling politely, she refused the offer.
+         她礼貌地微笑着，拒绝了这个提议。
+
+4：句子类型 (陈述、疑问与肯否定)
   4-1：陈述、疑问、祈使与感叹
     4-1-1：陈述句
-      The shop closes at six.
-      这家商店六点关门。
+      1：The shop closes at six.
+         这家商店六点关门。
+
+      2：My sister works at a hospital.
+         我姐姐在一家医院工作。
+
+      3：We had lunch beside the river.
+         我们在河边吃了午饭。
+
+      4：The next train arrives in ten minutes.
+         下一班火车十分钟后到。
+
+      5：I have a question about the schedule.
+         我对时间安排有个问题。
+
+      6：They are staying with friends.
+         他们正住在朋友家。
+
+      7：The garden needs more water.
+         花园需要多浇些水。
+
+      8：Her new office is on the third floor.
+         她的新办公室在三楼。
+
+      9：We will discuss the plan tomorrow.
+         我们明天会讨论这个计划。
+
+      10：The bus was full this morning.
+         今天早上的公共汽车坐满了人。
 
     4-1-2：一般疑问句
-      Do you speak English?
-      你会说英语吗？
+      1：Do you speak English?
+         你会说英语吗？
+
+      2：Are you ready to leave?
+         你准备好出发了吗？
+
+      3：Did she call you yesterday?
+         她昨天给你打电话了吗？
+
+      4：Have they finished their homework?
+         他们做完作业了吗？
+
+      5：Can your father drive?
+         你父亲会开车吗？
+
+      6：Is the museum open today?
+         博物馆今天开放吗？
+
+      7：Will you be home tonight?
+         你今晚会在家吗？
+
+      8：Does this bus stop at the hospital?
+         这班公共汽车在医院停吗？
+
+      9：Were the children asleep?
+         孩子们睡着了吗？
+
+      10：Has anyone seen my umbrella?
+         有人看见我的雨伞了吗？
 
     4-1-3：特殊疑问句
-      Where did you buy this book?
-      你在哪里买的这本书？
+      1：Where did you buy this book?
+         你在哪里买的这本书？
+
+      2：What are you reading?
+         你在读什么？
+
+      3：Who called you this morning?
+         今天早上是谁给你打的电话？
+
+      4：Why did the meeting end early?
+         会议为什么提前结束了？
+
+      5：When does the next train leave?
+         下一班火车什么时候开？
+
+      6：How do you spell your surname?
+         你的姓怎么拼？
+
+      7：Which seat would you prefer?
+         你更想坐哪个座位？
+
+      8：Whose bag is under the table?
+         桌子下面是谁的包？
+
+      9：How much does this ticket cost?
+         这张票多少钱？
+
+      10：How long have you lived here?
+         你在这里住了多久了？
 
     4-1-4：选择疑问句
-      Would you like tea or coffee?
-      你想喝茶还是咖啡？
+      1：Would you like tea or coffee?
+         你想喝茶还是咖啡？
+
+      2：Are we meeting on Tuesday or Wednesday?
+         我们星期二见面，还是星期三见面？
+
+      3：Would you prefer a window seat or an aisle seat?
+         你更想坐靠窗的座位，还是靠过道的座位？
+
+      4：Is this your bag or your sister's?
+         这是你的包，还是你姐姐的包？
+
+      5：Should we walk or take a taxi?
+         我们应该步行，还是坐出租车？
+
+      6：Did he arrive by train or by bus?
+         他是坐火车来的，还是坐公共汽车来的？
+
+      7：Do you want to eat here or outside?
+         你想在这里吃，还是在外面吃？
+
+      8：Will she call us tonight or tomorrow?
+         她会今晚打电话给我们，还是明天打？
+
+      9：Was the film funny or serious?
+         那部电影是搞笑的，还是严肃的？
+
+      10：Would you like the red one or the blue one?
+         你想要红色的，还是蓝色的？
 
     4-1-5：祈使句
-      Please open the window.
-      请打开窗户。
+      1：Please open the window.
+         请打开窗户。
+
+      2：Please keep the door closed.
+         请让门保持关闭。
+
+      3：Turn left at the next street.
+         在下一条街向左转。
+
+      4：Do not touch the wet paint.
+         不要碰未干的油漆。
+
+      5：Take your time.
+         慢慢来。
+
+      6：Let us check the answer together.
+         让我们一起核对答案。
+
+      7：Remember to bring your passport.
+         记得带上护照。
+
+      8：Be quiet in the library.
+         在图书馆里请保持安静。
+
+      9：Please send me the address.
+         请把地址发给我。
+
+      10：Do not forget your keys.
+         别忘了你的钥匙。
 
     4-1-6：感叹句
-      What a beautiful garden this is!
-      这是一个多么美丽的花园啊！
+      1：What a beautiful garden this is!
+         这是一个多么美丽的花园啊！
+
+      2：How lovely these flowers are!
+         这些花真漂亮啊！
+
+      3：What an exciting match that was!
+         那真是一场激动人心的比赛啊！
+
+      4：How quickly the time has passed!
+         时间过得真快啊！
+
+      5：What a helpful neighbor you have!
+         你有一位多么热心的邻居啊！
+
+      6：How cold the water feels!
+         这水摸起来真冷啊！
+
+      7：What delicious bread she makes!
+         她做的面包真好吃啊！
+
+      8：How beautifully he plays the piano!
+         他钢琴弹得真好啊！
+
+      9：What a long journey we had!
+         我们经历了多么漫长的一段旅程啊！
+
+      10：How lucky we were!
+         我们当时真幸运啊！
 
   4-2：肯定与否定
     4-2-1：肯定句
-      She likes this song.
-      她喜欢这首歌。
+      1：She likes this song.
+         她喜欢这首歌。
+
+      2：He has a valid ticket.
+         他有一张有效车票。
+
+      3：We enjoyed our stay.
+         我们在那儿住得很愉快。
+
+      4：The shop is open.
+         商店开着门。
+
+      5：They can come on Friday.
+         他们星期五能来。
+
+      6：I remember the address.
+         我记得那个地址。
+
+      7：She has finished the report.
+         她已经完成了报告。
+
+      8：You will find the answer here.
+         你会在这里找到答案。
+
+      9：The children were playing happily.
+         孩子们当时玩得很开心。
+
+      10：Our team won the final.
+         我们队赢得了决赛。
 
     4-2-2：not 构成否定
-      I do not agree with you.
-      我不同意你的看法。
+      1：I do not agree with you.
+         我不同意你的看法。
+
+      2：She is not at home.
+         她不在家。
+
+      3：We did not hear the announcement.
+         我们没有听到广播通知。
+
+      4：He cannot find his wallet.
+         他找不到钱包。
+
+      5：They have not arrived yet.
+         他们还没到。
+
+      6：I will not be late.
+         我不会迟到。
+
+      7：The machine does not work.
+         这台机器不能正常运转。
+
+      8：You should not leave the door open.
+         你不应该让门开着。
+
+      9：We were not expecting visitors.
+         我们当时没有料到会有客人来。
+
+      10：She has not seen that film.
+         她没看过那部电影。
 
     4-2-3：否定词构成否定
-      Nobody answered the phone.
-      没有人接电话。
+      1：Nobody answered the phone.
+         没有人接电话。
+
+      2：I never drink coffee after dinner.
+         我晚饭后从不喝咖啡。
+
+      3：Nothing happened during the night.
+         夜里什么事也没有发生。
+
+      4：No one knew where he lived.
+         没有人知道他住在哪里。
+
+      5：We found no mistakes in the report.
+         我们在报告里没发现错误。
+
+      6：Neither answer is acceptable.
+         两个答案都不能接受。
+
+      7：She hardly ever watches television.
+         她几乎从不看电视。
+
+      8：There was nowhere to sit.
+         没有地方可坐。
+
+      9：He has never visited Spain.
+         他从未去过西班牙。
+
+      10：None of the money was missing.
+         一分钱都没有丢。
 
     4-2-4：部分否定
-      Not all birds can fly.
-      并非所有的鸟都会飞。
+      1：Not all birds can fly.
+         并非所有的鸟都会飞。
 
-5：并列从句
+      2：Not every student passed the test.
+         并不是每个学生都通过了考试。
+
+      3：I do not always agree with him.
+         我并不总是同意他的看法。
+
+      4：The two answers are not both correct.
+         这两个答案并非都正确。
+
+      5：Not everyone enjoys spicy food.
+         并不是每个人都喜欢辛辣食物。
+
+      6：She does not completely understand the problem.
+         她并没有完全理解这个问题。
+
+      7：Not all the shops open on Sundays.
+         并非所有商店都在星期日营业。
+
+      8：The plan is not entirely practical.
+         这个计划并不完全切实可行。
+
+      9：We do not visit them every week.
+         我们并不是每周都去看他们。
+
+      10：Not everything in this book is true.
+         这本书里的内容并不全是真的。
+
+5：并列从句 (并列结构与各类从句)
   5-1：并列结构
     5-1-1：词语并列
-      She bought bread and cheese.
-      她买了面包和奶酪。
+      1：She bought bread and cheese.
+         她买了面包和奶酪。
+
+      2：He likes tea and coffee.
+         他喜欢茶和咖啡。
+
+      3：The room was clean and bright.
+         房间干净又明亮。
+
+      4：She moved slowly but steadily.
+         她行动缓慢但平稳。
+
+      5：We can meet today or tomorrow.
+         我们可以今天或明天见面。
+
+      6：My sister and my cousin are here.
+         我的姐姐和表妹都在这里。
+
+      7：He packed shoes, socks, and shirts.
+         他装好了鞋子、袜子和衬衫。
+
+      8：The film was long but interesting.
+         电影很长，但很有趣。
+
+      9：You can choose soup or salad.
+         你可以选汤或沙拉。
+
+      10：She sang softly and sweetly.
+         她唱得轻柔而甜美。
 
     5-1-2：分句并列：递进与补充
-      I cooked dinner, and he washed the dishes.
-      我做了晚饭，他洗了碗。
+      1：I cooked dinner, and he washed the dishes.
+         我做了晚饭，他洗了碗。
+
+      2：She opened the window, and fresh air filled the room.
+         她打开窗户，新鲜空气涌进了房间。
+
+      3：He took the bags, and I held the door.
+         他拿着包，我撑着门。
+
+      4：The rain stopped, and the sun came out.
+         雨停了，太阳出来了。
+
+      5：We bought the tickets, and they booked the hotel.
+         我们买了票，他们订了酒店。
+
+      6：She speaks Italian, and she also understands French.
+         她会说意大利语，也听得懂法语。
+
+      7：The children set the table, and their father served dinner.
+         孩子们摆好餐具，父亲端上了晚饭。
+
+      8：I called the office, and my colleague answered.
+         我给办公室打电话，同事接了。
+
+      9：He fixed the roof, and she painted the walls.
+         他修屋顶，她刷墙。
+
+      10：The bell rang, and everyone stood up.
+         铃响了，所有人都站了起来。
 
     5-1-3：分句并列：转折
-      The task was difficult, but we finished it.
-      任务很难，但我们完成了。
+      1：The task was difficult, but we finished it.
+         任务很难，但我们完成了。
+
+      2：I wanted to leave, but she wanted to stay.
+         我想离开，但她想留下。
+
+      3：The room was small, but it was comfortable.
+         房间很小，但很舒适。
+
+      4：He studied hard, yet he failed the exam.
+         他努力学习了，却没有通过考试。
+
+      5：We invited them, but they could not come.
+         我们邀请了他们，但他们来不了。
+
+      6：The sun was shining, but the air was cold.
+         阳光明媚，但空气很冷。
+
+      7：She knew the answer, but she said nothing.
+         她知道答案，却什么也没说。
+
+      8：The journey was long, yet we enjoyed it.
+         旅途很长，但我们很享受。
+
+      9：I sent a message, but he did not reply.
+         我发了消息，但他没有回复。
+
+      10：The coat looked warm, but it was surprisingly thin.
+         那件大衣看起来很暖和，但薄得出奇。
 
     5-1-4：分句并列：选择
-      We can take the bus, or we can walk.
-      我们可以坐公共汽车，也可以步行。
+      1：We can take the bus, or we can walk.
+         我们可以坐公共汽车，也可以步行。
+
+      2：You can stay here, or you can come with us.
+         你可以留在这里，也可以跟我们一起去。
+
+      3：We can eat now, or we can wait for Anna.
+         我们可以现在吃，也可以等安娜。
+
+      4：He can call me, or he can send a message.
+         他可以给我打电话，也可以发消息。
+
+      5：Either you wash the dishes, or I will do them.
+         要么你洗碗，要么我来洗。
+
+      6：We could rent a car, or we could use public transport.
+         我们可以租车，也可以乘公共交通。
+
+      7：You may pay in cash, or you may use a card.
+         你可以付现金，也可以刷卡。
+
+      8：I can bring the chairs, or you can collect them.
+         我可以把椅子送来，也可以由你来取。
+
+      9：She can join the morning class, or she can study in the evening.
+         她可以上早班课，也可以晚上学习。
+
+      10：We must hurry, or we will miss the ferry.
+         我们必须赶快，否则就会错过渡船。
 
   5-2：名词性从句
     5-2-1：主语从句
-      What she said surprised me.
-      她说的话让我很惊讶。
+      1：What she said surprised me.
+         她说的话让我很惊讶。
+
+      2：Whoever arrives first can open the door.
+         谁先到，谁就可以开门。
+
+      3：Whether we can finish today depends on the weather.
+         我们今天能否完成取决于天气。
+
+      4：That he remembered my name pleased me.
+         他记得我的名字，这让我很高兴。
+
+      5：What you need is a good night's sleep.
+         你需要的是好好睡一觉。
+
+      6：How she solved the problem remains a mystery.
+         她是如何解决那个问题的，仍是个谜。
+
+      7：Where we meet does not matter.
+         我们在哪里见面并不重要。
+
+      8：Why he left so early is unclear.
+         他为什么那么早离开，目前还不清楚。
+
+      9：What happened next changed our plans.
+         接下来发生的事改变了我们的计划。
+
+      10：When the shop will reopen is still unknown.
+         这家商店何时重新开业仍不清楚。
 
     5-2-2：宾语从句
-      I know that he is honest.
-      我知道他很诚实。
+      1：I know that he is honest.
+         我知道他很诚实。
+
+      2：She said that the train was late.
+         她说火车晚点了。
+
+      3：I wonder whether the shop is open.
+         我想知道那家商店是否开着。
+
+      4：He asked where we were going.
+         他问我们要去哪里。
+
+      5：We believe that practice makes a difference.
+         我们相信练习能带来改变。
+
+      6：Please tell me what you need.
+         请告诉我你需要什么。
+
+      7：I do not know why she left.
+         我不知道她为什么离开。
+
+      8：They noticed that the window was broken.
+         他们注意到窗户破了。
+
+      9：Can you explain how this machine works?
+         你能解释这台机器如何运转吗？
+
+      10：She remembered that she had met him before.
+         她记起以前见过他。
 
     5-2-3：表语从句
-      The problem is that we have no time.
-      问题是我们没有时间。
+      1：The problem is that we have no time.
+         问题是我们没有时间。
+
+      2：My hope is that everyone can attend.
+         我希望每个人都能参加。
+
+      3：The question is whether we have enough money.
+         问题是我们的钱是否足够。
+
+      4：This is what I was looking for.
+         这就是我一直在找的东西。
+
+      5：The truth is that I forgot the appointment.
+         事实是我忘了那个约会。
+
+      6：That is why she looked worried.
+         那就是她显得担心的原因。
+
+      7：This is where we first met.
+         这就是我们初次见面的地方。
+
+      8：The difficulty is that nobody has a key.
+         困难在于没有人有钥匙。
+
+      9：My concern is how we will get home.
+         我担心的是我们该如何回家。
+
+      10：The good news is that your application was accepted.
+         好消息是你的申请被接受了。
 
     5-2-4：同位语从句
-      The news that our team had won made us happy.
-      我们队获胜的消息让我们很高兴。
+      1：The news that our team had won made us happy.
+         我们队获胜的消息让我们很高兴。
+
+      2：I heard the rumor that the shop was closing.
+         我听到了那家商店即将停业的传闻。
+
+      3：The fact that she apologized means a lot.
+         她道歉这件事意义很大。
+
+      4：We welcomed the news that the road would reopen.
+         道路将重新开放的消息让我们很高兴。
+
+      5：He made a promise that he would return.
+         他许下承诺，说自己会回来。
+
+      6：The idea that money solves every problem is wrong.
+         认为金钱能解决一切问题的想法是错误的。
+
+      7：There is no doubt that she is qualified.
+         毫无疑问，她是合格的。
+
+      8：We discussed the possibility that the flight might be canceled.
+         我们讨论了航班可能取消的情况。
+
+      9：The belief that everyone can improve motivates her.
+         人人都能进步的信念激励着她。
+
+      10：She gave us a warning that the path was dangerous.
+         她向我们发出警告，说那条小路很危险。
 
   5-3：定语从句
     5-3-1：关系代词引导：修饰人
-      The woman who lives next door is a nurse.
-      住在隔壁的那位女士是一名护士。
+      1：The woman who lives next door is a nurse.
+         住在隔壁的那位女士是一名护士。
+
+      2：The man who repaired my bike lives nearby.
+         给我修自行车的那个人住在附近。
+
+      3：Students who arrive late should wait outside.
+         迟到的学生应该在外面等候。
+
+      4：The doctor whom we met was very kind.
+         我们见到的那位医生很亲切。
+
+      5：I know someone who can help you.
+         我认识一个能帮助你的人。
+
+      6：The girl whose bag was lost is upset.
+         丢了包的那个女孩很难过。
+
+      7：The person that answered the phone was polite.
+         接电话的那个人很有礼貌。
+
+      8：People who exercise regularly often sleep better.
+         经常锻炼的人通常睡得更好。
+
+      9：The teacher who taught me French has retired.
+         教过我法语的那位老师退休了。
+
+      10：The guest you invited has arrived.
+         你邀请的客人已经到了。
 
     5-3-2：关系代词引导：修饰事物
-      The book that you lent me is useful.
-      你借给我的那本书很有用。
+      1：The book that you lent me is useful.
+         你借给我的那本书很有用。
+
+      2：The house that we rented has a garden.
+         我们租的那栋房子有一个花园。
+
+      3：The train which leaves at six is direct.
+         六点发车的那班火车是直达车。
+
+      4：I found the keys that you lost.
+         我找到了你丢的钥匙。
+
+      5：The chair that broke was very old.
+         坏掉的那把椅子已经很旧了。
+
+      6：The film we watched last night was funny.
+         我们昨晚看的电影很有趣。
+
+      7：The cake which she made tasted wonderful.
+         她做的蛋糕非常好吃。
+
+      8：Please bring the documents that I requested.
+         请带来我要求的那些文件。
+
+      9：The song that is playing reminds me of home.
+         正在播放的那首歌让我想起家。
+
+      10：This is the camera I use for travel.
+         这就是我旅行时用的相机。
 
     5-3-3：非限制性定语从句
-      My father, who is retired, grows vegetables.
-      我父亲已经退休了，他种蔬菜。
+      1：My father, who is retired, grows vegetables.
+         我父亲已经退休了，他种蔬菜。
+
+      2：My sister, who lives abroad, is visiting us.
+         我姐姐住在国外，现在正来看望我们。
+
+      3：This painting, which I bought in Paris, is my favorite.
+         这幅画是我在巴黎买的，是我的最爱。
+
+      4：Anna, whose father is a pilot, loves flying.
+         安娜的父亲是飞行员，她很喜欢飞行。
+
+      5：Our house, which faces south, gets plenty of sunlight.
+         我们家朝南，阳光很充足。
+
+      6：Mr. Green, whom we met yesterday, is our new neighbor.
+         格林先生是我们昨天见到的那个人，他是我们的新邻居。
+
+      7：The train was canceled, which upset everyone.
+         火车被取消了，这让所有人都很不高兴。
+
+      8：Madrid, where my cousin lives, is a lively city.
+         马德里是我表哥居住的城市，那里很有活力。
+
+      9：Her bicycle, which was stolen last week, has been found.
+         她上周被偷的自行车已经找到了。
+
+      10：My grandmother, who is eighty, still walks every day.
+         我祖母八十岁了，仍然每天散步。
 
     5-3-4：关系副词引导
-      This is the town where I grew up.
-      这就是我长大的小镇。
+      1：This is the town where I grew up.
+         这就是我长大的小镇。
+
+      2：I remember the day when we first met.
+         我记得我们初次见面的那一天。
+
+      3：This is the cafe where we had breakfast.
+         这就是我们吃过早饭的那家咖啡馆。
+
+      4：Tell me the reason why you changed your mind.
+         告诉我你改变主意的原因。
+
+      5：The hotel where we stayed was quiet.
+         我们住过的那家酒店很安静。
+
+      6：There are moments when I miss my old job.
+         有时我会想念以前的工作。
+
+      7：We visited the village where my father was born.
+         我们去了我父亲出生的村庄。
+
+      8：I will never forget the summer when we traveled together.
+         我永远不会忘记我们一起旅行的那个夏天。
+
+      9：That is the reason why she refused.
+         那就是她拒绝的原因。
+
+      10：We need a room where we can practice.
+         我们需要一个可以练习的房间。
 
   5-4：状语从句
     5-4-1：时间状语从句
-      I will call you when I arrive.
-      我到了就给你打电话。
+      1：I will call you when I arrive.
+         我到了就给你打电话。
+
+      2：Please wash your hands before you eat.
+         吃东西前请洗手。
+
+      3：We went for a walk after the rain stopped.
+         雨停后，我们出去散了步。
+
+      4：She listened to music while she cooked.
+         她一边做饭，一边听音乐。
+
+      5：I waited until the shop opened.
+         我一直等到商店开门。
+
+      6：As soon as he arrived, we started dinner.
+         他一到，我们就开始吃晚饭。
+
+      7：By the time we got home, it was dark.
+         我们到家时，天已经黑了。
+
+      8：Whenever I visit, she makes tea.
+         每当我来访，她都会沏茶。
+
+      9：He smiled when he saw the puppy.
+         他看到小狗时笑了。
+
+      10：We have kept in touch since we left school.
+         离开学校后，我们一直保持着联系。
 
     5-4-2：原因状语从句
-      We stayed inside because it was raining.
-      因为下雨，我们待在室内。
+      1：We stayed inside because it was raining.
+         因为下雨，我们待在室内。
+
+      2：She took a taxi because she was late.
+         因为迟到了，她坐了出租车。
+
+      3：Since everyone is here, we can begin.
+         既然大家都到了，我们可以开始了。
+
+      4：As the road was closed, we took another route.
+         由于道路封闭，我们走了另一条路。
+
+      5：I opened the window because the room was hot.
+         因为房间很热，我打开了窗户。
+
+      6：He missed the meeting because his train was delayed.
+         因为火车晚点，他没能参加会议。
+
+      7：We canceled the picnic because a storm was coming.
+         因为暴风雨即将来临，我们取消了野餐。
+
+      8：Since you know the area, please lead the way.
+         既然你熟悉这一带，请你带路。
+
+      9：She stayed home because her son was ill.
+         因为儿子生病了，她待在家里。
+
+      10：As we had no map, we asked for directions.
+         由于没有地图，我们向人问了路。
 
     5-4-3：条件状语从句
-      If it rains, we will stay home.
-      如果下雨，我们就待在家里。
+      1：If it rains, we will stay home.
+         如果下雨，我们就待在家里。
+
+      2：You can borrow my car if you drive carefully.
+         如果你小心驾驶，可以借我的车。
+
+      3：Unless we hurry, we will miss the bus.
+         除非我们赶快，否则就会错过公共汽车。
+
+      4：I will help you if I have time.
+         如果有时间，我会帮助你。
+
+      5：As long as you return it tomorrow, you may take the book.
+         只要你明天归还，就可以把这本书拿走。
+
+      6：We can eat outside provided that the weather stays fine.
+         只要天气保持晴朗，我们就可以在外面吃饭。
+
+      7：If the shop is closed, we will come back later.
+         如果商店关着，我们就稍后再来。
+
+      8：You will not improve unless you practice.
+         除非练习，否则你不会进步。
+
+      9：If you heat ice, it melts.
+         如果加热冰，冰就会融化。
+
+      10：You can join the class on condition that you register first.
+         只要你先报名，就可以参加这门课。
 
     5-4-4：让步状语从句
-      Although he was tired, he kept working.
-      虽然他很累，但他仍然继续工作。
+      1：Although he was tired, he kept working.
+         虽然他很累，但他仍然继续工作。
+
+      2：Although the room was small, we liked it.
+         虽然房间很小，但我们很喜欢。
+
+      3：Even though it was raining, they went hiking.
+         尽管下着雨，他们还是去徒步了。
+
+      4：Though she was nervous, she spoke clearly.
+         虽然紧张，她仍然说得很清楚。
+
+      5：Even if you disagree, please listen.
+         即使你不同意，也请听一听。
+
+      6：No matter how busy he is, he calls his mother.
+         不管多忙，他都会给母亲打电话。
+
+      7：Whatever happens, we will support you.
+         无论发生什么，我们都会支持你。
+
+      8：However hard she tried, she could not open the jar.
+         不管怎么努力，她都打不开罐子。
+
+      9：Whether you win or lose, you should be proud.
+         无论输赢，你都应该感到自豪。
+
+      10：Although I had seen the film before, I enjoyed it again.
+         虽然以前看过那部电影，再看时我仍然很喜欢。
 
     5-4-5：目的状语从句
-      She spoke slowly so that everyone could understand her.
-      她说得很慢，以便每个人都能听懂。
+      1：She spoke slowly so that everyone could understand her.
+         她说得很慢，以便每个人都能听懂。
+
+      2：I wrote it down so that I would not forget.
+         我把它写下来，以免忘记。
+
+      3：He saved money so that he could study abroad.
+         他存钱是为了能出国留学。
+
+      4：We left early in order that we might arrive on time.
+         我们提早出发，以便准时到达。
+
+      5：She turned on the lamp so that we could read.
+         她打开灯，好让我们看书。
+
+      6：Please move aside so that everyone can see.
+         请挪到旁边，好让大家都能看到。
+
+      7：They built a fence so that the dog could not escape.
+         他们建了一道栅栏，防止狗跑出去。
+
+      8：I sent the address so that you could find the house.
+         我发了地址，好让你找到那栋房子。
+
+      9：He lowered his voice so that the baby would not wake up.
+         他压低了声音，以免吵醒宝宝。
+
+      10：We booked seats together so that we could talk.
+         我们订了相邻的座位，方便交谈。
 
     5-4-6：结果状语从句
-      The box was so heavy that I could not lift it.
-      箱子太重了，我提不起来。
+      1：The box was so heavy that I could not lift it.
+         箱子太重了，我提不起来。
 
-6：特殊句式
+      2：She was so tired that she fell asleep immediately.
+         她太累了，立刻就睡着了。
+
+      3：It was such a cold day that the lake froze.
+         天气冷得连湖面都结冰了。
+
+      4：He spoke so quietly that I could barely hear him.
+         他说话太小声，我几乎听不见。
+
+      5：The film was so funny that we laughed all evening.
+         电影太有趣了，我们笑了一整晚。
+
+      6：There were so many people that we could not get in.
+         人太多了，我们进不去。
+
+      7：It was such good news that she cried.
+         消息太好了，她激动得哭了。
+
+      8：The road was so narrow that only one car could pass.
+         道路太窄，只容一辆车通过。
+
+      9：They made such a noise that the neighbors complained.
+         他们发出的噪声太大，邻居都投诉了。
+
+      10：He ran so fast that nobody could catch him.
+         他跑得太快，谁也追不上。
+
+6：特殊句式 (倒装、强调与假设等)
   6-1：倒装、强调与省略
     6-1-1：否定词置于句首的部分倒装
-      Never have I seen such a clear sky.
-      我从未见过如此晴朗的天空。
+      1：Never have I seen such a clear sky.
+         我从未见过如此晴朗的天空。
+
+      2：Rarely do we see snow here.
+         我们这里很少下雪。
+
+      3：Never had she felt so relieved.
+         她以前从未感到如此宽慰。
+
+      4：Not until midnight did he return.
+         他直到午夜才回来。
+
+      5：Under no circumstances should you open this door.
+         在任何情况下，你都不应该打开这扇门。
+
+      6：Hardly had we sat down when the phone rang.
+         我们刚坐下，电话就响了。
+
+      7：No sooner had I arrived than it began to rain.
+         我刚到，就开始下雨了。
+
+      8：Little did they know what would happen.
+         他们完全不知道将会发生什么。
+
+      9：Seldom has the town been so quiet.
+         这个小镇很少如此安静。
+
+      10：Not only did she cook dinner, but she also washed the dishes.
+         她不但做了晚饭，还洗了碗。
 
     6-1-2：地点状语置于句首的完全倒装
-      On the hill stood an old castle.
-      山上矗立着一座古老的城堡。
+      1：On the hill stood an old castle.
+         山上矗立着一座古老的城堡。
+
+      2：By the gate stood a tall guard.
+         大门旁站着一名高个子警卫。
+
+      3：Under the bed lay a dusty suitcase.
+         床底下放着一个落满灰尘的手提箱。
+
+      4：At the end of the street was a small bakery.
+         街道尽头有一家小面包店。
+
+      5：On the wall hung a large portrait.
+         墙上挂着一幅大肖像画。
+
+      6：Beside the river stood an abandoned mill.
+         河边矗立着一座废弃的磨坊。
+
+      7：In the corner sat an elderly man.
+         角落里坐着一位老人。
+
+      8：Behind the curtain was a narrow doorway.
+         窗帘后面有一道狭窄的门口。
+
+      9：Across the valley stretched a stone bridge.
+         一座石桥横跨山谷。
+
+      10：On the desk lay three unopened letters.
+         书桌上放着三封未拆的信。
 
     6-1-3：so 引导的倒装
-      She likes tea, and so do I.
-      她喜欢茶，我也喜欢。
+      1：She likes tea, and so do I.
+         她喜欢茶，我也喜欢。
+
+      2：He is tired, and so am I.
+         他累了，我也累了。
+
+      3：Anna can swim, and so can her brother.
+         安娜会游泳，她哥哥也会。
+
+      4：They have finished, and so have we.
+         他们完成了，我们也完成了。
+
+      5：She enjoyed the concert, and so did I.
+         她很喜欢那场音乐会，我也很喜欢。
+
+      6：My father works here, and so does my aunt.
+         我父亲在这里工作，我姑姑也是。
+
+      7：We will attend the meeting, and so will they.
+         我们会参加会议，他们也会。
+
+      8：He was surprised, and so were his friends.
+         他很惊讶，他的朋友们也很惊讶。
+
+      9：I need a break, and so do you.
+         我需要休息，你也需要。
+
+      10：She has been waiting, and so has her sister.
+         她一直在等，她妹妹也是。
 
     6-1-4：it 强调句
-      It was Tom who called me last night.
-      昨晚给我打电话的是汤姆。
+      1：It was Tom who called me last night.
+         昨晚给我打电话的是汤姆。
+
+      2：It was Anna who found the keys.
+         找到钥匙的是安娜。
+
+      3：It is this book that I need.
+         我需要的是这本书。
+
+      4：It was yesterday that we signed the contract.
+         我们是在昨天签订合同的。
+
+      5：It was in London that they first met.
+         他们是在伦敦初次见面的。
+
+      6：It is your attitude that matters.
+         重要的是你的态度。
+
+      7：It was my brother who repaired the chair.
+         修好椅子的是我哥哥。
+
+      8：It was because of the rain that we stayed inside.
+         我们是因为下雨才待在室内的。
+
+      9：It was not until Friday that she replied.
+         她直到星期五才回复。
+
+      10：It is the blue bag that belongs to me.
+         属于我的是那个蓝色的包。
 
     6-1-5：do 加强语气
-      I do understand your concern.
-      我确实理解你的担忧。
+      1：I do understand your concern.
+         我确实理解你的担忧。
+
+      2：I do appreciate your help.
+         我确实很感激你的帮助。
+
+      3：She does know the answer.
+         她确实知道答案。
+
+      4：We did send the invitation.
+         我们确实发出了邀请。
+
+      5：He does work very hard.
+         他确实工作很努力。
+
+      6：They did arrive on time.
+         他们确实准时到了。
+
+      7：I do want to come with you.
+         我确实想和你一起去。
+
+      8：She did warn us about the road.
+         她确实提醒过我们那条路有问题。
+
+      9：This soup does taste good.
+         这汤的确很好喝。
+
+      10：You do look tired today.
+         你今天看起来确实很累。
 
     6-1-6：并列结构中的省略
-      Tom ordered tea, and Anna coffee.
-      汤姆点了茶，安娜点了咖啡。
+      1：Tom ordered tea, and Anna coffee.
+         汤姆点了茶，安娜点了咖啡。
+
+      2：She chose the red dress, and I the blue one.
+         她选了红裙子，我选了蓝裙子。
+
+      3：He can speak French, and his sister Spanish.
+         他会说法语，他妹妹会说西班牙语。
+
+      4：Some students arrived early, and others late.
+         有的学生来得早，有的来得晚。
+
+      5：I will wash the dishes, and you the cups.
+         我来洗盘子，你来洗杯子。
+
+      6：Anna lives in Rome, and Tom in Madrid.
+         安娜住在罗马，汤姆住在马德里。
+
+      7：We bought two tickets, and they three.
+         我们买了两张票，他们买了三张。
+
+      8：Her father is a doctor, and her mother a nurse.
+         她父亲是医生，母亲是护士。
+
+      9：The first room faces east, and the second west.
+         第一个房间朝东，第二个房间朝西。
+
+      10：He likes swimming, and she cycling.
+         他喜欢游泳，她喜欢骑车。
 
   6-2：条件、假设与虚拟表达
     6-2-1：与现在事实相反的假设
-      If I were you, I would take the job.
-      如果我是你，我会接受这份工作。
+      1：If I were you, I would take the job.
+         如果我是你，我会接受这份工作。
+
+      2：If I had more time, I would learn pottery.
+         如果我有更多时间，我会学习陶艺。
+
+      3：If she knew the answer, she would tell us.
+         如果她知道答案，她会告诉我们。
+
+      4：If we lived closer, we could visit more often.
+         如果我们住得近些，就能更经常地拜访。
+
+      5：If he were here, he would help.
+         如果他在这里，他会帮忙。
+
+      6：If I owned a car, I would drive to work.
+         如果我有车，我会开车上班。
+
+      7：If the room were larger, we could fit another desk.
+         如果房间大一些，就能再放一张书桌。
+
+      8：If you spoke more slowly, I could understand you.
+         如果你说慢一点，我就能听懂。
+
+      9：If she did not work nights, she would sleep better.
+         如果她不上夜班，就会睡得更好。
+
+      10：If I knew his number, I would call him.
+         如果我知道他的号码，就会给他打电话。
 
     6-2-2：与过去事实相反的假设
-      If I had left earlier, I would have caught the train.
-      如果我早点出发，就赶上那班火车了。
+      1：If I had left earlier, I would have caught the train.
+         如果我早点出发，就赶上那班火车了。
+
+      2：If she had studied harder, she would have passed.
+         如果她当时更用功，就会通过考试了。
+
+      3：If we had taken a map, we would not have got lost.
+         如果我们当时带了地图，就不会迷路了。
+
+      4：If he had called, I would have waited.
+         如果他当时打了电话，我就会等他了。
+
+      5：If I had known about the sale, I would have gone.
+         如果我当时知道有促销，就会去了。
+
+      6：If they had booked earlier, they could have saved money.
+         如果他们早点预订，就能省钱了。
+
+      7：If you had warned me, I would have been careful.
+         如果你当时提醒了我，我就会小心了。
+
+      8：If it had not rained, we would have eaten outside.
+         如果当时没下雨，我们就会在外面吃了。
+
+      9：If she had seen the sign, she would have stopped.
+         如果她当时看到了标志，就会停下了。
+
+      10：If I had charged my phone, I could have called you.
+         如果我当时给手机充了电，就能给你打电话了。
 
     6-2-3：对将来可能性较小的假设
-      If I won the lottery, I would buy a house.
-      如果我中了彩票，我会买一套房子。
+      1：If I won the lottery, I would buy a house.
+         如果我中了彩票，我会买一套房子。
+
+      2：If I became mayor, I would improve public transport.
+         如果我当上市长，我会改善公共交通。
+
+      3：If she were to move abroad, we would miss her.
+         如果她将来搬到国外，我们会想念她。
+
+      4：If the museum were to close, the town would lose an important landmark.
+         如果博物馆将来关闭，小镇就会失去一处重要地标。
+
+      5：If I met my favorite writer, I would ask for an autograph.
+         如果我遇见最喜欢的作家，我会请对方签名。
+
+      6：If we were to buy an island, we would build a small house.
+         如果我们将来买下一座岛，就会盖一间小房子。
+
+      7：If he won the championship, he would celebrate with his family.
+         如果他赢得冠军，他会和家人庆祝。
+
+      8：If the company offered me a job overseas, I would consider it.
+         如果公司给我一份海外工作，我会考虑。
+
+      9：If humans discovered life on Mars, it would change science.
+         如果人类在火星上发现生命，将会改变科学。
+
+      10：If she were to become famous, she would still value her friends.
+         即使她将来成名，也仍然会珍惜朋友。
 
     6-2-4：混合时间条件句
-      If I had studied medicine, I would be a doctor now.
-      如果我当初学了医学，我现在就是医生了。
+      1：If I had studied medicine, I would be a doctor now.
+         如果我当初学了医学，我现在就是医生了。
+
+      2：If I had gone to bed earlier, I would not be so tired now.
+         如果我昨晚早点睡，现在就不会这么累了。
+
+      3：If she had accepted the job, she would be living in Paris now.
+         如果她当时接受了那份工作，现在就住在巴黎了。
+
+      4：If we had saved more, we could afford a car now.
+         如果我们以前多存点钱，现在就买得起车了。
+
+      5：If he had not missed the train, he would be here now.
+         如果他当时没错过火车，现在就已经在这里了。
+
+      6：If I were more organized, I would not have lost the receipt yesterday.
+         如果我做事更有条理，昨天就不会丢收据了。
+
+      7：If she spoke Spanish, she could have helped us last week.
+         如果她会说西班牙语，上周就能帮我们了。
+
+      8：If they had repaired the roof, the room would be dry now.
+         如果他们当时修了屋顶，房间现在就会是干燥的。
+
+      9：If I were not afraid of heights, I would have joined the climb.
+         如果我不恐高，当时就会参加攀登了。
+
+      10：If we had taken the other road, we would be at home now.
+         如果我们当时走了另一条路，现在就到家了。
 
     6-2-5：wish 表达与现实不同的愿望
-      I wish I knew the answer.
-      我真希望自己知道答案。
+      1：I wish I knew the answer.
+         我真希望自己知道答案。
+
+      2：I wish I could swim.
+         我真希望自己会游泳。
+
+      3：She wishes she lived closer to her parents.
+         她真希望住得离父母近一些。
+
+      4：We wish we had more free time.
+         我们真希望有更多空闲时间。
+
+      5：He wishes he had studied harder.
+         他真希望自己当时更用功一些。
+
+      6：I wish I had not said that.
+         我真希望自己当时没说那句话。
+
+      7：She wishes the rain would stop.
+         她真希望雨能停下来。
+
+      8：I wish you would listen to me.
+         我真希望你能听我说话。
+
+      9：They wish they could stay longer.
+         他们真希望能多待一阵子。
+
+      10：He wishes he were taller.
+         他真希望自己更高一些。
 
     6-2-6：建议或要求后的虚拟表达
-      The doctor suggested that he rest for a few days.
-      医生建议他休息几天。
+      1：The doctor suggested that he rest for a few days.
+         医生建议他休息几天。
+
+      2：They demanded that the fee be refunded.
+         他们要求退还费用。
+
+      3：She insisted that he arrive on time.
+         她坚决要求他准时到达。
+
+      4：We recommended that the meeting be postponed.
+         我们建议推迟会议。
+
+      5：It is essential that every applicant sign the form.
+         每位申请人都必须在表格上签字。
+
+      6：The teacher requested that nobody use a phone.
+         老师要求任何人都不要使用手机。
+
+      7：He proposed that we meet again next week.
+         他提议我们下周再见面。
+
+      8：It is important that she be informed immediately.
+         必须立即通知她。
+
+      9：The manager asked that the report be ready by noon.
+         经理要求报告在中午前准备好。
+
+      10：The rules require that each player wear a helmet.
+         规则要求每位球员都戴头盔。
 
   6-3：引语转换、存在句与形式主宾语
     6-3-1：直接引语
-      Anna said, "I am tired."
-      安娜说：“我累了。”
+      1：Anna said, "I am tired."
+         安娜说：“我累了。”
+
+      2：Tom said, "I need some help."
+         汤姆说：“我需要一些帮助。”
+
+      3：She asked, "Where is the station?"
+         她问：“车站在哪里？”
+
+      4：He said, "We will arrive tomorrow."
+         他说：“我们明天会到。”
+
+      5：The teacher said, "Please close your books."
+         老师说：“请合上书。”
+
+      6：My mother asked, "Have you eaten?"
+         我母亲问：“你吃过了吗？”
+
+      7：Anna said, "I saw him yesterday."
+         安娜说：“我昨天见到他了。”
+
+      8：He shouted, "Do not touch that!"
+         他喊道：“别碰那个！”
+
+      9：She said, "This is my first visit."
+         她说：“这是我第一次来。”
+
+      10：The guide said, "We are leaving now."
+         导游说：“我们现在出发。”
 
     6-3-2：间接引语转述陈述
-      Anna said that she was tired.
-      安娜说她累了。
+      1：Anna said that she was tired.
+         安娜说她累了。
+
+      2：Tom said that he needed some help.
+         汤姆说他需要一些帮助。
+
+      3：She told me that she lived nearby.
+         她告诉我，她住在附近。
+
+      4：He said that they would arrive the next day.
+         他说他们会在第二天到达。
+
+      5：Anna said that she had seen him the day before.
+         安娜说她前一天见过他。
+
+      6：The guide said that they were leaving then.
+         导游说他们当时正准备出发。
+
+      7：My sister told me that she had lost her phone.
+         我姐姐告诉我，她丢了手机。
+
+      8：He said that he could not attend the meeting.
+         他说他无法参加会议。
+
+      9：They told us that the road was closed.
+         他们告诉我们，道路封闭了。
+
+      10：She said that she had been waiting for an hour.
+         她说她已经等了一个小时。
 
     6-3-3：间接引语转述疑问
-      He asked me where I lived.
-      他问我住在哪里。
+      1：He asked me where I lived.
+         他问我住在哪里。
+
+      2：She asked me whether I was ready.
+         她问我是否准备好了。
+
+      3：He wanted to know what time the shop closed.
+         他想知道那家商店几点关门。
+
+      4：They asked if we had booked a room.
+         他们问我们是否订了房间。
+
+      5：My father asked why I was late.
+         我父亲问我为什么迟到。
+
+      6：The teacher asked who had finished the exercise.
+         老师问谁已经做完了练习。
+
+      7：She wanted to know how much the ticket cost.
+         她想知道票价是多少。
+
+      8：He asked whether I could help him.
+         他问我能否帮助他。
+
+      9：We asked when the next train would leave.
+         我们问下一班火车什么时候开。
+
+      10：The guard asked where we were going.
+         警卫问我们要去哪里。
 
     6-3-4：there be 存在句
-      There is a book on the desk.
-      桌上有一本书。
+      1：There is a book on the desk.
+         桌上有一本书。
+
+      2：There are two chairs by the window.
+         窗边有两把椅子。
+
+      3：There was a strange noise outside.
+         外面有一阵奇怪的声音。
+
+      4：There were several messages on my phone.
+         我的手机上有几条消息。
+
+      5：There will be a meeting tomorrow.
+         明天会有一个会议。
+
+      6：There has been a change of plan.
+         计划有了变动。
+
+      7：There is not enough room for everyone.
+         没有足够的空间容纳所有人。
+
+      8：Are there any seats available?
+         还有空座位吗？
+
+      9：There must be a better way.
+         一定有更好的办法。
+
+      10：There used to be a cinema here.
+         这里以前有一家电影院。
 
     6-3-5：it 作形式主语
-      It is important to get enough sleep.
-      保证充足睡眠很重要。
+      1：It is important to get enough sleep.
+         保证充足睡眠很重要。
+
+      2：It is difficult to learn a language alone.
+         独自学习一门语言很难。
+
+      3：It was kind of you to help us.
+         你帮助了我们，真是太好了。
+
+      4：It takes time to build trust.
+         建立信任需要时间。
+
+      5：It is clear that she understands the problem.
+         很明显，她理解这个问题。
+
+      6：It surprised me that he remembered.
+         他还记得，这让我惊讶。
+
+      7：It is uncertain whether the flight will leave today.
+         航班今天是否起飞还不确定。
+
+      8：It would be useful to keep a copy.
+         保留一份副本会很有用。
+
+      9：It is a pity that you cannot come.
+         你不能来，真遗憾。
+
+      10：It does not matter what you choose.
+         你选什么都没关系。
 
     6-3-6：it 作形式宾语
-      I find it difficult to wake up early.
-      我觉得早起很难。
+      1：I find it difficult to wake up early.
+         我觉得早起很难。
+
+      2：She found it easy to learn the song.
+         她觉得学这首歌很容易。
+
+      3：We consider it important to arrive early.
+         我们认为早到很重要。
+
+      4：He made it clear that he disagreed.
+         他明确表示自己不同意。
+
+      5：I think it strange that nobody called.
+         我觉得奇怪，竟然没有人打电话。
+
+      6：They found it impossible to cross the river.
+         他们发现无法过河。
+
+      7：She considers it a privilege to teach here.
+         她认为在这里教书是一种荣幸。
+
+      8：We made it a rule to check every detail.
+         我们规定要核对每个细节。
+
+      9：I find it helpful to take notes.
+         我觉得做笔记很有帮助。
+
+      10：He thought it unfair that she had to pay.
+         他认为让她付款不公平。
 

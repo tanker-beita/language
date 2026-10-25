@@ -12,7 +12,9 @@ data.categories.forEach((category, ci) => {
       lines.push(`    ${ci + 1}-${si + 1}-${pi + 1}：${point.name}`);
       point.examples.forEach((example, ei) => {
         if (!example.en?.trim() || !example.zh?.trim()) throw new Error(`例句缺少中英文：${example.id}`);
-        lines.push(`      ${ei + 1}：${example.en}`, `         ${example.zh}`, "");
+        lines.push(`      ${ei + 1}：${example.en}`, `         ${example.zh}`);
+        if (example.keywords?.length) lines.push(`         关键词：${example.keywords.join(' / ')}`);
+        lines.push("");
         count += 1;
       });
     });

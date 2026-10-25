@@ -30,6 +30,18 @@ assert.equal(rows.length, 1200);
 assert.equal(new Set(rows.map(row => row.id)).size, 1200);
 assert.equal(new Set(rows.map(row => row.text.toLocaleLowerCase())).size, 1200);
 assert.ok(rows.every(row => /[\u3400-\u9fff]/u.test(row.translation)));
+assert.ok(rows.every(row => Array.isArray(row.keywords) && row.keywords.length > 0));
+for (const row of rows) {
+  const parts = library.keywordParts(row.text, row.keywords);
+  assert.equal(parts.map(part => part.text).join(""), row.text, `Highlighting must preserve the original: ${row.id}`);
+  assert.ok(parts.some(part => part.highlight), `No highlight: ${row.id}`);
+}
+assert.equal(rows.find(row => row.text === "I lost my wallet yesterday.").keywords.join("|"), "lost");
+assert.equal(library.keywordParts("The teacher is here.", ["he"]).filter(part => part.highlight).length, 0);
+assert.equal(library.keywordParts("He helped her.", ["he"]).filter(part => part.highlight).map(part => part.text).join(""), "He");
+assert.equal(library.keywordParts("I have finished.", ["have finished", "finished"]).filter(part => part.highlight).length, 1);
+assert.equal(library.keywordParts("a+b is literal.", ["a+b"]).find(part => part.highlight).text, "a+b");
+assert.equal(library.keywordParts("<b>lost</b>", ["lost"]).map(part => part.text).join(""), "<b>lost</b>");
 assert.equal(library.filter(rows, { query: "主谓一致" }).length, 40);
 assert.equal(library.filter(rows, { category: "verbs", subcategory: "verbs.tense-aspect", query: "完成" }).length, 60);
 assert.equal(library.filter(rows, { query: "THE TEACHER OPENED" }).length, 1);
@@ -46,6 +58,14 @@ assert.throws(() => library.parse({ ...data, schemaVersion: "2.0.0" }), /格式/
 const invalid = structuredClone(data);
 delete invalid.categories[0].subcategories[0].points[0].examples[0].zh;
 assert.throws(() => library.parse(invalid), /中文/);
+const invalidKeywords = structuredClone(data);
+const keywordExample = invalidKeywords.categories[0].subcategories[0].points[0].examples[0];
+for (const value of ["teacher", [""], ["teach"], ["teacher", "TEACHER"], [" teacher"]]) {
+  keywordExample.keywords = value;
+  assert.throws(() => library.parse(invalidKeywords), /关键词/);
+}
+delete keywordExample.keywords;
+assert.equal(library.parse(invalidKeywords)[0].keywords.length, 0, "Manually added sentences may omit keywords");
 
 await assert.rejects(library.load(), /503/);
 const [first, second] = await Promise.all([library.load(), library.load()]);

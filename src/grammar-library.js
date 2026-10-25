@@ -1,7 +1,38 @@
 /* Hierarchical, manually editable grammar material; no AI requests or user-data writes. */
 (() => {
   "use strict";
-  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json?v=20261026-1";
+  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json?v=20261026-2";
+
+  function keywordParts(text, keywords = []) {
+    const ranges = [];
+    const word = char => /[\p{L}\p{N}_]/u.test(char || "");
+    for (const keyword of keywords) {
+      const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      for (const match of text.matchAll(new RegExp(escaped, "giu"))) {
+        const start = match.index;
+        const end = start + match[0].length;
+        if ((word(keyword[0]) && word(text[start - 1]))
+            || (word(keyword.at(-1)) && word(text[end]))) continue;
+        ranges.push({ start, end });
+      }
+    }
+    ranges.sort((a, b) => a.start - b.start || b.end - a.end);
+    const merged = [];
+    for (const range of ranges) {
+      const previous = merged.at(-1);
+      if (previous && range.start <= previous.end) previous.end = Math.max(previous.end, range.end);
+      else merged.push({ ...range });
+    }
+    const parts = [];
+    let cursor = 0;
+    for (const { start, end } of merged) {
+      if (start > cursor) parts.push({ text: text.slice(cursor, start), highlight: false });
+      parts.push({ text: text.slice(start, end), highlight: true });
+      cursor = end;
+    }
+    if (cursor < text.length) parts.push({ text: text.slice(cursor), highlight: false });
+    return parts;
+  }
 
   function parse(data) {
     const ids = new Set();
@@ -29,8 +60,15 @@
           nodes(point.examples).forEach((example) => {
             check(example, "en");
             if (typeof example.zh !== "string" || !example.zh.trim()) throw new Error("例句缺少中文翻译");
+            const keywords = example.keywords === undefined ? [] : example.keywords;
+            if (!Array.isArray(keywords) || keywords.some(keyword => typeof keyword !== "string" || !keyword.trim()
+                || keyword !== keyword.trim() || !keywordParts(example.en, [keyword]).some(part => part.highlight))
+                || new Set(keywords.map(keyword => keyword.toLocaleLowerCase())).size !== keywords.length) {
+              throw new Error(`关键词格式错误或与原句不匹配：${example.id}`);
+            }
             rows.push({
               id: example.id, libraryId: data.id, text: example.en, translation: example.zh,
+              keywords: [...keywords],
               categoryId: category.id, subcategoryId: subcategory.id, pointId: point.id,
               category: `${ci + 1}：${category.name}`,
               categoryOption: `${ci + 1}：${category.name}${typeof category.description === "string" && category.description.trim() ? ` (${category.description.trim()})` : ""}`,
@@ -127,7 +165,17 @@
         sentence.className = "grammar-library-example";
         const english = document.createElement("span");
         english.className = "library-sentence-english";
-        english.textContent = row.text;
+        english.title = "右键点击单词，打开词典查询";
+        for (const part of keywordParts(row.text, row.keywords)) {
+          if (part.highlight) {
+            const mark = document.createElement("mark");
+            mark.className = "grammar-library-keyword";
+            mark.textContent = part.text;
+            english.append(mark);
+          } else {
+            english.append(document.createTextNode(part.text));
+          }
+        }
         sentence.append(english);
         const button = document.createElement("button");
         button.type = "button";
@@ -146,7 +194,23 @@
       options(category, unique(rows, "categoryId", "categoryOption"), "全部大类");
       const categoryRows = filter(rows, { category: category.value });
       options(subcategory, unique(categoryRows, "subcategoryId", "subcategory"), "全部小类");
+      const categoryBySubcategory = new Map(categoryRows.map(row => [row.subcategoryId, row.categoryId]));
+      let previousCategory = null;
+      for (const option of subcategory.options) {
+        if (!option.value) continue;
+        const categoryId = categoryBySubcategory.get(option.value);
+        option.classList.toggle("grammar-category-divider", previousCategory !== null && categoryId !== previousCategory);
+        previousCategory = categoryId;
+      }
       options(point, unique(filter(categoryRows, { subcategory: subcategory.value }), "pointId", "point"), "全部语法点");
+      const subcategoryByPoint = new Map(categoryRows.map(row => [row.pointId, row.subcategoryId]));
+      let previousSubcategory = null;
+      for (const option of point.options) {
+        if (!option.value) continue;
+        const subcategoryId = subcategoryByPoint.get(option.value);
+        option.classList.toggle("grammar-subcategory-divider", previousSubcategory !== null && subcategoryId !== previousSubcategory);
+        previousSubcategory = subcategoryId;
+      }
       render();
     }
     async function open() {
@@ -182,5 +246,5 @@
     use.addEventListener("click", () => { if (isEnglish() && visible.length) onUse(visible); });
     return { open };
   }
-  window.langLSRWGrammarLibrary = { parse, filter, load, init };
+  window.langLSRWGrammarLibrary = { parse, filter, keywordParts, load, init };
 })();

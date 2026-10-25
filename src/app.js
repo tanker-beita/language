@@ -1017,9 +1017,11 @@ const fallbackSentences = [
 
     function closeLibraryModal() {
       $("libraryModal").hidden = true;
+      closeDictionaryLookup();
     }
 
     function setLibraryView(view) {
+      closeDictionaryLookup();
       const views = [
         ["common", "commonLibraryPanel", "commonLibraryTabBtn"],
         ["settings", "librarySettingsPanel", "librarySettingsTabBtn"],
@@ -1102,7 +1104,7 @@ const fallbackSentences = [
         ? visibleItems.map((item) => `
           <div class="library-sentence-row">
             <span class="library-sentence-id">${escapeHtml(item.id)}</span>
-            <span class="library-sentence-english">${escapeHtml(item.text)}</span>
+            <span class="library-sentence-english" title="右键点击单词，打开词典查询">${escapeHtml(item.text)}</span>
             <span class="library-sentence-translation">${escapeHtml(item.translation)}</span>
             <button class="user-sentence-load-button" type="button" data-load-library-sentence="${escapeHtml(item.id)}" title="加载到听写练习" aria-label="加载到听写练习">▶</button>
           </div>
@@ -9573,6 +9575,15 @@ ${orderNote}`;
     });
     $("libraryModal").addEventListener("pointerdown", (event) => {
       if (event.target === $("libraryModal")) closeLibraryModal();
+    });
+    $("libraryModal").addEventListener("contextmenu", (event) => {
+      const sentence = event.target.closest(".library-sentence-english");
+      if (!sentence) return;
+      const hit = learningWordAtPoint(event, sentence);
+      if (!hit?.word) return;
+      event.preventDefault();
+      event.stopPropagation();
+      lookupLearningWord(hit.word, { clientX: event.clientX, avoidRect: hit.rect });
     });
     $("librarySearchInput").addEventListener("input", filterLibrary);
     $("libraryFirstPageBtn").addEventListener("click", () => goToLibraryPage(0));

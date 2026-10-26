@@ -3981,6 +3981,17 @@
       align-items: center;
     }
 
+    .grammar-mobile-classification { display: none; }
+    .grammar-class-menu:not([hidden]) { display: grid; gap: 0; }
+    .grammar-class-menu { box-sizing: border-box; }
+    .grammar-class-column { min-width: 0; max-height: inherit; overflow-y: auto; overscroll-behavior: contain; }
+    .grammar-class-column + .grammar-class-column { border-left: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+    .grammar-class-menu button { white-space: normal; overflow-wrap: anywhere; line-height: 1.5; padding: 5px 6px; min-height: 30px; }
+    .grammar-class-menu button > span:first-child { min-width: 0; }
+    .grammar-class-menu button > span + span { flex-shrink: 0; }
+    .grammar-class-menu button.grammar-class-back { position: sticky; top: 0; z-index: 1; font-weight: 700; color: var(--accent, var(--ink)); background: var(--panel); border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
+    @media (max-width: 640px) { .grammar-class-menu button { min-height: 38px; padding: 8px 12px; font-size: 14px; } }
+
     .grammar-library-filters select {
       width: 100%;
       min-width: 0;
@@ -6202,9 +6213,9 @@
       .speaking-status { white-space: normal; overflow-wrap: anywhere; line-height: 1.4; flex-basis: 100%; }
       .speaking-status:empty { display: none; }
       .target-english, .translation-prompt { padding-top: 5px; padding-bottom: 5px; }
-      /* Narrow screens: the sentence stars stack vertically (1 on top, 5 at the bottom) so the sentence keeps its width. */
+      /* Narrow screens: the sentence stars stack vertically (1 at the bottom, 5 on top) so the sentence keeps its width. */
       .target-english { gap: 5px; padding-right: 4px; }
-      .target-english > .sentence-rating { flex-direction: column; align-self: center; margin-top: 0; }
+      .target-english > .sentence-rating { flex-direction: column-reverse; align-self: center; margin-top: 0; }
       .target-english > .sentence-rating .dictionary-favorite-button { width: 16px; min-width: 16px; height: 16px; min-height: 16px; }
       .translation-prompt { font-size: 12px; min-height: 48px; gap: 5px; padding-right: 4px; align-items: center; }
       /* Phone: no 编辑 button on the translation; press and hold the text to edit. */
@@ -6365,6 +6376,77 @@
       .library-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
       .library-sidebar { display: flex; overflow-x: auto; }
       .library-type-button { width: auto; flex: 0 0 auto; }
+    }
+
+    @media (max-width: 700px), (max-width: 900px) and (max-height: 500px) {
+      #libraryModal .library-header { padding: 5px 10px; flex-wrap: nowrap; }
+      #libraryModal .library-header h2 { font-size: 18px; }
+      #libraryModal #closeLibraryBtn { min-height: 30px; padding: 3px 10px; font-size: 14px; }
+      #libraryModal .library-sidebar {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 4px;
+        padding: 3px 6px;
+        align-items: center;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+      }
+      #libraryModal .library-sidebar::-webkit-scrollbar { display: none; }
+      #libraryModal .library-type-button {
+        min-height: 26px;
+        height: 26px;
+        margin-bottom: 0;
+        padding: 2px 6px;
+        font-size: 14px;
+        white-space: nowrap;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #libraryModal .grammar-library-panel {
+        padding: 8px;
+        gap: 6px;
+      }
+      #libraryModal .grammar-library-panel .library-summary { gap: 8px; align-items: center; }
+      #libraryModal .grammar-library-panel .library-title-line { flex: 1; min-width: 0; gap: 5px; flex-wrap: nowrap; }
+      #libraryModal .grammar-library-panel h3 { font-size: 16px; }
+      #libraryModal #grammarLibraryMeta { display: none; }
+      #libraryModal #grammarLibraryMobileMeta { display: inline; font-size: 11px; line-height: 1.4; white-space: nowrap; }
+      #libraryModal #useGrammarLibraryBtn {
+        flex: 0 0 auto;
+        min-height: 30px;
+        padding: 4px 8px;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+      #libraryModal .grammar-library-filters { display: none; }
+      #libraryModal .grammar-mobile-classification { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px; font-size: 12px; }
+      #libraryModal #grammarMobileClassBtn { min-width: 0; width: 100%; min-height: 22px; height: 22px; padding: 0 6px; font-size: 12px; line-height: 1; text-align: left; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; background: var(--panel); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; }
+      #libraryModal .grammar-library-filters:has(#grammarCategorySelect:is(:focus, :open)) { grid-template-columns: 2fr 1fr 1fr; }
+      #libraryModal .grammar-library-filters:has(#grammarSubcategorySelect:is(:focus, :open)) { grid-template-columns: 1fr 2fr 1fr; }
+      #libraryModal .grammar-library-filters:has(#grammarPointSelect:is(:focus, :open)) { grid-template-columns: 1fr 1fr 2fr; }
+      #libraryModal .grammar-library-filters label { display: grid; min-width: 0; grid-template-columns: auto minmax(0, 1fr); gap: 3px; font-size: 11px; }
+      #libraryModal .grammar-library-filters label + label > span { margin-left: 0; }
+      #libraryModal .grammar-library-filters select { height: 26px; min-height: 26px; padding: 1px 4px; gap: 2px; font-size: 12px; white-space: nowrap; overflow: hidden; }
+      #libraryModal .grammar-library-filters select::picker(select) { min-width: min(240px, calc(100vw - 24px)); max-width: calc(100vw - 24px); }
+      #libraryModal .grammar-library-search-row { grid-template-columns: auto minmax(0, 1fr); gap: 4px; }
+      #libraryModal .grammar-search-label-full { display: none; }
+      #libraryModal .grammar-search-label-mobile { display: inline; }
+      #libraryModal .grammar-library-search-row > span { font-size: 11px; }
+      #libraryModal .grammar-library-search-row .library-search { height: 24px; min-height: 24px; padding-top: 0; padding-bottom: 0; font-size: 12px; }
+      #libraryModal .grammar-library-examples { grid-template-columns: minmax(0, 1fr); }
+      #libraryModal .grammar-library-heading { padding: 6px 8px; font-size: 12px; line-height: 1.5; }
+      #libraryModal .grammar-library-example { gap: 8px; padding: 0 8px; font-size: 14px; line-height: 1.35; }
+      #libraryModal .grammar-library-example .user-sentence-load-button { width: 24px; min-width: 24px; height: 22px; min-height: 22px; }
+      #libraryModal .grammar-library-footer { font-size: 11px; }
+    }
+
+    @media (min-width: 701px) and (max-width: 900px) and (max-height: 500px) {
+      #libraryModal .grammar-library-filters { gap: 8px; }
+      #libraryModal .grammar-library-search-row { grid-template-columns: auto minmax(0, 1fr); gap: 5px; }
+      #libraryModal #grammarLibraryMeta { flex-basis: auto; }
+      #libraryModal .grammar-library-panel .library-title-line { gap: 6px; }
     }
 
     @media (max-width: 700px), (max-width: 900px) and (max-height: 500px) {

@@ -202,6 +202,7 @@ const fallbackSentences = [
       grammarVisible: false,
       translationEditing: false,
       translationDraft: "",
+      translationGrammarVisible: false,
       grammarExpansionMode: "main",
       grammarExpandedNodeIds: new Set(),
       library: {
@@ -686,6 +687,8 @@ const fallbackSentences = [
         return {
           id: String(item.id || "").trim(),
           libraryId: String(item.libraryId || "").trim(),
+          keywords: Array.isArray(item.keywords) ? item.keywords.filter(word => typeof word === "string" && word.trim()) : [],
+          grammarPoint: String(item.grammarPoint || item.point || "").trim(),
           text: String(item.text || item.sentence || item.english || "").trim(),
           translation: String(item.translation || item.zh || item.cn || "").trim(),
           grammar: String(item.grammar || item.grammarAnalysis || "").trim(),
@@ -743,7 +746,7 @@ const fallbackSentences = [
 
     // 🌈 marks sentences that already have an AI grammar analysis; clicking it shows (or hides) that analysis.
     function grammarToggleButton(visible) {
-      return `<button class="translation-grammar-button${visible ? " is-active" : ""}" type="button" data-grammar-toggle title="${visible ? "隐藏 Ai 语法分析" : "显示已保存的 Ai 语法分析"}" aria-pressed="${visible}">🌈</button>`;
+      return `<button class="translation-grammar-button${visible ? " is-active" : ""}" type="button" data-grammar-visibility-toggle title="${visible ? "隐藏 Ai 语法分析" : "显示已保存的 Ai 语法分析"}" aria-pressed="${visible}">🌈</button>`;
     }
 
     function grammarCacheKeySet() {
@@ -8754,8 +8757,33 @@ ${orderNote}`;
       return { accuracy, cpm, wpm, pauseCount, fluency, errors, typedChars, targetLength: target.length, avgInterval };
     }
 
+    function grammarTranslationButton(item) {
+      if (state.currentLibraryLabel !== "语法句库" || !item?.grammarPoint) return "";
+      return `<button class="translation-edit-button translation-content-toggle" type="button" data-translation-action="grammar-translation" title="${state.translationGrammarVisible ? "切换显示本句翻译" : "切换显示本句所属语法点"}">${state.translationGrammarVisible ? "翻译" : "语法"}</button>`;
+    }
+
+    function sentenceTranslationDisplay(item) {
+      if (state.currentLibraryLabel === "语法句库" && state.translationGrammarVisible && item.grammarPoint) return item.grammarPoint;
+      return item.translation ? displayedTranslation(item.translation) : "暂无翻译";
+    }
+
     function renderTarget() {
       const target = currentSentence();
+      const keywordParts = window.langLSRWGrammarLibrary.keywordParts(target,
+        state.currentLibraryLabel === "语法句库" ? state.sentences[state.index]?.keywords || [] : []);
+      let keywordOffset = 0;
+      const keywordRanges = keywordParts.flatMap(part => {
+        const start = keywordOffset;
+        keywordOffset += part.text.length;
+        return part.highlight ? [{ start, end: keywordOffset }] : [];
+      });
+      let pieceOffset = 0;
+      const targetPieces = getTargetWordPieces(target).map(piece => {
+        const start = pieceOffset;
+        pieceOffset += piece.text.length;
+        return { ...piece, keywordClass: piece.type === "word" && keywordRanges.some(range => start < range.end && pieceOffset > range.start)
+          ? " target-grammar-keyword" : "" };
+      });
       const translation = currentTranslation();
       const hasGrammarCache = Boolean(currentGrammar());
       $("analyzeGrammarBtn").classList.toggle("has-cache", hasGrammarCache);
@@ -8767,7 +8795,9 @@ ${orderNote}`;
           ? "当前句已有缓存：左键查看，右键更多选项"
           : "左键分析当前句，右键更多选项";
       const showTranslation = $("showTranslationToggle").checked;
-      const translationText = translation ? escapeHtml(displayedTranslation(translation)) : "暂无翻译";
+      const currentItem = normalizeSentenceItem(state.sentences[state.index]);
+      const contentToggle = grammarTranslationButton(currentItem);
+      const translationText = escapeHtml(sentenceTranslationDisplay(currentItem));
       const languageToggle = chineseTranslationToggle(translation);
       const translationHtml = state.translationEditing
         ? `<div class="translation-prompt translation-editor">
@@ -8777,9 +8807,9 @@ ${orderNote}`;
               <button type="button" data-translation-action="cancel">取消</button>
             </div>
           </div>`
-        : `<div class="translation-prompt ${showTranslation ? "" : "is-hidden"}${languageToggle ? " has-language-toggle" : ""}">
+        : `<div class="translation-prompt ${showTranslation ? "" : "is-hidden"}${languageToggle ? " has-language-toggle" : ""}${contentToggle ? " has-content-toggle" : ""}">
             <span aria-hidden="${showTranslation ? "false" : "true"}">${translationText}</span>
-            <div class="translation-actions">${hasGrammarCache ? grammarToggleButton(state.grammarVisible) : ""}${languageToggle}<button class="translation-edit-button" type="button" data-translation-action="edit">编辑</button></div>
+            <div class="translation-actions">${hasGrammarCache ? grammarToggleButton(state.grammarVisible) : ""}${languageToggle}${contentToggle}<button class="translation-edit-button" type="button" data-translation-action="edit" title="编辑当前句翻译">编辑</button></div>
           </div>`;
       const grammarHtml = renderGrammarAnalysis();
       const input = typingBox.value;
@@ -8791,15 +8821,15 @@ ${orderNote}`;
         targetEl.className = "target hidden-source";
         const revealedCount = getRevealedWordCount(input, target);
         let wordIndex = 0;
-        html = getTargetWordPieces(target).map((piece) => {
+        html = targetPieces.map((piece) => {
           if (piece.type === "text") return escapeHtml(piece.text);
           const isRevealed = wordIndex < revealedCount;
           const currentWordIndex = wordIndex;
           wordIndex += 1;
           if (isRevealed) {
-            return `<span class="target-word revealed-word" data-word="${escapeHtml(piece.text)}" data-word-index="${currentWordIndex}">${escapeHtml(piece.text)}</span>`;
+            return `<span class="target-word revealed-word${piece.keywordClass}" data-word="${escapeHtml(piece.text)}" data-word-index="${currentWordIndex}">${escapeHtml(piece.text)}</span>`;
           }
-          return `<span class="target-word covered-word" data-word="${escapeHtml(piece.text)}" data-word-index="${currentWordIndex}">${escapeHtml(piece.text)}</span>`;
+          return `<span class="target-word covered-word${piece.keywordClass}" data-word="${escapeHtml(piece.text)}" data-word-index="${currentWordIndex}">${escapeHtml(piece.text)}</span>`;
         }).join("");
         placeTargetContent(`<span class="target-english"><span class="target-english-text">${html || "&nbsp;"}</span>${sentenceFavoriteButton(target)}</span>${translationHtml}${grammarHtml}`, true);
         return;
@@ -8818,14 +8848,14 @@ ${orderNote}`;
       );
       let targetWordIndex = 0;
 
-      html = getTargetWordPieces(target).map((piece) => {
+      html = targetPieces.map((piece) => {
         if (piece.type === "text") return escapeHtml(piece.text);
         const isWrong = wrongTargetWords.has(targetWordIndex);
         const isDone = correctTargetWords.has(targetWordIndex);
         const currentWordIndex = targetWordIndex;
         targetWordIndex += 1;
         const className = isWrong ? "wrong" : (isDone ? "done" : "pending");
-        return `<span class="target-word ${className}" data-word="${escapeHtml(piece.text)}" data-word-index="${currentWordIndex}">${escapeHtml(piece.text)}</span>`;
+        return `<span class="target-word ${className}${piece.keywordClass}" data-word="${escapeHtml(piece.text)}" data-word-index="${currentWordIndex}">${escapeHtml(piece.text)}</span>`;
       }).join("");
 
       placeTargetContent(`<span class="target-english"><span class="target-english-text">${html || "&nbsp;"}</span>${sentenceFavoriteButton(target)}</span>${translationHtml}${grammarHtml}`, false);
@@ -8888,9 +8918,10 @@ ${orderNote}`;
         }
         const item = normalizeSentenceItem(state.sentences[index]);
         const languageToggle = chineseTranslationToggle(item.translation);
+        const contentToggle = grammarTranslationButton(item);
         rows.push(`<div class="long-text-item" data-long-text-index="${index}" title="点击切换到这一句">
           <span class="target-english"><span class="target-english-text${showSource ? "" : " long-text-hidden-note"}">${showSource ? longTextEnglishHtml(item.text) : "原文已隐藏"}</span>${sentenceFavoriteButton(item.text)}</span>
-          <div class="translation-prompt ${showTranslation ? "" : "is-hidden"}${languageToggle ? " has-language-toggle" : ""}"><span aria-hidden="${showTranslation ? "false" : "true"}">${escapeHtml(item.translation || "暂无翻译")}</span><div class="translation-actions">${sentenceHasGrammar(item, analysedKeys) ? grammarToggleButton(false) : ""}${languageToggle}<button class="translation-edit-button" type="button" data-translation-action="edit" title="切换到这一句并编辑翻译">编辑</button></div></div>
+          <div class="translation-prompt ${showTranslation ? "" : "is-hidden"}${languageToggle ? " has-language-toggle" : ""}${contentToggle ? " has-content-toggle" : ""}"><span aria-hidden="${showTranslation ? "false" : "true"}">${escapeHtml(sentenceTranslationDisplay(item))}</span><div class="translation-actions">${sentenceHasGrammar(item, analysedKeys) ? grammarToggleButton(false) : ""}${languageToggle}${contentToggle}<button class="translation-edit-button" type="button" data-translation-action="edit" title="切换到这一句并编辑翻译">编辑</button></div></div>
         </div>`);
       }
       targetEl.className = `target long-text-target${focus ? " is-focus" : ""}${hiddenSource ? " hidden-source" : ""}`;
@@ -9001,7 +9032,7 @@ ${orderNote}`;
       state.index = (nextIndex + state.sentences.length) % state.sentences.length;
       state.translationEditing = false;
       state.translationDraft = "";
-      state.grammarVisible = false;
+      state.grammarVisible = state.grammarVisible && Boolean(currentGrammar());
       resetGrammarInteraction();
       typingBox.value = "";
       state.events = [];
@@ -9024,7 +9055,7 @@ ${orderNote}`;
       closeDictionaryLookup();
       state.translationEditing = false;
       state.translationDraft = "";
-      state.grammarVisible = false;
+      state.grammarVisible = state.grammarVisible && Boolean(currentGrammar());
       resetGrammarInteraction();
       typingBox.value = "";
       state.events = [];
@@ -9813,10 +9844,14 @@ ${orderNote}`;
         if (action === "save") saveCurrentTranslation();
         if (action === "cancel") cancelTranslationEdit();
         if (action === "language") toggleChineseTranslation();
+        if (action === "grammar-translation" && state.currentLibraryLabel === "语法句库") {
+          state.translationGrammarVisible = !state.translationGrammarVisible;
+          renderTarget();
+        }
         return;
       }
 
-      const grammarToggle = event.target.closest("[data-grammar-toggle]");
+      const grammarToggle = event.target.closest("[data-grammar-visibility-toggle]");
       if (grammarToggle) {
         const row = grammarToggle.closest(".long-text-item:not(.is-current)");
         const index = row ? Number(row.dataset.longTextIndex) : state.index;

@@ -1,7 +1,7 @@
 /* Hierarchical, manually editable grammar material; no AI requests or user-data writes. */
 (() => {
   "use strict";
-  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json?v=20261026-2";
+  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json?v=20261030-1";
 
   function keywordParts(text, keywords = []) {
     const ranges = [];
@@ -68,6 +68,7 @@
             }
             rows.push({
               id: example.id, libraryId: data.id, text: example.en, translation: example.zh,
+              ...(example.grammarAnalysis ? { grammar: JSON.stringify(example.grammarAnalysis) } : {}),
               keywords: [...keywords],
               categoryId: category.id, subcategoryId: subcategory.id, pointId: point.id,
               category: `${ci + 1}：${category.name}`,

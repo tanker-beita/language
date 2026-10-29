@@ -48,6 +48,34 @@ assert.equal(library.filter(rows, { query: "THE TEACHER OPENED" }).length, 1);
 assert.equal(library.filter(rows, { query: "不存在的例句" }).length, 0);
 assert.equal(library.filter(rows, { point: rows[0].pointId }).length, 10);
 
+const analysed = rows.filter(row => row.grammar);
+assert.equal(analysed.length, 10, "Only the first ten sample sentences have built-in analyses");
+const roles = new Set(["主语", "谓语", "宾语", "表语", "补语", "定语", "状语", "同位语", "中心语", "其他"]);
+for (const row of analysed) {
+  const analysis = JSON.parse(row.grammar);
+  assert.equal(analysis.schemaVersion, 2);
+  assert.equal(analysis.convention, "traditional-school/8");
+  assert.equal(analysis.status, "complete");
+  assert.ok(analysis.explanation.length <= 4);
+  assert.deepEqual(Object.keys(analysis).sort(), ["schemaVersion", "convention", "status", "pattern", "nodes", "explanation"].sort());
+  assert.equal(analysis.nodes.filter(node => !node.parent).map(node => node.text).join(""), row.text);
+  const byId = new Map();
+  const offsets = new Map();
+  for (const node of analysis.nodes) {
+    assert.deepEqual(Object.keys(node).sort(), ["id", "text", "role", "type", "parent", "note"].sort());
+    assert.ok(Number.isInteger(node.id) && node.id > 0 && !byId.has(node.id));
+    assert.ok(roles.has(node.role) && node.note.length <= 20);
+    const parent = node.parent ? byId.get(node.parent) : null;
+    assert.ok(!node.parent || parent, `Parent must precede child: ${row.id}`);
+    const source = parent ? parent.text : row.text;
+    const start = source.indexOf(node.text, offsets.get(node.parent) || 0);
+    assert.ok(start >= 0, `Contiguous, ordered sibling spans: ${row.id}`);
+    if (parent) assert.notEqual(parent.text, node.text);
+    offsets.set(node.parent, start + node.text.length);
+    byId.set(node.id, node);
+  }
+}
+
 const changed = structuredClone(data);
 const example = changed.categories[0].subcategories[0].points[0].examples[0];
 changed.categories[0].subcategories[0].points[0].examples.push({ ...example, id: `${example.id}-new` });

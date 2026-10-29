@@ -7,42 +7,82 @@
       1：The teacher opened the window.
          老师打开了窗户。
          关键词：teacher / window
+         句型：主语 + 谓语 + 宾语
+         语法说明：The teacher 是主语，the window 是 opened 的宾语。
+         语法说明：opened 是谓语，表示过去发生的动作。
+         语法说明：teacher 和 window 是名词；各自前面的 the 作定语。
 
       2：The farmer feeds the chickens.
          农夫喂鸡。
          关键词：farmer / chickens
+         句型：主语 + 谓语 + 宾语
+         语法说明：The farmer 是主语，the chickens 是 feeds 的宾语。
+         语法说明：一般现在时可描述经常性行为；单数主语搭配 feeds。
+         语法说明：farmer 是单数名词，chickens 是规则复数名词。
 
       3：A bicycle stood beside the gate.
          一辆自行车停在大门旁。
          关键词：bicycle / gate
+         句型：主语 + 谓语 + 地点状语
+         语法说明：A bicycle 是主语，stood 是谓语，此处表示位于或停放。
+         语法说明：stood 是 stand 的过去式，本句没有直接宾语。
+         语法说明：beside the gate 是地点状语，其中 the gate 是介词 beside 的宾语。
 
       4：Her daughter loves music.
          她的女儿喜欢音乐。
          关键词：daughter / music
+         句型：主语 + 谓语 + 宾语
+         语法说明：Her daughter 是主语，music 是 loves 的宾语。
+         语法说明：Her 作定语，daughter 是主语短语的中心语。
+         语法说明：loves 使用一般现在时；泛指音乐的 music 是不可数名词，前面不加冠词。
 
       5：The river flows through the village.
          这条河流经村庄。
          关键词：river / village
+         句型：主语 + 谓语 + 地点状语
+         语法说明：The river 是主语，flows 是谓语，使用一般现在时。
+         语法说明：through the village 是地点或路径状语，不是 flows 的直接宾语。
+         语法说明：the village 在介词短语内部作 through 的宾语。
 
       6：Our neighbor owns a bakery.
          我们的邻居开了一家面包店。
          关键词：neighbor / bakery
+         句型：主语 + 谓语 + 宾语
+         语法说明：Our neighbor 是主语，a bakery 是 owns 的宾语。
+         语法说明：owns 描述现在的拥有状态，使用一般现在时。
+         语法说明：Our 和 a 分别作定语，neighbor 和 bakery 分别是各名词短语的中心语。
 
       7：The suitcase is under the bed.
          手提箱在床底下。
          关键词：suitcase / bed
+         句型：主语 + 系动词 + 表语
+         语法说明：The suitcase 是主语，is 是系动词，单独作为谓语。
+         语法说明：按常见传统教学分析，under the bed 作表语，说明主语的位置；也有教学体系将此类地点成分称为地点状语。
+         语法说明：the bed 是介词 under 的宾语，不能把它标为整个介词短语的中心语。
 
       8：A nurse checked my temperature.
          一名护士给我量了体温。
          关键词：nurse / temperature
+         句型：主语 + 谓语 + 宾语
+         语法说明：A nurse 是主语，my temperature 是 checked 的宾语。
+         语法说明：checked 是谓语，使用一般过去时。
+         语法说明：my 作定语，temperature 是宾语短语的中心语。
 
       9：The library closes on Sundays.
          图书馆星期日闭馆。
          关键词：library / Sundays
+         句型：主语 + 谓语 + 时间状语
+         语法说明：The library 是主语，closes 是不及物动词用法，本句没有直接宾语。
+         语法说明：一般现在时表示规律性安排，closes 与单数主语一致。
+         语法说明：on Sundays 作时间状语，Sundays 是介词 on 的宾语。
 
       10：Friendship matters more than money.
          友谊比金钱更重要。
          关键词：Friendship / money
+         句型：主语 + 谓语 + 比较状语
+         语法说明：Friendship 是主语，matters 是谓语，表示具有重要性，不是名词复数。
+         语法说明：more than money 作比较状语；money 不是 matters 的直接宾语。
+         语法说明：此处将 than 按介词处理，money 作其宾语；也可从省略比较从句的角度理解。
 
     1-1-2：动词表示动作
       1：The children laughed.

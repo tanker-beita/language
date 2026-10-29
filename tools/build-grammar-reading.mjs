@@ -14,6 +14,10 @@ data.categories.forEach((category, ci) => {
         if (!example.en?.trim() || !example.zh?.trim()) throw new Error(`例句缺少中英文：${example.id}`);
         lines.push(`      ${ei + 1}：${example.en}`, `         ${example.zh}`);
         if (example.keywords?.length) lines.push(`         关键词：${example.keywords.join(' / ')}`);
+        if (example.grammarAnalysis) {
+          lines.push(`         句型：${example.grammarAnalysis.pattern}`);
+          example.grammarAnalysis.explanation.forEach(text => lines.push(`         语法说明：${text}`));
+        }
         lines.push("");
         count += 1;
       });

@@ -10,6 +10,7 @@
     "prepare:dictionary": "npm run vendor:sqlite && npm run build:dictionary",
     "test:dictionary": "python tools/test-ecdict-build.py",
     "test:grammar-library": "node tools/test-grammar-library.mjs",
+    "test:grammar-navigation": "node tools/test-grammar-navigation.mjs",
     "build:grammar-reading": "node tools/build-grammar-reading.mjs"
   },
   "devDependencies": {

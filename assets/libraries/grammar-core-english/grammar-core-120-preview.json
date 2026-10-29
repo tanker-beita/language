@@ -24,7 +24,76 @@
                   "keywords": [
                     "teacher",
                     "window"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 宾语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "The teacher ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "The ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "teacher",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "opened ",
+                        "role": "谓语",
+                        "type": "动词过去式",
+                        "parent": 0,
+                        "note": "一般过去时，主动语态"
+                      },
+                      {
+                        "id": 5,
+                        "text": "the window.",
+                        "role": "宾语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 6,
+                        "text": "the ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 5,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 7,
+                        "text": "window",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 5,
+                        "note": "名词短语的中心"
+                      }
+                    ],
+                    "explanation": [
+                      "The teacher 是主语，the window 是 opened 的宾语。",
+                      "opened 是谓语，表示过去发生的动作。",
+                      "teacher 和 window 是名词；各自前面的 the 作定语。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.002",
@@ -33,7 +102,76 @@
                   "keywords": [
                     "farmer",
                     "chickens"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 宾语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "The farmer ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "The ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "farmer",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "feeds ",
+                        "role": "谓语",
+                        "type": "动词第三人称单数形式",
+                        "parent": 0,
+                        "note": "一般现在时，主动语态"
+                      },
+                      {
+                        "id": 5,
+                        "text": "the chickens.",
+                        "role": "宾语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 6,
+                        "text": "the ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 5,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 7,
+                        "text": "chickens",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 5,
+                        "note": "名词短语的中心"
+                      }
+                    ],
+                    "explanation": [
+                      "The farmer 是主语，the chickens 是 feeds 的宾语。",
+                      "一般现在时可描述经常性行为；单数主语搭配 feeds。",
+                      "farmer 是单数名词，chickens 是规则复数名词。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.003",
@@ -42,7 +180,92 @@
                   "keywords": [
                     "bicycle",
                     "gate"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 地点状语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "A bicycle ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "A ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "bicycle",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "stood ",
+                        "role": "谓语",
+                        "type": "动词过去式",
+                        "parent": 0,
+                        "note": "一般过去时，主动语态"
+                      },
+                      {
+                        "id": 5,
+                        "text": "beside the gate.",
+                        "role": "状语",
+                        "type": "介词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 6,
+                        "text": "beside ",
+                        "role": "其他",
+                        "type": "介词",
+                        "parent": 5,
+                        "note": "引出介词宾语"
+                      },
+                      {
+                        "id": 7,
+                        "text": "the gate.",
+                        "role": "宾语",
+                        "type": "介词宾语（名词短语）",
+                        "parent": 5,
+                        "note": "介词的宾语"
+                      },
+                      {
+                        "id": 8,
+                        "text": "the ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 7,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 9,
+                        "text": "gate",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 7,
+                        "note": "名词短语的中心"
+                      }
+                    ],
+                    "explanation": [
+                      "A bicycle 是主语，stood 是谓语，此处表示位于或停放。",
+                      "stood 是 stand 的过去式，本句没有直接宾语。",
+                      "beside the gate 是地点状语，其中 the gate 是介词 beside 的宾语。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.004",
@@ -51,7 +274,60 @@
                   "keywords": [
                     "daughter",
                     "music"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 宾语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "Her daughter ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "Her ",
+                        "role": "定语",
+                        "type": "物主限定词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "daughter",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "loves ",
+                        "role": "谓语",
+                        "type": "动词第三人称单数形式",
+                        "parent": 0,
+                        "note": "一般现在时，主动语态"
+                      },
+                      {
+                        "id": 5,
+                        "text": "music.",
+                        "role": "宾语",
+                        "type": "不可数名词",
+                        "parent": 0,
+                        "note": "loves 的宾语"
+                      }
+                    ],
+                    "explanation": [
+                      "Her daughter 是主语，music 是 loves 的宾语。",
+                      "Her 作定语，daughter 是主语短语的中心语。",
+                      "loves 使用一般现在时；泛指音乐的 music 是不可数名词，前面不加冠词。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.005",
@@ -60,7 +336,92 @@
                   "keywords": [
                     "river",
                     "village"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 地点状语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "The river ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "The ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "river",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "flows ",
+                        "role": "谓语",
+                        "type": "动词第三人称单数形式",
+                        "parent": 0,
+                        "note": "一般现在时，主动语态"
+                      },
+                      {
+                        "id": 5,
+                        "text": "through the village.",
+                        "role": "状语",
+                        "type": "介词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 6,
+                        "text": "through ",
+                        "role": "其他",
+                        "type": "介词",
+                        "parent": 5,
+                        "note": "引出介词宾语"
+                      },
+                      {
+                        "id": 7,
+                        "text": "the village.",
+                        "role": "宾语",
+                        "type": "介词宾语（名词短语）",
+                        "parent": 5,
+                        "note": "介词的宾语"
+                      },
+                      {
+                        "id": 8,
+                        "text": "the ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 7,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 9,
+                        "text": "village",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 7,
+                        "note": "名词短语的中心"
+                      }
+                    ],
+                    "explanation": [
+                      "The river 是主语，flows 是谓语，使用一般现在时。",
+                      "through the village 是地点或路径状语，不是 flows 的直接宾语。",
+                      "the village 在介词短语内部作 through 的宾语。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.006",
@@ -69,7 +430,76 @@
                   "keywords": [
                     "neighbor",
                     "bakery"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 宾语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "Our neighbor ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "Our ",
+                        "role": "定语",
+                        "type": "物主限定词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "neighbor",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "owns ",
+                        "role": "谓语",
+                        "type": "动词第三人称单数形式",
+                        "parent": 0,
+                        "note": "一般现在时，主动语态"
+                      },
+                      {
+                        "id": 5,
+                        "text": "a bakery.",
+                        "role": "宾语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 6,
+                        "text": "a ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 5,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 7,
+                        "text": "bakery",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 5,
+                        "note": "名词短语的中心"
+                      }
+                    ],
+                    "explanation": [
+                      "Our neighbor 是主语，a bakery 是 owns 的宾语。",
+                      "owns 描述现在的拥有状态，使用一般现在时。",
+                      "Our 和 a 分别作定语，neighbor 和 bakery 分别是各名词短语的中心语。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.007",
@@ -78,7 +508,92 @@
                   "keywords": [
                     "suitcase",
                     "bed"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 系动词 + 表语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "The suitcase ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "The ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "suitcase",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "is ",
+                        "role": "谓语",
+                        "type": "系动词（一般现在时）",
+                        "parent": 0,
+                        "note": "连接主语与表语"
+                      },
+                      {
+                        "id": 5,
+                        "text": "under the bed.",
+                        "role": "表语",
+                        "type": "介词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 6,
+                        "text": "under ",
+                        "role": "其他",
+                        "type": "介词",
+                        "parent": 5,
+                        "note": "引出介词宾语"
+                      },
+                      {
+                        "id": 7,
+                        "text": "the bed.",
+                        "role": "宾语",
+                        "type": "介词宾语（名词短语）",
+                        "parent": 5,
+                        "note": "介词的宾语"
+                      },
+                      {
+                        "id": 8,
+                        "text": "the ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 7,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 9,
+                        "text": "bed",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 7,
+                        "note": "名词短语的中心"
+                      }
+                    ],
+                    "explanation": [
+                      "The suitcase 是主语，is 是系动词，单独作为谓语。",
+                      "按常见传统教学分析，under the bed 作表语，说明主语的位置；也有教学体系将此类地点成分称为地点状语。",
+                      "the bed 是介词 under 的宾语，不能把它标为整个介词短语的中心语。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.008",
@@ -87,7 +602,76 @@
                   "keywords": [
                     "nurse",
                     "temperature"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 宾语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "A nurse ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "A ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "nurse",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "checked ",
+                        "role": "谓语",
+                        "type": "动词过去式",
+                        "parent": 0,
+                        "note": "一般过去时，主动语态"
+                      },
+                      {
+                        "id": 5,
+                        "text": "my temperature.",
+                        "role": "宾语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 6,
+                        "text": "my ",
+                        "role": "定语",
+                        "type": "物主限定词",
+                        "parent": 5,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 7,
+                        "text": "temperature",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 5,
+                        "note": "名词短语的中心"
+                      }
+                    ],
+                    "explanation": [
+                      "A nurse 是主语，my temperature 是 checked 的宾语。",
+                      "checked 是谓语，使用一般过去时。",
+                      "my 作定语，temperature 是宾语短语的中心语。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.009",
@@ -96,7 +680,76 @@
                   "keywords": [
                     "library",
                     "Sundays"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 时间状语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "The library ",
+                        "role": "主语",
+                        "type": "名词短语",
+                        "parent": 0,
+                        "note": ""
+                      },
+                      {
+                        "id": 2,
+                        "text": "The ",
+                        "role": "定语",
+                        "type": "冠词",
+                        "parent": 1,
+                        "note": "限定名词"
+                      },
+                      {
+                        "id": 3,
+                        "text": "library",
+                        "role": "中心语",
+                        "type": "名词",
+                        "parent": 1,
+                        "note": "名词短语的中心"
+                      },
+                      {
+                        "id": 4,
+                        "text": "closes ",
+                        "role": "谓语",
+                        "type": "动词第三人称单数形式",
+                        "parent": 0,
+                        "note": "一般现在时，主动形式"
+                      },
+                      {
+                        "id": 5,
+                        "text": "on Sundays.",
+                        "role": "状语",
+                        "type": "介词短语",
+                        "parent": 0,
+                        "note": "表示每逢星期日"
+                      },
+                      {
+                        "id": 6,
+                        "text": "on ",
+                        "role": "其他",
+                        "type": "介词",
+                        "parent": 5,
+                        "note": "引出时间"
+                      },
+                      {
+                        "id": 7,
+                        "text": "Sundays",
+                        "role": "宾语",
+                        "type": "介词宾语（复数名词）",
+                        "parent": 5,
+                        "note": "表示每个星期日"
+                      }
+                    ],
+                    "explanation": [
+                      "The library 是主语，closes 是不及物动词用法，本句没有直接宾语。",
+                      "一般现在时表示规律性安排，closes 与单数主语一致。",
+                      "on Sundays 作时间状语，Sundays 是介词 on 的宾语。"
+                    ]
+                  }
                 },
                 {
                   "id": "words.classes.noun.010",
@@ -105,7 +758,76 @@
                   "keywords": [
                     "Friendship",
                     "money"
-                  ]
+                  ],
+                  "grammarAnalysis": {
+                    "schemaVersion": 2,
+                    "convention": "traditional-school/8",
+                    "status": "complete",
+                    "pattern": "主语 + 谓语 + 比较状语",
+                    "nodes": [
+                      {
+                        "id": 1,
+                        "text": "Friendship ",
+                        "role": "主语",
+                        "type": "抽象名词",
+                        "parent": 0,
+                        "note": "泛指友谊"
+                      },
+                      {
+                        "id": 2,
+                        "text": "matters ",
+                        "role": "谓语",
+                        "type": "动词第三人称单数形式",
+                        "parent": 0,
+                        "note": "一般现在时，表示重要"
+                      },
+                      {
+                        "id": 3,
+                        "text": "more than money.",
+                        "role": "状语",
+                        "type": "比较结构（副词短语）",
+                        "parent": 0,
+                        "note": "说明重要程度的比较"
+                      },
+                      {
+                        "id": 4,
+                        "text": "more ",
+                        "role": "中心语",
+                        "type": "副词比较级",
+                        "parent": 3,
+                        "note": "修饰 matters 的程度"
+                      },
+                      {
+                        "id": 5,
+                        "text": "than money.",
+                        "role": "状语",
+                        "type": "比较介词短语",
+                        "parent": 3,
+                        "note": "引出比较对象"
+                      },
+                      {
+                        "id": 6,
+                        "text": "than ",
+                        "role": "其他",
+                        "type": "介词",
+                        "parent": 5,
+                        "note": "此处按介词分析"
+                      },
+                      {
+                        "id": 7,
+                        "text": "money",
+                        "role": "宾语",
+                        "type": "介词宾语（不可数名词）",
+                        "parent": 5,
+                        "note": "than 的宾语"
+                      }
+                    ],
+                    "explanation": [
+                      "Friendship 是主语，matters 是谓语，表示具有重要性，不是名词复数。",
+                      "more than money 作比较状语；money 不是 matters 的直接宾语。",
+                      "此处将 than 按介词处理，money 作其宾语；也可从省略比较从句的角度理解。"
+                    ]
+                  }
                 }
               ]
             },

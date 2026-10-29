@@ -4134,6 +4134,22 @@
       font-weight: 600;
     }
 
+    .target .target-grammar-keyword {
+      font-weight: 600;
+    }
+
+    .target .pending.target-grammar-keyword,
+    .target .covered-word.peek-word.target-grammar-keyword {
+      color: #a84408;
+    }
+
+    body[data-theme="gray"] .target .pending.target-grammar-keyword,
+    body[data-theme="black"] .target .pending.target-grammar-keyword,
+    body[data-theme="gray"] .target .covered-word.peek-word.target-grammar-keyword,
+    body[data-theme="black"] .target .covered-word.peek-word.target-grammar-keyword {
+      color: #ffad66;
+    }
+
     body[data-theme="gray"] .grammar-library-keyword,
     body[data-theme="black"] .grammar-library-keyword {
       color: #ffad66;
@@ -6073,6 +6089,10 @@
       gap: 4px;
     }
 
+    .target .translation-prompt.has-content-toggle:not(.translation-editor) {
+      padding-right: 160px;
+    }
+
     /* 中译 / 英译 and 编辑 share the 75px star column (non-English learning languages). */
     .translation-prompt.has-language-toggle .translation-actions .translation-edit-button {
       padding-left: 4px;
@@ -6220,9 +6240,11 @@
       .translation-prompt { font-size: 12px; min-height: 48px; gap: 5px; padding-right: 4px; align-items: center; }
       /* Phone: no 编辑 button on the translation; press and hold the text to edit. */
       .translation-prompt:not(.translation-editor) .translation-edit-button { display: none; }
+      .translation-prompt:not(.translation-editor) .translation-content-toggle { display: inline-flex; }
       .translation-prompt:not(.translation-editor) > span { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
       /* Narrow screens: the edit button sits right after the translation (5px gap) instead of in the reserved star column. */
       .target .translation-prompt:not(.translation-editor),
+      .target .translation-prompt.has-content-toggle:not(.translation-editor),
       .long-text-target .long-text-item .translation-prompt:not(.translation-editor) { padding-right: 4px; }
       .target .translation-prompt:not(.translation-editor) > .translation-actions,
       .long-text-target .long-text-item .translation-prompt:not(.translation-editor) > .translation-actions { position: static; transform: none; }

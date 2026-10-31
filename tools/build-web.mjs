@@ -7,6 +7,8 @@ const DIST = path.join(ROOT, "dist");
 
 const runtimePaths = [
   "index.html",
+  "manifest.webmanifest",
+  "sw.js",
   "src",
   "assets/materials",
   "assets/audio",

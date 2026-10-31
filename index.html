@@ -4,6 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <title>langLSRW</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#3f7f58">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="langLSRW">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="icon" type="image/png" href="src/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="src/icons/apple-touch-icon.png">
   <!-- Page content stays hidden until the user's own settings (theme, fonts) are applied, so the default look never flashes. -->
   <style>html.is-booting body > * { visibility: hidden; }</style>
   <link rel="stylesheet" href="src/styles.css?v=20261031-1">
@@ -848,5 +856,6 @@
   <script src="src/languages/es/dictionary.js?v=20260928-2"></script>
   <script src="src/user-data.js?v=20260928-5"></script>
   <script src="src/app.js?v=20261031-1"></script>
+  <script>if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function () {});</script>
 </body>
 </html>

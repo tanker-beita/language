@@ -32,9 +32,19 @@ categories[]                  大类
 
 数组顺序就是显示顺序。名称中不重复存编号；网页组合序号与名称，例如 `1：词语短语`、`1-1：词类与构词`、`1-1-1：名词表示人或事物`。编号使用连字符分层、中文冒号分隔名称。文本快照使用相同格式。
 
+## 完成进度
+
+特殊句式整类阅读版见 `docs/GRAMMAR_ANALYSIS_SPECIAL.md`。全部1,200句已有分析数据，其中1,077句标为完整分析，123句保留明确的格式限制；不等同于所有句子的语法关系均已由现有格式完整表达。
+
+并列从句整类阅读版见 `docs/GRAMMAR_ANALYSIS_CLAUSES.md`。
+
+句子类型整类阅读版见 `docs/GRAMMAR_ANALYSIS_SENTENCE_TYPES.md`。
+
+词语短语300句、句子结构140句、动词形式300句、句子类型100句、并列从句180句、特殊句式180句均已有分析，六大类分析已全部完成。下一步是复核分析质量并改进格式限制。动词形式完整阅读版见 `docs/GRAMMAR_ANALYSIS_VERBS.md`。
+
 ## 手动添加与修改
 
-当前只为原顺序前 10 句添加了 `grammarAnalysis` 样例，采用网页当前 `schemaVersion: 2`、`convention: "traditional-school/8"` 的完整格式。加载器把它转换为现有练习页使用的 `grammar` 字符串，进入练习后点击“AI语法分析”即可使用已有结果，无需重复请求 API。其他 1,190 句尚未生成分析。可读样例见 `docs/GRAMMAR_ANALYSIS_SAMPLE_10.md`。这批由 Codex 按现有提示规范分析，未调用用户配置的 API。
+当前已为原顺序全部 1,200 句添加了 `grammarAnalysis` 分析（本次完成“特殊句式”，新增第1021–1200句，共180句），采用网页当前 `schemaVersion: 2`、`convention: "traditional-school/8"` 的完整格式。加载器把它转换为现有练习页使用的 `grammar` 字符串，进入练习后点击“AI语法分析”即可使用已有结果，无需重复请求 API。全部例句均已有分析。可读分析见 `docs/GRAMMAR_ANALYSIS_FIRST_100.md` 、`docs/GRAMMAR_ANALYSIS_101_200.md` 、`docs/GRAMMAR_ANALYSIS_201_300.md` 、`docs/GRAMMAR_ANALYSIS_301_400.md` 和 `docs/GRAMMAR_ANALYSIS_401_500.md`。累计 123 句为 `partial`：113句涉及不连续谓语，10句强调句涉及构式关联表达限制，具体说明保存在各句解释中；其余1,077句为 `complete`。这批由 Codex 按现有提示规范分析，未调用用户配置的 API。
 
 1. 用支持 UTF-8 的文本编辑器修改 JSON；不要在 JSON 中加注释或末尾逗号。
 2. 当前是研发阶段，名称、内容和 ID 都允许调整，不要求保留旧 ID。每个 ID 在当前文件中必须唯一；网页练习位置按 ID 记录，重新编号后旧位置可能无法恢复。

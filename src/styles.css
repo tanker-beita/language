@@ -3968,6 +3968,14 @@
       display: none;
     }
 
+    .channel-library-panel .channel-select {
+      flex: 0 0 auto;
+      height: 26px;
+      min-height: 26px;
+      padding: 1px 6px;
+      font-size: 13px;
+    }
+
     .grammar-library-panel.library-settings-panel:not([hidden]) {
       grid-template-rows: auto auto auto minmax(0, 1fr) auto;
       align-content: stretch;
@@ -4042,12 +4050,14 @@
         box-shadow: 0 4px 12px color-mix(in srgb, var(--ink) 15%, transparent);
       }
 
-      #grammarPointSelect::picker(select) {
+      #grammarPointSelect::picker(select),
+      #channelTopicSelect::picker(select) {
         max-height: min(600px, calc(100dvh - 80px));
         scrollbar-width: none;
       }
 
-      #grammarPointSelect::picker(select)::-webkit-scrollbar {
+      #grammarPointSelect::picker(select)::-webkit-scrollbar,
+      #channelTopicSelect::picker(select)::-webkit-scrollbar {
         display: none;
       }
 
@@ -4058,7 +4068,9 @@
       }
 
       #grammarSubcategorySelect option.grammar-category-divider,
-      #grammarPointSelect option.grammar-subcategory-divider {
+      #grammarPointSelect option.grammar-subcategory-divider,
+      #channelSceneSelect option.grammar-category-divider,
+      #channelTopicSelect option.grammar-subcategory-divider {
         border-top: 1px solid color-mix(in srgb, var(--ink) 28%, transparent);
       }
 
@@ -6433,9 +6445,9 @@
       #libraryModal .grammar-library-panel .library-summary { gap: 8px; align-items: center; }
       #libraryModal .grammar-library-panel .library-title-line { flex: 1; min-width: 0; gap: 5px; flex-wrap: nowrap; }
       #libraryModal .grammar-library-panel h3 { font-size: 16px; }
-      #libraryModal #grammarLibraryMeta { display: none; }
-      #libraryModal #grammarLibraryMobileMeta { display: inline; font-size: 11px; line-height: 1.4; white-space: nowrap; }
-      #libraryModal #useGrammarLibraryBtn {
+      #libraryModal :is(#grammarLibraryMeta, #channelLibraryMeta) { display: none; }
+      #libraryModal :is(#grammarLibraryMobileMeta, #channelLibraryMobileMeta) { display: inline; font-size: 11px; line-height: 1.4; white-space: nowrap; }
+      #libraryModal :is(#useGrammarLibraryBtn, #useChannelLibraryBtn) {
         flex: 0 0 auto;
         min-height: 30px;
         padding: 4px 8px;
@@ -6444,10 +6456,10 @@
       }
       #libraryModal .grammar-library-filters { display: none; }
       #libraryModal .grammar-mobile-classification { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px; font-size: 12px; }
-      #libraryModal #grammarMobileClassBtn { min-width: 0; width: 100%; min-height: 22px; height: 22px; padding: 0 6px; font-size: 12px; line-height: 1; text-align: left; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; background: var(--panel); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; }
-      #libraryModal .grammar-library-filters:has(#grammarCategorySelect:is(:focus, :open)) { grid-template-columns: 2fr 1fr 1fr; }
-      #libraryModal .grammar-library-filters:has(#grammarSubcategorySelect:is(:focus, :open)) { grid-template-columns: 1fr 2fr 1fr; }
-      #libraryModal .grammar-library-filters:has(#grammarPointSelect:is(:focus, :open)) { grid-template-columns: 1fr 1fr 2fr; }
+      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn) { min-width: 0; width: 100%; min-height: 22px; height: 22px; padding: 0 6px; font-size: 12px; line-height: 1; text-align: left; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; background: var(--panel); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; }
+      #libraryModal .grammar-library-filters:has(:is(#grammarCategorySelect, #channelSituationSelect):is(:focus, :open)) { grid-template-columns: 2fr 1fr 1fr; }
+      #libraryModal .grammar-library-filters:has(:is(#grammarSubcategorySelect, #channelSceneSelect):is(:focus, :open)) { grid-template-columns: 1fr 2fr 1fr; }
+      #libraryModal .grammar-library-filters:has(:is(#grammarPointSelect, #channelTopicSelect):is(:focus, :open)) { grid-template-columns: 1fr 1fr 2fr; }
       #libraryModal .grammar-library-filters label { display: grid; min-width: 0; grid-template-columns: auto minmax(0, 1fr); gap: 3px; font-size: 11px; }
       #libraryModal .grammar-library-filters label + label > span { margin-left: 0; }
       #libraryModal .grammar-library-filters select { height: 26px; min-height: 26px; padding: 1px 4px; gap: 2px; font-size: 12px; white-space: nowrap; overflow: hidden; }
@@ -6467,7 +6479,7 @@
     @media (min-width: 701px) and (max-width: 900px) and (max-height: 500px) {
       #libraryModal .grammar-library-filters { gap: 8px; }
       #libraryModal .grammar-library-search-row { grid-template-columns: auto minmax(0, 1fr); gap: 5px; }
-      #libraryModal #grammarLibraryMeta { flex-basis: auto; }
+      #libraryModal :is(#grammarLibraryMeta, #channelLibraryMeta) { flex-basis: auto; }
       #libraryModal .grammar-library-panel .library-title-line { gap: 6px; }
     }
 

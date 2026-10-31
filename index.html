@@ -6,7 +6,7 @@
   <title>langLSRW</title>
   <!-- Page content stays hidden until the user's own settings (theme, fonts) are applied, so the default look never flashes. -->
   <style>html.is-booting body > * { visibility: hidden; }</style>
-  <link rel="stylesheet" href="src/styles.css?v=20261027-2">
+  <link rel="stylesheet" href="src/styles.css?v=20261031-1">
 
 </head>
 <body data-theme="eye" data-active-page="listenPage">
@@ -283,7 +283,7 @@
           <button id="commonLibraryTabBtn" class="library-type-button is-active" type="button" aria-current="true">常用句库</button>
           <button id="grammarLibraryTabBtn" class="library-type-button" type="button" aria-current="false" title="按语法分类浏览英语例句，并选择内容练习">语法句库</button>
           <button id="audioLibraryTabBtn" class="library-type-button" type="button" aria-current="false" title="管理音频 + 字幕材料，每句播放原声">音频字幕</button>
-          <button class="library-type-button" type="button" disabled>情景句库</button>
+          <button id="channelLibraryTabBtn" class="library-type-button" type="button" aria-current="false" title="按频道、情景、场景和话题浏览英语例句，并选择内容练习">频道句库</button>
           <button class="library-type-button" type="button" disabled>等级句库</button>
           <button class="library-type-button" type="button" disabled>短语句库</button>
         </aside>
@@ -326,6 +326,23 @@
           </label>
           <div id="grammarLibraryList" class="library-sentence-list" aria-label="语法例句"></div>
           <div class="grammar-library-footer"><span id="grammarLibraryStatus" class="library-status" aria-live="polite">尚未加载</span><button id="retryGrammarLibraryBtn" type="button" hidden title="重新读取语法句库文件">重新加载</button></div>
+        </section>
+        <section id="channelLibraryPanel" class="grammar-library-panel channel-library-panel library-settings-panel" hidden>
+          <div class="library-summary">
+            <div class="library-title-line"><h3>英语频道句库</h3><select id="channelSelect" class="channel-select" disabled title="选择频道；每个频道按情景、场景、话题分类"><option value="">频道</option></select><span id="channelLibraryMeta" class="small-note">正在读取频道句库…</span><span id="channelLibraryMobileMeta" class="small-note" hidden></span></div>
+            <button id="useChannelLibraryBtn" class="primary" type="button" disabled title="把当前筛选结果载入听写与口说练习">练习当前结果</button>
+          </div>
+          <div class="grammar-mobile-classification"><span>分类：</span><button id="channelMobileClassBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="channelMobileClassMenu" title="展开情景、场景和话题；点击母项展开子项，选择全部或具体话题进行筛选">全部分类 ▾</button></div>
+          <div class="grammar-library-filters">
+            <label><span>情景</span><select id="channelSituationSelect" title="按情景筛选，例如饮食、购物"><option value="">全部情景</option></select></label>
+            <label><span>场景</span><select id="channelSceneSelect" title="按场景筛选，例如餐厅点餐"><option value="">全部场景</option></select></label>
+            <label><span>话题</span><select id="channelTopicSelect" title="选择一个具体话题，例如结账与小费"><option value="">全部话题</option></select></label>
+          </div>
+          <label class="grammar-library-search-row" for="channelLibrarySearch"><span class="grammar-search-label-full">搜索 (分类/话题/英文/中文)：</span><span class="grammar-search-label-mobile" hidden>搜索：</span>
+            <input id="channelLibrarySearch" class="library-search" type="search" autocomplete="off" placeholder="例如：点餐、问路、menu" title="搜索情景、场景、话题名称、中英文例句或例句 ID">
+          </label>
+          <div id="channelLibraryList" class="library-sentence-list" aria-label="频道例句"></div>
+          <div class="grammar-library-footer"><span id="channelLibraryStatus" class="library-status" aria-live="polite">尚未加载</span><button id="retryChannelLibraryBtn" type="button" hidden title="重新读取频道句库文件">重新加载</button></div>
         </section>
         <section id="librarySettingsPanel" class="library-settings-panel" hidden>
           <div>
@@ -821,13 +838,15 @@
   <script src="src/auth/supabase-auth-service.js?v=20260925-1"></script>
   <script src="src/generated/grammar-prompt.js?v=20260921-10"></script>
   <script src="src/library.js?v=20260923-1"></script>
-  <script src="src/grammar-library.js?v=20261030-1"></script>
+  <script src="src/tree-library.js?v=20261031-1"></script>
+  <script src="src/grammar-library.js?v=20261031-2"></script>
+  <script src="src/channel-library.js?v=20261031-3"></script>
   <script src="src/dictionary/dictionary-service.js?v=20261021-3"></script>
   <script src="src/languages/en/text.js?v=20260928-2"></script>
   <script src="src/languages/es/text.js?v=20260928-2"></script>
   <script src="src/languages/en/dictionary.js?v=20260928-2"></script>
   <script src="src/languages/es/dictionary.js?v=20260928-2"></script>
   <script src="src/user-data.js?v=20260928-5"></script>
-  <script src="src/app.js?v=20261030-2"></script>
+  <script src="src/app.js?v=20261031-1"></script>
 </body>
 </html>

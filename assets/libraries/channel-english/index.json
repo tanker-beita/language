@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "english-channel",
+  "title": "频道句库",
+  "description": "按频道分类的英语例句。层级固定为 频道 → 情景 → 场景 → 话题，每个频道一个数据文件；新增频道只需加文件并在 channels 中登记，新增例句只需在话题的 examples 末尾按编号追加。",
+  "language": "en",
+  "translationLanguage": "zh",
+  "levels": [
+    "频道",
+    "情景",
+    "场景",
+    "话题"
+  ],
+  "channels": [
+    {
+      "id": "daily",
+      "name": "日常",
+      "file": "daily.json",
+      "status": "test",
+      "description": "日常生活中的常用口语句子，按情景、场景、话题分类。"
+    }
+  ]
+}

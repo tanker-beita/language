@@ -3207,6 +3207,9 @@ const fallbackSentences = [
       const nextTheme = themeMap[theme] || theme;
       state.theme = themes.some((item) => item.id === nextTheme) ? nextTheme : "eye";
       document.body.dataset.theme = state.theme;
+      // The installed app's title bar follows the page background of the current theme.
+      const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeColorMeta) themeColorMeta.content = getComputedStyle(document.body).backgroundColor;
       // Browser cache of the last shown theme, read by index.html before the page renders so opening the page does
       // not flash another background; the identity's theme setting stays authoritative.
       try {

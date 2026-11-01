@@ -23,7 +23,8 @@ const NETWORK_TIMEOUT_MS = 4000;
 async function networkFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
   const findCached = async () => await cache.match(request) || await cache.match(request, { ignoreSearch: true });
-  const fetching = fetch(request).then((response) => {
+  // no-cache: always revalidate with the server, so the browser's HTTP cache cannot hand back an old page.
+  const fetching = fetch(request, { cache: "no-cache" }).then((response) => {
     if (response.status === 200) cache.put(request, response.clone());
     return response;
   });

@@ -47,6 +47,10 @@
       --warn: #b45309;
       --bad: #b91c1c;
       --ring: rgba(37, 99, 235, 0.22);
+      /* Ordinary buttons, selects and inputs: background, border and hover border follow the theme. */
+      --control-bg: #ffffff;
+      --control-border: #d1d5db;
+      --control-border-hover: #9ca3af;
       --font-english-content: "Segoe UI", Arial, sans-serif;
       --font-translation: "Microsoft YaHei", "PingFang SC", sans-serif;
       --grammar-subject-color: #ef4444;
@@ -78,8 +82,8 @@
     }
 
     button {
-      border: 1px solid #d1d5db;
-      background: #fff;
+      border: 1px solid var(--control-border);
+      background: var(--control-bg);
       color: var(--ink);
       min-height: 34px;
       border-radius: 8px;
@@ -88,7 +92,44 @@
     }
 
     button:hover {
-      border-color: #9ca3af;
+      border-color: var(--control-border-hover);
+    }
+
+    /* Touch screens: no blue tap flash. A pressed button sinks quickly and springs back on release (the separate
+       scale property leaves each control's own transform alone); wide menu rows and library sentences fade in a
+       tint instead. The transition list covers every property the buttons' own transitions animate, so it may
+       override them (!important) and every button gets the same press. */
+    html {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (hover: none) {
+      :is(button, summary) {
+        transition: scale 260ms cubic-bezier(0.34, 1.56, 0.64, 1), filter 200ms ease, background-color 160ms ease,
+          border-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease !important;
+      }
+
+      :is(button, summary):not(:disabled):active {
+        scale: 0.95;
+        filter: brightness(0.94);
+        transition-duration: 80ms !important;
+      }
+
+      :is(.grammar-class-menu button, .learning-filter-menu button, .quick-lookup-option):not(:disabled):active {
+        scale: none;
+        filter: none;
+        background: color-mix(in srgb, var(--accent) 16%, var(--panel));
+      }
+
+      .library-sentence-english {
+        transition: background-color 200ms ease;
+      }
+
+      .library-sentence-english:active {
+        border-radius: 4px;
+        background: color-mix(in srgb, var(--accent) 16%, transparent);
+        transition-duration: 60ms;
+      }
     }
 
     button.primary {
@@ -111,10 +152,9 @@
     }
 
     #analyzeGrammarBtn.has-cache {
-      border-color: var(--good);
-      background: color-mix(in srgb, var(--good) 16%, var(--panel));
-      color: var(--good);
-      box-shadow: 0 0 0 2px color-mix(in srgb, var(--good) 22%, transparent);
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 14%, var(--control-bg));
+      color: var(--accent);
     }
 
     .grammar-context-menu {
@@ -1141,6 +1181,39 @@
       transform: translateY(-1px);
     }
 
+    /* 设置 → 外观 → 顶栏按钮: all top-bar buttons look alike, glass (default) or solid. Theme rules for ordinary
+       buttons would otherwise give only some of them a solid fill. */
+    body .topbar .toolbar > button {
+      border-color: rgba(148, 163, 184, 0.28);
+      background: rgba(255, 255, 255, 0.07);
+      color: #f8fafc;
+    }
+
+    body .topbar .toolbar > button:hover {
+      border-color: rgba(147, 197, 253, 0.55);
+      background: rgba(96, 165, 250, 0.18);
+    }
+
+    body[data-topbar-buttons="solid"] .topbar :is(.toolbar > button, .user-menu > summary) {
+      border-color: #d1d5db;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    body[data-topbar-buttons="solid"][data-theme="gray"] .topbar :is(.toolbar > button, .user-menu > summary) {
+      border-color: #3a3a3a;
+      background: #242424;
+    }
+
+    body[data-topbar-buttons="solid"][data-theme="black"] .topbar :is(.toolbar > button, .user-menu > summary) {
+      border-color: #262626;
+      background: #161616;
+    }
+
+    body[data-topbar-buttons="solid"] .topbar :is(.toolbar > button, .user-menu > summary):hover {
+      border-color: #9ca3af;
+    }
+
     .source-menu,
     .font-menu,
     .user-menu,
@@ -1321,11 +1394,11 @@
       display: inline-flex;
       align-items: center;
       min-height: 38px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--control-border);
       border-radius: 999px;
-      background: #fff;
+      background: var(--control-bg);
       padding: 0 12px;
-      color: #374151;
+      color: var(--ink);
       font-size: 14px;
     }
 
@@ -1427,8 +1500,8 @@
       color: var(--ink);
       font-size: 12px;
       height: 24px;
-      background: #fff;
-      border: 1px solid #d1d5db;
+      background-color: var(--control-bg);
+      border: 1px solid var(--control-border);
       border-radius: 6px;
       padding: 0 22px 0 6px;
       line-height: 1;
@@ -1447,11 +1520,6 @@
     #currentLibrarySelect {
       margin-left: -6px;
       padding: 0 14px 0 6px;
-    }
-
-    #currentLibrarySelect.has-unavailable-libraries {
-      border-color: color-mix(in srgb, var(--warn) 45%, #d1d5db);
-      background: color-mix(in srgb, var(--warn) 8%, var(--panel));
     }
 
     #currentLibrarySelect option {
@@ -1584,9 +1652,9 @@
       min-width: 39px;
       margin-left: -6px;
       padding: 0 1px 0 4px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--control-border);
       border-radius: 6px;
-      background: transparent;
+      background: var(--control-bg);
     }
 
     .speech-rate-label {
@@ -1630,19 +1698,8 @@
       color: var(--accent);
     }
 
-    body[data-theme="gray"] .sentence-tools .speech-rate-control,
-    body[data-theme="black"] .sentence-tools .speech-rate-control {
-      border-color: #3a3a3a;
-      background: transparent;
-    }
-
     body[data-theme="gray"] .sentence-tools .speech-rate-stepper button,
     body[data-theme="black"] .sentence-tools .speech-rate-stepper button {
-      background: transparent;
-    }
-
-    body[data-theme="eye"] .sentence-tools .speech-rate-control {
-      border-color: #d2d7bd;
       background: transparent;
     }
 
@@ -2380,13 +2437,13 @@
       justify-content: center;
       width: 24px;
       min-height: 24px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--control-border);
       border-radius: 999px;
-      background: #fff;
+      background: var(--control-bg);
       cursor: pointer;
       font-weight: 700;
       font-size: 12px;
-      color: #2563eb;
+      color: var(--accent);
     }
 
     .help-popover summary::-webkit-details-marker {
@@ -2804,9 +2861,9 @@
     .shortcut-input {
       width: 100%;
       min-height: 34px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--control-border);
       border-radius: 8px;
-      background: #fff;
+      background: var(--control-bg);
       padding: 6px 8px;
       color: #111827;
       cursor: pointer;
@@ -2837,18 +2894,20 @@
     select, input[type="file"] {
       width: 100%;
       min-height: 38px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--control-border);
       border-radius: 8px;
-      background: #fff;
+      background-color: var(--control-bg);
+      color: var(--ink);
       padding: 6px 8px;
     }
 
     input[type="text"] {
       width: 100%;
       min-height: 38px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--control-border);
       border-radius: 8px;
-      background: #fff;
+      background: var(--control-bg);
+      color: var(--ink);
       padding: 6px 8px;
     }
 
@@ -2892,15 +2951,15 @@
       width: 14px;
       height: 14px;
       flex: 0 0 14px;
-      border: 1px solid #9ca3af;
+      border: 1px solid var(--control-border-hover);
       border-radius: 3px;
-      background: #fff;
+      background: var(--control-bg);
       transform: translateY(0);
     }
 
     .check-row input:checked + span::before {
-      border-color: #2563eb;
-      background: #2563eb;
+      border-color: var(--accent);
+      background: var(--accent);
     }
 
     .check-row input:checked + span::after {
@@ -3548,9 +3607,9 @@
       min-height: 22px;
       height: 22px;
       padding: 0 12px 0 4px;
-      border-color: color-mix(in srgb, var(--ink) 18%, transparent);
+      border-color: var(--control-border);
       border-radius: 7px;
-      background-color: var(--panel);
+      background-color: var(--control-bg);
       background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
       background-position: calc(100% - 8px) 10px, calc(100% - 4px) 10px;
       background-size: 4px 4px, 4px 4px;
@@ -3571,9 +3630,9 @@
       height: 22px;
       padding: 0 12px 0 4px;
       overflow: hidden;
-      border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+      border: 1px solid var(--control-border);
       border-radius: 7px;
-      background: var(--panel);
+      background: var(--control-bg);
       color: var(--ink);
       font-size: 11px;
       line-height: 20px;
@@ -4024,6 +4083,7 @@
       width: 100%;
       border-color: transparent;
       background: transparent;
+      font-size: 14px;
       text-align: left;
     }
 
@@ -4031,7 +4091,6 @@
       border-color: var(--accent);
       color: var(--accent);
       background: color-mix(in srgb, var(--accent) 10%, transparent);
-      font-weight: 700;
     }
 
     .library-type-button:disabled {
@@ -4058,13 +4117,33 @@
       display: none;
     }
 
+    /* The channel choice is a button with a menu styled like the 分类 menu (channel-library.js); the hidden select keeps
+       the value. The wrapper only matters on phones, where the button moves into the 分类 row. */
+    .channel-select-wrap {
+      display: contents;
+    }
+
     .channel-library-panel .channel-select {
+      display: none;
+    }
+
+    #channelSelectBtn {
       flex: 0 0 auto;
-      width: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
       height: 26px;
       min-height: 26px;
-      padding: 1px 6px;
+      padding: 0 6px;
+      border-radius: 7px;
       font-size: 13px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    #channelSelectBtn .class-button-caret {
+      font-size: 16px;
+      line-height: 1;
     }
 
     .grammar-library-panel.library-settings-panel:not([hidden]) {
@@ -4230,8 +4309,12 @@
       border-top: 1px solid color-mix(in srgb, var(--ink) 28%, transparent);
     }
 
+    /* Groups outside the visible part of the list are not laid out until scrolled near, so showing a library with
+       thousands of sentences stays quick. "auto" remembers each group's real height once it has been shown. */
     .grammar-library-row.library-sentence-row {
       border-bottom: 0;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 240px;
     }
 
     .grammar-library-example {
@@ -4390,6 +4473,7 @@
     }
 
     .library-sentence-english {
+      cursor: pointer;
       font-family: var(--font-english-content);
       color: var(--ink);
     }
@@ -4467,13 +4551,22 @@
         border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
       }
 
-      /* Phones: number | English | ▶ on one line; the Chinese is left out. */
+      /* Phones: number | English | ▶ on one line; the Chinese is left out. Row height matches the grammar and
+         channel libraries (22px ▶ button, no vertical padding). */
       #librarySentenceList .library-sentence-row {
         grid-template-columns: auto minmax(0, 1fr) auto;
         gap: 8px;
         align-items: center;
-        padding: 1px 8px;
+        padding: 0 8px;
+        font-size: 14px;
         line-height: 1.35;
+      }
+
+      #librarySentenceList .user-sentence-load-button {
+        width: 24px;
+        min-width: 24px;
+        height: 22px;
+        min-height: 22px;
       }
 
       #librarySentenceList .library-sentence-id {
@@ -4643,7 +4736,7 @@
       align-items: center;
       box-sizing: border-box;
       min-height: 24px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--control-border);
       border-radius: 999px;
       background: transparent;
       color: var(--muted);
@@ -4654,20 +4747,20 @@
 
     .audio-option-button {
       min-height: 24px;
-      border: 1px solid var(--accent);
+      border: 1px solid var(--control-border);
       border-radius: 6px;
-      background: transparent;
-      color: var(--accent);
+      background: var(--control-bg);
+      color: var(--ink);
       padding: 0 8px;
       font-size: 12px;
       cursor: pointer;
-      transition: background 120ms ease, color 120ms ease;
+      transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
     }
 
     .audio-option-button:hover,
     .audio-option-button:focus-visible {
-      background: var(--accent);
-      color: #fff;
+      border-color: var(--accent);
+      color: var(--accent);
       outline: none;
     }
 
@@ -4677,13 +4770,10 @@
     }
 
     .audio-option-button.is-active {
-      background: var(--accent);
-      color: #fff;
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 14%, var(--control-bg));
+      color: var(--accent);
     }
-
-    /* Mode toggle: only the "录音" state is filled; hover/focus must not look like a state. */
-    #mobileSpeakMode:not(.is-active):hover,
-    #mobileSpeakMode:not(.is-active):focus-visible { background: transparent; color: var(--accent); }
 
     .pitch-compare-chart {
       margin-top: 7px;
@@ -4972,33 +5062,33 @@
       --warn: #fbbf24;
       --bad: #f87171;
       --ring: rgba(96, 165, 250, 0.24);
+      --control-bg: #242424;
+      --control-border: #3a3a3a;
+      --control-border-hover: #686868;
       background: #181818;
     }
 
-    body[data-theme="gray"] button,
-    body[data-theme="gray"] select,
-    body[data-theme="gray"] input[type="file"],
-    body[data-theme="gray"] input[type="text"],
     body[data-theme="gray"] .ai-text-dialog textarea,
     body[data-theme="gray"] .sentence-list,
-    body[data-theme="gray"] .shortcut-input,
     body[data-theme="gray"] .audio-option,
-    body[data-theme="black"] button,
-    body[data-theme="black"] select,
-    body[data-theme="black"] input[type="file"],
-    body[data-theme="black"] input[type="text"],
     body[data-theme="black"] .ai-text-dialog textarea,
     body[data-theme="black"] .sentence-list,
-    body[data-theme="black"] .shortcut-input,
     body[data-theme="black"] .audio-option {
-      border-color: #3a3a3a;
-      background: #242424;
+      border-color: var(--control-border);
+      background-color: var(--control-bg);
       color: var(--ink);
     }
 
-    body[data-theme="gray"] button:hover,
-    body[data-theme="black"] button:hover {
-      border-color: #686868;
+    body:is([data-theme="gray"], [data-theme="black"]) :is(button.primary, .word-review-start):not(:disabled),
+    body:is([data-theme="gray"], [data-theme="black"]) .check-row input:checked + span::before {
+      border-color: #2563eb;
+      background: #2563eb;
+      color: #fff;
+    }
+
+    body:is([data-theme="gray"], [data-theme="black"]) :is(button.primary, .word-review-start):not(:disabled):hover {
+      border-color: #1d4ed8;
+      background: #1d4ed8;
     }
 
     body[data-theme="gray"] .topbar,
@@ -5051,7 +5141,6 @@
 
     body[data-theme="gray"] .counter,
     body[data-theme="gray"] .learned-count,
-    body[data-theme="gray"] .current-library-indicator,
     body[data-theme="gray"] .inline-metrics,
     body[data-theme="gray"] .volume-meter,
     body[data-theme="gray"] .translation-prompt,
@@ -5066,7 +5155,6 @@
     body[data-theme="gray"] .kbd,
     body[data-theme="black"] .counter,
     body[data-theme="black"] .learned-count,
-    body[data-theme="black"] .current-library-indicator,
     body[data-theme="black"] .inline-metrics,
     body[data-theme="black"] .volume-meter,
     body[data-theme="black"] .translation-prompt,
@@ -5159,15 +5247,13 @@
       --warn: #fbbf24;
       --bad: #f87171;
       --ring: rgba(96, 165, 250, 0.22);
+      --control-bg: #161616;
+      --control-border: #262626;
+      --control-border-hover: #686868;
       background: #0b0b0b;
     }
 
-    body[data-theme="black"] button,
-    body[data-theme="black"] select,
-    body[data-theme="black"] input[type="file"],
-    body[data-theme="black"] input[type="text"],
-    body[data-theme="black"] .sentence-list,
-    body[data-theme="black"] .shortcut-input {
+    body[data-theme="black"] .sentence-list {
       border-color: #262626;
       background: #161616;
     }
@@ -5185,7 +5271,6 @@
     body[data-theme="black"] .drop-card,
     body[data-theme="black"] .counter,
     body[data-theme="black"] .learned-count,
-    body[data-theme="black"] .current-library-indicator,
     body[data-theme="black"] .inline-metrics,
     body[data-theme="black"] .translation-prompt,
     body[data-theme="black"] .target-english,
@@ -5232,6 +5317,9 @@
       --warn: #9a6a1f;
       --bad: #b34848;
       --ring: rgba(63, 127, 88, 0.2);
+      --control-bg: #fbfae9;
+      --control-border: #cdd3b6;
+      --control-border-hover: #98a585;
       background: #e8ead2;
     }
 
@@ -5253,7 +5341,6 @@
     body[data-theme="eye"] .sentence-list,
     body[data-theme="eye"] .counter,
     body[data-theme="eye"] .learned-count,
-    body[data-theme="eye"] .current-library-indicator,
     body[data-theme="eye"] .inline-metrics,
     body[data-theme="eye"] .translation-prompt,
     body[data-theme="eye"] .target-english,
@@ -5262,8 +5349,7 @@
     body[data-theme="eye"] .metric,
     body[data-theme="eye"] .error-item,
     body[data-theme="eye"] .history-item,
-    body[data-theme="eye"] .speech-result,
-    body[data-theme="eye"] .audio-option {
+    body[data-theme="eye"] .speech-result {
       border-color: #d2d7bd;
       background: #f7f6e3;
     }
@@ -6579,7 +6665,7 @@
         height: 26px;
         margin: 0;
         padding: 2px 6px;
-        font-size: 14px;
+        font-size: 13px;
         white-space: nowrap;
         text-align: center;
         display: inline-flex;
@@ -6594,10 +6680,12 @@
         color: var(--accent);
         background: color-mix(in srgb, var(--accent) 14%, var(--panel));
       }
-      #libraryModal .grammar-library-panel {
+      /* Every library panel has the same inset and spacing, so the titles line up when switching libraries. */
+      #libraryModal :is(.library-content, .library-settings-panel) {
         padding: 8px;
         gap: 6px;
       }
+      #libraryModal .library-settings-panel h3 { margin: 0; font-size: 14px; line-height: 24px; }
       #libraryModal .grammar-library-panel .library-summary { gap: 8px; align-items: center; }
       #libraryModal .grammar-library-panel .library-title-line { flex: 1; min-width: 0; gap: 5px; flex-wrap: nowrap; }
       #libraryModal .grammar-library-panel h3 { font-size: 16px; }
@@ -6613,30 +6701,60 @@
       #libraryModal .library-summary { row-gap: 6px; }
       #libraryModal .library-summary > .library-title-line { order: 1; flex: 1 1 0; min-width: 0; }
       #libraryModal .library-summary h3 { white-space: nowrap; }
-      #libraryModal .channel-library-panel .channel-select { flex: 0 1 auto; min-width: 0; }
       #libraryModal .library-summary > .primary { order: 2; }
       #libraryModal .library-summary > .grammar-mobile-classification { order: 3; flex-basis: 100%; }
       #libraryModal .library-summary > .grammar-library-search-row { order: 4; flex-basis: 100%; max-width: none; margin-left: 0; }
+      /* Every library's title row is one compact line: small name, small notes, short controls. */
+      #libraryModal .library-summary { row-gap: 4px; }
+      #libraryModal .library-summary .library-title-line { flex-wrap: nowrap; gap: 5px; align-items: center; }
+      #libraryModal .library-summary h3 { flex: none; font-size: 14px; line-height: 1.2; }
+      #libraryModal .library-title-line .small-note { min-width: 0; overflow: hidden; font-size: 11px; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+      #libraryModal .library-summary > :is(#useLibraryBtn, #useGrammarLibraryBtn, #useChannelLibraryBtn) { flex: none; height: 24px; min-height: 24px; padding: 0 8px; font-size: 12px; line-height: 1; white-space: nowrap; }
       #libraryModal .tree-library-body { grid-template-columns: minmax(0, 1fr); }
       #libraryModal .tree-library-tree { display: none; }
       #libraryModal .grammar-mobile-classification { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px; font-size: 12px; }
-      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn) { display: flex; align-items: center; gap: 4px; min-width: 0; width: 100%; min-height: 22px; height: 22px; padding: 0 6px; font-size: 12px; line-height: 1; text-align: left; overflow: hidden; white-space: nowrap; background: var(--panel); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; }
-      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn) > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn, #channelSelectBtn) { display: flex; align-items: center; gap: 4px; min-width: 0; width: 100%; min-height: 22px; height: 22px; padding: 0 6px; font-size: 12px; line-height: 1; text-align: left; overflow: hidden; white-space: nowrap; background: var(--panel); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; }
+      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn, #channelSelectBtn) > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
       #libraryModal .class-button-caret { flex-shrink: 0; font-size: 16px; }
       #libraryModal .grammar-library-search-row { grid-template-columns: auto minmax(0, 1fr); gap: 4px; }
       #libraryModal .grammar-library-search-row > span { font-size: 11px; }
       #libraryModal .grammar-library-search-row .library-search { height: 24px; min-height: 24px; padding-top: 0; padding-bottom: 0; font-size: 12px; }
       /* The search moved into the title row: no 搜索： label, and as tall as 关闭. */
+      /* Phone fonts are wider than the Windows ones; the title and 关闭 keep their size on one line and only the
+         search box gives way. */
       #libraryModal .library-header { gap: 8px; }
-      #libraryModal .library-header-search { flex: 1 1 auto; min-width: 0; }
+      #libraryModal .library-header > div:first-child, #libraryModal #closeLibraryBtn { flex: none; white-space: nowrap; }
+      #libraryModal .library-header-search { flex: 1 1 0; min-width: 0; margin-left: 12px; }
       #libraryModal .library-header-search .grammar-library-search-row { grid-template-columns: minmax(0, 1fr); }
       #libraryModal .library-header-search .grammar-library-search-row > span { display: none; }
       #libraryModal .library-header-search .library-search { width: 100%; height: 28px; min-height: 28px; }
+      /* Libraries on phones have no title row; 句库练习 sits left of 关闭, the library's description in the footer
+         and the channel menu left of the class button (app.js moves them). */
+      #libraryModal .grammar-library-panel .library-title-line,
+      #libraryModal #commonLibraryPanel .library-summary,
+      #libraryModal #audioLibraryPanel > div:has(> h3) { display: none; }
+      #libraryModal .library-header :is(#useLibraryBtn, #useGrammarLibraryBtn, #useChannelLibraryBtn) {
+        flex: none;
+        min-height: 30px;
+        padding: 4px 8px;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      #libraryModal #commonLibraryPanel { grid-template-rows: minmax(0, 1fr) auto; }
+      #libraryModal #libraryMobileMeta { display: inline; font-size: 11px; line-height: 1.4; white-space: nowrap; }
+      #libraryModal .library-pagination #libraryStatus { flex: 1 1 auto; width: auto; min-width: 0; font-size: 11px; }
+      #libraryModal #channelLibraryPanel .grammar-mobile-classification { grid-template-columns: auto auto minmax(0, 1fr); }
+      /* The channel choice is a button and menu like the class button next to it (channel-library.js). */
+      #libraryModal .grammar-mobile-classification .channel-select-wrap { display: flex; min-width: 0; max-width: 140px; }
       #libraryModal .grammar-library-examples { grid-template-columns: minmax(0, 1fr); }
       #libraryModal .grammar-library-heading { padding: 6px 8px; font-size: 12px; line-height: 1.5; }
       #libraryModal .grammar-library-example { gap: 8px; padding: 0 8px; font-size: 14px; line-height: 1.35; }
       #libraryModal .grammar-library-example .user-sentence-load-button { width: 24px; min-width: 24px; height: 22px; min-height: 22px; }
-      #libraryModal .grammar-library-footer { font-size: 11px; }
+      /* Footer reads "357个话题 · 共7228句": the count moved in by app.js, a separator, then the status. */
+      #libraryModal .grammar-library-footer { gap: 0; font-size: 11px; }
+      #libraryModal .grammar-library-footer > .small-note::after { content: " · "; white-space: pre; }
+      #libraryModal .grammar-library-footer > #retryGrammarLibraryBtn,
+      #libraryModal .grammar-library-footer > #retryChannelLibraryBtn { margin-left: 8px; }
     }
 
     @media (min-width: 701px) and (max-width: 900px) and (max-height: 500px) {

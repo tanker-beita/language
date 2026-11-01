@@ -1024,19 +1024,35 @@ const fallbackSentences = [
       closeDictionaryLookup();
     }
 
-    // Phones show the open library's search in the 句库 title row; wider screens keep it in the library's own panel.
-    const librarySearchRows = ["commonLibraryPanel", "grammarLibraryPanel", "channelLibraryPanel"].map((panelId) => {
-      const el = document.querySelector(`#${panelId} .grammar-library-search-row`);
-      return { panelId, el, parent: el.parentNode, next: el.nextSibling };
-    });
+    // Phones rearrange the open library: its search sits in the 句库 title row and each library drops its own title
+    // row — 句库练习 moves next to 关闭, the library's description joins the footer status and the channel menu joins
+    // the 分类 row.
+    // Wider screens keep everything in the library's own panel.
     const libraryPhoneQuery = window.matchMedia("(max-width: 700px), (max-width: 900px) and (max-height: 500px)");
-    function placeLibrarySearch() {
-      librarySearchRows.forEach((item) => {
-        if (libraryPhoneQuery.matches && !$(item.panelId).hidden) $("libraryHeaderSearch").append(item.el);
-        else if (item.el.parentNode !== item.parent) item.parent.insertBefore(item.el, item.next);
+    const libraryPhoneMoves = [
+      ...["commonLibraryPanel", "grammarLibraryPanel", "channelLibraryPanel"].map((panelId) => ({
+        panelId, el: document.querySelector(`#${panelId} .grammar-library-search-row`), place: (el) => $("libraryHeaderSearch").append(el)
+      })),
+      { panelId: "commonLibraryPanel", el: $("useLibraryBtn"), place: (el) => $("closeLibraryBtn").before(el) },
+      { panelId: "commonLibraryPanel", el: $("libraryMobileMeta"), place: (el) => $("libraryStatus").before(el) },
+      { panelId: "audioLibraryPanel", el: $("audioLibraryStatus"), place: (el) => $("audioLibraryPanel").append(el) },
+      { panelId: "grammarLibraryPanel", el: $("useGrammarLibraryBtn"), place: (el) => $("closeLibraryBtn").before(el) },
+      { panelId: "grammarLibraryPanel", el: $("grammarLibraryMobileMeta"), place: (el) => $("grammarLibraryStatus").before(el) },
+      { panelId: "channelLibraryPanel", el: $("useChannelLibraryBtn"), place: (el) => $("closeLibraryBtn").before(el) },
+      { panelId: "channelLibraryPanel", el: $("channelSelect").parentNode, place: (el) => $("channelMobileClassBtn").before(el) },
+      { panelId: "channelLibraryPanel", el: $("channelLibraryMobileMeta"), place: (el) => $("channelLibraryStatus").before(el) }
+    ].map((item) => ({ ...item, parent: item.el.parentNode, next: item.el.nextSibling }));
+    function placeLibraryPhoneControls() {
+      // Put everything back first (last moved first, so each saved neighbour is in place again), then move for phones.
+      [...libraryPhoneMoves].reverse().forEach((item) => {
+        if (item.el.parentNode !== item.parent) item.parent.insertBefore(item.el, item.next);
+      });
+      if (!libraryPhoneQuery.matches) return;
+      libraryPhoneMoves.forEach((item) => {
+        if (!$(item.panelId).hidden) item.place(item.el);
       });
     }
-    libraryPhoneQuery.addEventListener("change", placeLibrarySearch);
+    libraryPhoneQuery.addEventListener("change", placeLibraryPhoneControls);
 
     function setLibraryView(view) {
       closeDictionaryLookup();
@@ -1053,10 +1069,10 @@ const fallbackSentences = [
         $(buttonId).classList.toggle("is-active", name === active);
         $(buttonId).setAttribute("aria-current", String(name === active));
       });
-      placeLibrarySearch();
+      placeLibraryPhoneControls();
       if (active === "audio") renderAudioLibrary();
-      if (active === "grammar") grammarLibrary.open();
-      if (active === "channel") channelLibrary.open();
+      if (active === "grammar") grammarLibrary.open({ reuse: true });
+      if (active === "channel") channelLibrary.open({ reuse: true });
     }
 
     const grammarLibrary = window.langLSRWGrammarLibrary.init({
@@ -1157,7 +1173,7 @@ const fallbackSentences = [
         ? visibleItems.map((item) => `
           <div class="library-sentence-row">
             <span class="library-sentence-id">${escapeHtml(item.id)}</span>
-            <span class="library-sentence-english" title="右键点击单词，打开词典查询">${escapeHtml(item.text)}</span>
+            <span class="library-sentence-english" title="点击朗读整句；右键点击单词，打开词典查询">${escapeHtml(item.text)}</span>
             <span class="library-sentence-translation">${escapeHtml(item.translation)}</span>
             <button class="user-sentence-load-button" type="button" data-load-library-sentence="${escapeHtml(item.id)}" title="加载到听写练习" aria-label="加载到听写练习">▶</button>
           </div>
@@ -1211,8 +1227,8 @@ const fallbackSentences = [
         state.library.items = result.items;
         state.library.fingerprint = textFingerprint(result.items.map((item) => `${item.id}\t${item.text}`).join("\n"));
         state.library.filteredItems = result.items;
-        $("libraryName").textContent = result.manifest.name;
         $("libraryMeta").textContent = `${result.items.length.toLocaleString()} 条 · ${currentLearningLanguage().commonLibraryContent} · v${result.manifest.version}`;
+        $("libraryMobileMeta").textContent = `${currentLearningLanguage().commonLibraryContent} · v${result.manifest.version}`;
         $("useLibraryBtn").disabled = false;
         renderLibraryPage();
       } catch (error) {
@@ -1228,7 +1244,6 @@ const fallbackSentences = [
       clearPeekedWord();
       if (state.speaking.holdActive) scheduleStopSpeakingPractice();
       $("libraryModal").hidden = false;
-      $("libraryModalTitle").textContent = `${currentLearningLanguage().label} · 句库`;
       // The channel library opens first; it is English only, so other languages start from the common library.
       const view = state.learningLanguageId === "en" ? "channel" : "common";
       setLibraryView(view);
@@ -2564,7 +2579,7 @@ const fallbackSentences = [
 
     // Settings belong to the identity (settings records) and are not kept in browser storage. The AI API key is
     // per identity too but stays on this device (localSecrets: never exported or synced).
-    const IDENTITY_SETTING_NAMES = ["theme", "shortcuts", "speech", "fonts", "grammarColors", "dictionaryAutoSpeak", "practice"];
+    const IDENTITY_SETTING_NAMES = ["theme", "shortcuts", "speech", "fonts", "topbarButtons", "grammarColors", "dictionaryAutoSpeak", "practice"];
 
     function persistSetting(name, value) {
       if (!userData.identity) return;
@@ -2579,6 +2594,7 @@ const fallbackSentences = [
         shortcuts: { ...defaultShortcuts },
         speech: {},
         fonts: fontDefaults(),
+        topbarButtons: "glass",
         grammarColors: grammarColorDefaults(),
         dictionaryAutoSpeak: "1",
         practice: {
@@ -2608,6 +2624,7 @@ const fallbackSentences = [
       state.shortcuts = { ...defaultShortcuts, ...(saved("shortcuts") || {}) };
       state.speechSettings = { ...(saved("speech") || {}) };
       applyFontSettings(saved("fonts"), { persist: false });
+      applyTopbarButtonStyle(saved("topbarButtons"), { persist: false });
       applyGrammarColors(saved("grammarColors"), { persist: false });
       state.aiSettings = { ...(saved("ai") || {}), apiKey: String(userData.get("localSecrets", "aiApiKey", "global") || "") };
       loadAiSettings();
@@ -3272,6 +3289,14 @@ const fallbackSentences = [
       applyFontSettings(fontDefaults());
     }
 
+    // 顶栏按钮: glass (light text on a faint fill, part of the dark bar) or solid (like the page's ordinary buttons).
+    function applyTopbarButtonStyle(style, { persist = true } = {}) {
+      const value = style === "solid" ? "solid" : "glass";
+      document.body.dataset.topbarButtons = value;
+      $("topbarButtonStyleSelect").value = value;
+      if (persist) persistSetting("topbarButtons", value);
+    }
+
     const grammarColorLabels = {
       subject: "主语",
       predicate: "谓语",
@@ -3336,6 +3361,7 @@ const fallbackSentences = [
       persistSetting("speech", state.speechSettings);
       applyTheme(defaultSettingValue("theme"));
       applyFontSettings(fontDefaults());
+      applyTopbarButtonStyle(defaultSettingValue("topbarButtons"));
       applyGrammarColors(grammarColorDefaults());
       persistSetting("practice", defaultSettingValue("practice"));
       loadPracticeSettings();
@@ -3347,7 +3373,7 @@ const fallbackSentences = [
 
     async function resetGlobalSettings() {
       const confirmed = await showAppConfirm(
-        "确定恢复默认设置吗？主题、字体、句子成分颜色、快捷键、朗读设置会重置，用户记录和句库不会删除。",
+        "确定恢复默认设置吗？主题、字体、顶栏按钮、句子成分颜色、快捷键、朗读设置会重置，用户记录和句库不会删除。",
         { title: "恢复默认设置" }
       );
       if (!confirmed) return;
@@ -4498,6 +4524,12 @@ ${orderNote}`;
     function closeDictionaryLookup() {
       $("dictionaryLookupPopover").hidden = true;
       closeEnglishLookup();
+      // A phone lookup from a library moved its sentence to the top of the list; put the list back where it was.
+      const saved = state.libraryLookupScroll;
+      if (saved) {
+        state.libraryLookupScroll = null;
+        saved.list.scrollTop = saved.top;
+      }
     }
 
     function dictionarySearchPattern(query, exact = false) {
@@ -9788,6 +9820,12 @@ ${orderNote}`;
     $("libraryModal").addEventListener("pointerdown", (event) => {
       if (event.target === $("libraryModal")) closeLibraryModal();
     });
+    // A click on a sentence in any library list reads the whole sentence; selecting text does not.
+    $("libraryModal").addEventListener("click", (event) => {
+      const sentence = event.target.closest(".library-sentence-english");
+      if (!sentence || !window.getSelection().isCollapsed) return;
+      speakText(sentence.textContent.trim(), { rate: currentReplayRate() });
+    });
     $("libraryModal").addEventListener("contextmenu", (event) => {
       const sentence = event.target.closest(".library-sentence-english");
       if (!sentence) return;
@@ -9795,7 +9833,18 @@ ${orderNote}`;
       if (!hit?.word) return;
       event.preventDefault();
       event.stopPropagation();
-      lookupLearningWord(hit.word, { clientX: event.clientX, avoidRect: hit.rect });
+      let rect = hit.rect;
+      const list = sentence.closest(".library-sentence-list");
+      if (libraryPhoneQuery.matches && list) {
+        // Phones: the sentence first moves to the top row of the list, so the lookup opens below it with room to
+        // spare. The first position is kept across several lookups and restored when the lookup closes.
+        if (!state.libraryLookupScroll || state.libraryLookupScroll.list !== list) state.libraryLookupScroll = { list, top: list.scrollTop };
+        const before = sentence.getBoundingClientRect().top;
+        list.scrollTop += before - list.getBoundingClientRect().top - list.clientTop;
+        const moved = before - sentence.getBoundingClientRect().top;
+        rect = new DOMRect(rect.x, rect.y - moved, rect.width, rect.height);
+      }
+      lookupLearningWord(hit.word, { clientX: event.clientX, avoidRect: rect });
     });
     $("librarySearchInput").addEventListener("input", filterLibrary);
     $("libraryFirstPageBtn").addEventListener("click", () => goToLibraryPage(0));
@@ -10315,6 +10364,7 @@ ${orderNote}`;
     $("englishFontSelect").addEventListener("change", saveFontSettings);
     $("chineseFontSelect").addEventListener("change", saveFontSettings);
     $("resetFontSettingsBtn").addEventListener("click", resetFontSettings);
+    $("topbarButtonStyleSelect").addEventListener("change", (event) => applyTopbarButtonStyle(event.target.value));
     $("grammarColorGrid").addEventListener("pointerdown", (event) => {
       const row = event.target.closest("[data-grammar-color-row]");
       if (row) setActiveGrammarColorRole(row.dataset.grammarColorRow);

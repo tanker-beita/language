@@ -42,6 +42,8 @@
     let rows = [];
     let visible = [];
     let generation = 0;
+    // Whether the shown list was built from loaded English data, so switching back can keep it.
+    let shownLoaded = false;
 
     function unique(items, id, label) {
       return [...new Map(items.map(row => [row[id], row[label]])).entries()];
@@ -253,7 +255,7 @@
         sentence.className = "grammar-library-example";
         const english = document.createElement("span");
         english.className = "library-sentence-english";
-        english.title = "右键点击单词，打开词典查询";
+        english.title = "点击朗读整句；右键点击单词，打开词典查询";
         renderText(row, english);
         sentence.append(english);
         const button = document.createElement("button");
@@ -266,12 +268,17 @@
         sentence.append(button);
         examples.append(sentence);
       });
-      if (enabled) status.textContent = `共 ${rows.length} 句 · 当前 ${visible.length} 句`;
+      // The filtered count only appears while a class or search narrows the list.
+      if (enabled) status.textContent = visible.length === rows.length ? `共${rows.length}句` : `共${rows.length}句 · 当前${visible.length}句`;
       list.scrollTop = 0;
+      shownLoaded = enabled;
     }
     // reset: start from the full list, used when the panel switches to other data such as another channel.
-    async function open({ reset = false } = {}) {
+    // reuse: switching back to this library keeps the list already built (rebuilding thousands of sentences stalls the
+    // page); the data is read again on the next page load.
+    async function open({ reset = false, reuse = false } = {}) {
       closeClassMenu();
+      if (reuse && !reset && shownLoaded && isEnglish()) return;
       const request = ++generation;
       retry.hidden = true;
       if (reset) { Object.assign(chosen, { category: "", subcategory: "", point: "" }); expanded.clear(); search.value = ""; }

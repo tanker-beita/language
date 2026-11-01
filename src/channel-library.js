@@ -110,8 +110,79 @@
     return pending.get(entry.id);
   }
 
+  // The channel choice is a button with a menu styled like the 分类 menu instead of the system list; the hidden select
+  // stays the source of truth, so choosing an entry sets it and fires its change event.
+  function mountChannelMenu(select) {
+    const button = document.getElementById("channelSelectBtn");
+    const menu = document.createElement("div");
+    menu.className = "learning-filter-menu grammar-class-menu";
+    menu.setAttribute("role", "menu");
+    menu.setAttribute("aria-label", "频道");
+    menu.hidden = true;
+    document.body.append(menu);
+    function sync() {
+      button.firstElementChild.textContent = select.selectedOptions[0]?.text || "频道";
+      button.disabled = select.disabled;
+    }
+    function close() {
+      menu.hidden = true;
+      button.setAttribute("aria-expanded", "false");
+    }
+    function show() {
+      const column = document.createElement("div");
+      column.className = "grammar-class-column";
+      column.append(...[...select.options].map(option => {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.setAttribute("role", "menuitem");
+        item.title = option.title || option.text;
+        if (option.selected) item.classList.add("is-current");
+        const text = document.createElement("span");
+        text.textContent = option.text;
+        item.append(text);
+        item.addEventListener("click", () => {
+          close();
+          button.focus();
+          if (select.value === option.value) return;
+          select.value = option.value;
+          select.dispatchEvent(new Event("change"));
+        });
+        return item;
+      }));
+      menu.replaceChildren(column);
+      menu.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+      // Phones: full width like the 分类 menu; wider screens: under the button.
+      const anchor = button.getBoundingClientRect();
+      const narrow = window.matchMedia("(max-width: 640px)").matches;
+      const width = narrow ? window.innerWidth - 16 : Math.min(window.innerWidth - 16, Math.max(180, anchor.width));
+      menu.style.width = `${width}px`;
+      menu.style.gridTemplateColumns = "minmax(0, 1fr)";
+      menu.style.left = `${Math.max(8, Math.min(anchor.left, window.innerWidth - width - 8))}px`;
+      const below = window.innerHeight - anchor.bottom - 8;
+      const above = anchor.top - 8;
+      const upward = below < 180 && above > below;
+      menu.style.maxHeight = `${Math.max(60, Math.min(480, upward ? above : below))}px`;
+      menu.style.top = upward ? "auto" : `${anchor.bottom}px`;
+      menu.style.bottom = upward ? `${window.innerHeight - anchor.top}px` : "auto";
+    }
+    button.addEventListener("click", () => { if (menu.hidden) show(); else close(); });
+    document.addEventListener("pointerdown", event => {
+      if (!menu.contains(event.target) && !button.contains(event.target)) close();
+    });
+    menu.addEventListener("keydown", event => {
+      if (event.key === "Escape") { event.preventDefault(); close(); button.focus(); }
+    });
+    window.addEventListener("resize", close);
+    window.addEventListener("blur", close);
+    document.addEventListener("visibilitychange", close);
+    select.addEventListener("change", sync);
+    return sync;
+  }
+
   function init({ isEnglish, onUse }) {
     const select = document.getElementById("channelSelect");
+    const syncChannelMenu = mountChannelMenu(select);
     const view = window.langLSRWTreeLibrary.mount({
       ids: {
         tree: "channelLibraryTree", search: "channelLibrarySearch", list: "channelLibraryList", use: "useChannelLibraryBtn",
@@ -130,6 +201,7 @@
         }));
         select.value = previous && result.manifest.channels.some(channel => channel.id === previous) ? previous : result.channel.id;
         select.disabled = false;
+        syncChannelMenu();
         const scenes = result.data.situations.flatMap(situation => situation.scenes);
         const topics = scenes.reduce((n, scene) => n + scene.topics.length, 0);
         return {

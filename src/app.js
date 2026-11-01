@@ -101,12 +101,12 @@ const fallbackSentences = [
       { id: "holdSpeaking", label: "按住说话" }
     ];
 
-    // Mouse buttons and phone gestures match: 左键 = 单击, 右键 = 双击, 中键 = 长按.
+    // Mouse buttons and phone gestures match: 左键 = 单击, 右键 = 长按, 中键 = 双击.
     const fixedMouseActions = [
       { label: "朗读所点单词", control: "左键 · 单击", detail: "电脑点鼠标左键，手机单击" },
-      { label: "临时查看隐藏单词", control: "按住中键 · 长按", detail: "电脑按住鼠标中键，手机长按，松开后恢复隐藏" },
-      { label: "查询所点单词", control: "右键 · 双击", detail: "电脑点鼠标右键，手机双击" },
-      { label: "句库：在主页显示所点句子", control: "中键 · 长按", detail: "在句库里，电脑点鼠标中键，手机长按句子" }
+      { label: "临时查看隐藏单词", control: "按住中键 · 双击", detail: "电脑按住鼠标中键，松开后恢复隐藏；手机双击，再点一下屏幕恢复隐藏" },
+      { label: "查询所点单词", control: "右键 · 长按", detail: "电脑点鼠标右键，手机长按" },
+      { label: "句库：在主页显示所点句子", control: "中键 · 双击", detail: "在句库里，电脑点鼠标中键，手机双击句子" }
     ];
 
     // The page is not remembered: every visit starts on 听.
@@ -1030,7 +1030,7 @@ const fallbackSentences = [
     // row — 句库练习 moves next to 关闭, the library's description joins the footer status and the channel menu joins
     // the 分类 row.
     // Wider screens keep everything in the library's own panel.
-    const libraryPhoneQuery = window.matchMedia("(max-width: 700px), (max-width: 900px) and (max-height: 500px)");
+    const libraryPhoneQuery = window.matchMedia("(max-width: 700px), (max-height: 500px) and (pointer: coarse)");
     const libraryPhoneMoves = [
       ...["commonLibraryPanel", "grammarLibraryPanel", "channelLibraryPanel"].map((panelId) => ({
         panelId, el: document.querySelector(`#${panelId} .grammar-library-search-row`), place: (el) => $("libraryHeaderSearch").append(el)
@@ -1163,7 +1163,7 @@ const fallbackSentences = [
       ));
     }
 
-    const LIBRARY_SENTENCE_TITLE = "点击朗读整句；右键点单词查词典；中键点击在主页显示这句（手机：单击、双击单词、长按）";
+    const LIBRARY_SENTENCE_TITLE = "点击朗读整句；右键点单词查词典；中键点击在主页显示这句（手机：单击、长按单词、双击）";
 
     function renderLibraryPage() {
       const library = state.library;
@@ -3134,7 +3134,7 @@ const fallbackSentences = [
       }
       learningFilterMenu.ownerSelect = select;
       learningFilterMenu.ownerButton = button;
-      learningFilterMenu.classList.toggle("is-tap-menu", window.matchMedia("(max-width: 700px), (max-width: 900px) and (max-height: 500px), (hover: none)").matches);
+      learningFilterMenu.classList.toggle("is-tap-menu", window.matchMedia("(max-width: 700px), (max-height: 500px) and (pointer: coarse), (hover: none)").matches);
       learningFilterMenu.querySelectorAll(".learning-filter-parent").forEach((parent) => {
         parent.classList.remove("is-expanded");
         const trigger = parent.querySelector("button");
@@ -4503,7 +4503,7 @@ ${orderNote}`;
 
     function placeLookupPopover(popover, anchor) {
       const margin = 8;
-      const gap = 0;
+      const gap = anchor?.gap ?? 0;
       const preferredX = anchor?.clientX ?? anchor?.left ?? window.innerWidth / 2;
       const avoidRect = anchor?.avoidRect || anchor;
       const avoidTop = avoidRect?.top ?? anchor?.clientY ?? window.innerHeight / 2;
@@ -4651,7 +4651,7 @@ ${orderNote}`;
     }
 
     function dictionaryLibraryUsesOverlay() {
-      return window.matchMedia("(max-width: 700px), (max-width: 900px) and (max-height: 500px)").matches;
+      return window.matchMedia("(max-width: 700px), (max-height: 500px) and (pointer: coarse)").matches;
     }
 
     function dictionaryLibraryBackButton() {
@@ -9839,40 +9839,47 @@ ${orderNote}`;
         const moved = before - sentence.getBoundingClientRect().top;
         rect = new DOMRect(rect.x, rect.y - moved, rect.width, rect.height);
       }
-      lookupLearningWord(hit.word, { clientX: event.clientX, avoidRect: rect });
+      // A small gap keeps the popover off the sentence in the dense library rows.
+      lookupLearningWord(hit.word, { clientX: event.clientX, avoidRect: rect, gap: 4 });
       return true;
     }
-    // 鼠标中键 / 手机长按 on a sentence shows it on the main page, the same as the ▶ button in its row.
+    // 手机长按: a finger held still for 0.5 s on what pick(event) returns runs run(target, event) before it lifts.
+    // The page times it itself, so every phone feels the same (iPhone Safari never reports a long press to the page).
+    // The browser's own long-press event only blocks the system menu, or runs the hold if it comes first.
+    // hold.touch tells whether the last press was a finger; hold.fired lets the click after a hold be ignored.
+    function onTouchHold(root, pick, run) {
+      const hold = { touch: false, fired: false, timer: 0, start: null };
+      const cancel = () => { clearTimeout(hold.timer); hold.timer = 0; hold.start = null; };
+      const fire = (target, event) => { cancel(); hold.fired = true; run(target, event); };
+      root.addEventListener("pointerdown", (event) => {
+        cancel();
+        hold.touch = event.pointerType === "touch";
+        hold.fired = false;
+        const target = hold.touch ? pick(event) : null;
+        if (!target) return;
+        hold.start = { x: event.clientX, y: event.clientY };
+        hold.timer = setTimeout(() => fire(target, event), 500);
+      });
+      root.addEventListener("pointermove", (event) => {
+        if (hold.start && Math.hypot(event.clientX - hold.start.x, event.clientY - hold.start.y) > 10) cancel();
+      });
+      ["pointerup", "pointercancel"].forEach((name) => root.addEventListener(name, cancel));
+      root.addEventListener("contextmenu", (event) => {
+        const target = hold.touch ? pick(event) : null;
+        if (!target) return;
+        event.preventDefault();
+        if (!hold.fired) fire(target, event);
+      });
+      return hold;
+    }
+
+    // 鼠标中键 / 手机双击 on a sentence shows it on the main page, the same as the ▶ button in its row.
     function showLibrarySentence(sentence) {
       sentence.parentElement.querySelector(".user-sentence-load-button")?.click();
     }
-    let libraryPointerType = "";
-    let libraryHold = null;
-    const cancelLibraryHold = () => {
-      if (libraryHold) clearTimeout(libraryHold.timer);
-      libraryHold = null;
-    };
-    let libraryHoldFired = false;
-    $("libraryModal").addEventListener("pointerdown", (event) => {
-      libraryPointerType = event.pointerType;
-      libraryHoldFired = false;
-      cancelLibraryHold();
-      const sentence = event.target.closest(".library-sentence-english");
-      if (!sentence || event.pointerType !== "touch") return;
-      libraryHold = {
-        x: event.clientX,
-        y: event.clientY,
-        timer: setTimeout(() => {
-          libraryHold = null;
-          libraryHoldFired = true;
-          showLibrarySentence(sentence);
-        }, 500)
-      };
-    });
-    $("libraryModal").addEventListener("pointermove", (event) => {
-      if (libraryHold && Math.hypot(event.clientX - libraryHold.x, event.clientY - libraryHold.y) > 10) cancelLibraryHold();
-    });
-    ["pointerup", "pointercancel"].forEach((name) => $("libraryModal").addEventListener(name, cancelLibraryHold));
+    // 鼠标右键 / 手机长按 looks up the word there.
+    const libraryHold = onTouchHold($("libraryModal"), (event) => event.target.closest?.(".library-sentence-english"),
+      (sentence, event) => lookupLibrarySentenceWord(event, sentence));
     $("libraryModal").addEventListener("mousedown", (event) => {
       // Stops the browser's middle-button auto-scroll on a sentence.
       if (event.button === 1 && event.target.closest(".library-sentence-english")) event.preventDefault();
@@ -9884,33 +9891,28 @@ ${orderNote}`;
       showLibrarySentence(sentence);
     });
     // A click on a sentence in any library list reads the whole sentence; selecting text does not. On phones a quick
-    // second tap at the same place looks up the word there instead of reading again.
+    // second tap at the same place shows the sentence on the main page instead of reading again.
     let libraryTap = null;
     $("libraryModal").addEventListener("click", (event) => {
       const sentence = event.target.closest(".library-sentence-english");
       if (!sentence || !window.getSelection().isCollapsed) return;
-      if (libraryHoldFired) {
-        libraryHoldFired = false;
+      if (libraryHold.fired) {
+        libraryHold.fired = false;
         return;
       }
       const previous = libraryTap;
       libraryTap = { sentence, x: event.clientX, y: event.clientY, time: event.timeStamp };
-      if (libraryPhoneQuery.matches && previous?.sentence === sentence && event.timeStamp - previous.time < 350
+      if (libraryHold.touch && previous?.sentence === sentence && event.timeStamp - previous.time < 350
         && Math.hypot(event.clientX - previous.x, event.clientY - previous.y) < 24) {
         libraryTap = null;
-        lookupLibrarySentenceWord(event, sentence);
+        showLibrarySentence(sentence);
         return;
       }
       speakText(sentence.textContent.trim(), { rate: currentReplayRate() });
     });
     $("libraryModal").addEventListener("contextmenu", (event) => {
       const sentence = event.target.closest(".library-sentence-english");
-      if (!sentence) return;
-      // A phone long press belongs to showing the sentence; it neither looks up nor opens the system menu.
-      if (libraryPointerType === "touch") {
-        event.preventDefault();
-        return;
-      }
+      if (!sentence || libraryHold.touch) return;
       if (!lookupLibrarySentenceWord(event, sentence)) return;
       event.preventDefault();
       event.stopPropagation();
@@ -10009,7 +10011,7 @@ ${orderNote}`;
         { el: $("systemVoiceBtn"), phoneAfter: $("voiceSelect") },
         { el: document.querySelector(".speech-rate-group"), phoneAfter: $("systemVoiceBtn") }
       ].map((item) => ({ ...item, parent: item.el.parentNode, next: item.el.nextSibling }));
-      const phoneQuery = window.matchMedia("(max-width: 700px), (max-width: 900px) and (max-height: 500px)");
+      const phoneQuery = window.matchMedia("(max-width: 700px), (max-height: 500px) and (pointer: coarse)");
       const placeControls = () => {
         if (phoneQuery.matches) placements.forEach((item) => item.phoneAfter.after(item.el));
         else [...placements].reverse().forEach((item) => item.parent.insertBefore(item.el, item.next));
@@ -10092,36 +10094,12 @@ ${orderNote}`;
       }
     });
 
-    // 手机长按 = 按住鼠标中键: holding a hidden word shows it until the finger lifts.
-    let targetPointerType = "";
-    let targetHoldFired = false;
-    {
-      let peek = null;
-      const cancelPeek = () => {
-        if (!peek) return;
-        clearTimeout(peek.timer);
-        if (peek.shown) clearPeekedWord();
-        peek = null;
-      };
-      targetEl.addEventListener("pointerdown", (event) => {
-        targetPointerType = event.pointerType;
-        targetHoldFired = false;
-        cancelPeek();
-        const wordEl = targetWordFromEvent(event);
-        if (event.pointerType !== "touch" || !wordEl || !targetEl.classList.contains("hidden-source")) return;
-        peek = { x: event.clientX, y: event.clientY, shown: false };
-        peek.timer = setTimeout(() => {
-          clearPeekedWord();
-          wordEl.classList.add("peek-word");
-          peek.shown = true;
-          targetHoldFired = true;
-        }, 500);
-      });
-      targetEl.addEventListener("pointermove", (event) => {
-        if (peek && !peek.shown && Math.hypot(event.clientX - peek.x, event.clientY - peek.y) > 10) cancelPeek();
-      });
-      ["pointerup", "pointercancel"].forEach((name) => targetEl.addEventListener(name, cancelPeek));
-    }
+    // 鼠标右键 / 手机长按 looks the word up.
+    const targetHold = onTouchHold(targetEl, targetWordFromEvent, (wordEl, event) => lookupTargetWord(wordEl, event));
+    // A word shown by a phone double tap stays visible until the next touch on the screen.
+    window.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "touch") clearPeekedWord();
+    }, true);
 
     // Touch screens: the 编辑 button is hidden; pressing and holding the translation text opens the editor instead.
     {
@@ -10148,17 +10126,16 @@ ${orderNote}`;
 
     targetEl.addEventListener("contextmenu", (event) => {
       const wordEl = targetWordFromEvent(event);
-      if (!wordEl) return;
+      if (!wordEl || targetHold.touch) return;
       event.preventDefault();
-      // A phone long press peeks instead; a phone looks up with a double tap.
-      if (targetPointerType !== "touch") lookupTargetWord(wordEl, event);
+      lookupTargetWord(wordEl, event);
     });
 
     let targetTap = null;
 
     targetEl.addEventListener("click", (event) => {
-      if (targetHoldFired) {
-        targetHoldFired = false;
+      if (targetHold.fired) {
+        targetHold.fired = false;
         return;
       }
       const sentenceFavorite = event.target.closest("[data-sentence-favorite]");
@@ -10237,15 +10214,18 @@ ${orderNote}`;
       }
 
       // 鼠标左键 / 手机单击 on a word reads it, but not when the click ends a text selection. On phones a quick second
-      // tap on the same word looks it up instead (手机双击 = 鼠标右键).
+      // tap on the same word shows it while the source is hidden (手机双击 = 鼠标中键) instead of reading again.
       if (!String(window.getSelection?.() || "").trim()) {
         const wordEl = targetWordFromEvent(event);
         if (!wordEl) return;
         const previous = targetTap;
         targetTap = { wordEl, time: event.timeStamp };
-        if (targetPointerType === "touch" && previous?.wordEl === wordEl && event.timeStamp - previous.time < 350) {
+        if (targetHold.touch && previous?.wordEl === wordEl && event.timeStamp - previous.time < 350) {
           targetTap = null;
-          lookupTargetWord(wordEl, event);
+          if (targetEl.classList.contains("hidden-source")) {
+            clearPeekedWord();
+            wordEl.classList.add("peek-word");
+          }
           return;
         }
         speakTargetWord(wordEl);

@@ -122,7 +122,20 @@
       }
 
       .library-sentence-english {
+        /* No double-tap zoom: a double tap looks a word up. A long press shows the sentence on the main page, so the
+           system text selection and its menu stay out of the way. */
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
         transition: background-color 200ms ease;
+      }
+
+      .target-word {
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
       }
 
       .library-sentence-english:active {

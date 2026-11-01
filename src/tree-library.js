@@ -255,7 +255,7 @@
         sentence.className = "grammar-library-example";
         const english = document.createElement("span");
         english.className = "library-sentence-english";
-        english.title = "点击朗读整句；右键点击单词，打开词典查询";
+        english.title = "点击朗读整句；右键点单词查词典；中键点击在主页显示这句（手机：单击、双击单词、长按）";
         renderText(row, english);
         sentence.append(english);
         const button = document.createElement("button");

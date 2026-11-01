@@ -22,7 +22,7 @@
     constructor(options = {}) {
       this.packages = options.packages || DICTIONARY_PACKAGES;
       this.activeDictionaryId = options.activeDictionaryId || "ecdict";
-      this.workerUrl = options.workerUrl || "src/dictionary/dictionary-worker.js?v=20261021-3";
+      this.workerUrl = options.workerUrl || "src/dictionary/dictionary-worker.js?v=20261101-4";
       this.worker = null;
       this.sequence = 0;
       this.pending = new Map();
@@ -162,6 +162,10 @@
 
     match(word, limit = 10, strip = false, id = this.activeDictionaryId) {
       return this.call("match", { dictionary: this.workerDictionary(id), word: String(word || "").trim(), limit, strip });
+    }
+
+    async suggest(word, limit = 8, id = this.activeDictionaryId) {
+      return this.call("suggest", { dictionary: this.workerDictionary(id), frequency: await this.frequencyOptions(id), word: String(word || ""), limit });
     }
 
     count(id = this.activeDictionaryId) {

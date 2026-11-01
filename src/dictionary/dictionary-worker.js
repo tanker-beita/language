@@ -154,16 +154,43 @@ function reply(id, result, error) {
   self.postMessage({ id, result, error: error ? String(error.message || error) : undefined });
 }
 
+// The storage pool allows one page at a time, and sqlite deletes the whole pool directory when opening it fails.
+// So a page opens the pool only while holding this Web Lock, which the browser releases when that page closes.
+// Without the lock every call fails with a clear message without touching the files, and the next call asks again,
+// so lookups recover once the other page is closed.
+const POOL_LOCK = "langlsrw-dictionary-pool";
+const POOL_LOCK_WAIT_MS = 2000;
+const POOL_BUSY = "本地词典正被另一个 langLSRW 页面使用，请关闭其他页面后再查询";
+let releasePoolLock;
+
+// Waits briefly, so a reloaded page gets the lock as soon as its previous instance has closed.
+function acquirePoolLock() {
+  return new Promise((resolve) => {
+    navigator.locks.request(POOL_LOCK, { signal: AbortSignal.timeout(POOL_LOCK_WAIT_MS) }, () => new Promise((release) => {
+      releasePoolLock = release;
+      resolve(true);
+    })).catch(() => resolve(false));
+  });
+}
+
 async function initialize() {
-  if (sqlite3) return;
-  sqlite3 = await sqlite3InitModule({
+  if (pool) return;
+  sqlite3 ||= await sqlite3InitModule({
     locateFile: (file) => new URL(`../vendor/sqlite-wasm/${file}`, import.meta.url).href
   });
-  pool = await sqlite3.installOpfsSAHPoolVfs({
-    name: "langlsrw-dictionary",
-    directory: ".langlsrw-dictionary",
-    initialCapacity: 4
-  });
+  if (!releasePoolLock && !await acquirePoolLock()) throw new Error(POOL_BUSY);
+  try {
+    pool = await sqlite3.installOpfsSAHPoolVfs({
+      name: "langlsrw-dictionary",
+      directory: ".langlsrw-dictionary",
+      initialCapacity: 4,
+      forceReinitIfPreviouslyFailed: true
+    });
+  } catch (error) {
+    releasePoolLock();
+    releasePoolLock = undefined;
+    throw new Error(`${POOL_BUSY}（${error.message || error}）`);
+  }
   // Room for both dictionaries plus the journal of the frequency import.
   await pool.reserveMinimumCapacity(6);
 }
@@ -269,7 +296,8 @@ async function remove(payload = {}) {
   return { removed };
 }
 
-function requireDatabase(payload = {}) {
+async function requireDatabase(payload = {}) {
+  await initialize();
   const dictionary = normalizeDictionary(payload);
   if (!pool.getFileNames().includes(dictionary.databaseName)) throw new Error("本地词典尚未安装");
   if (!database || currentDictionary?.databaseName !== dictionary.databaseName) openDatabase(dictionary);
@@ -291,7 +319,7 @@ function selectEntry(word, dictionary = currentDictionary) {
 }
 
 async function query(payload) {
-  const dictionary = requireDatabase(payload);
+  const dictionary = await requireDatabase(payload);
   await ensureFrequency(payload, dictionary);
   const word = typeof payload === "string" ? payload : payload?.word;
   const result = selectEntry(word);
@@ -308,7 +336,7 @@ async function query(payload) {
 }
 
 async function queryMany(payload) {
-  requireDatabase(payload);
+  await requireDatabase(payload);
   const words = Array.isArray(payload) ? payload : payload?.words;
   const uniqueWords = [...new Set((Array.isArray(words) ? words : []).map((word) => String(word || "").trim()).filter(Boolean))];
   const results = [];
@@ -316,8 +344,8 @@ async function queryMany(payload) {
   return results.filter(Boolean);
 }
 
-function match(payload = {}) {
-  requireDatabase(payload);
+async function match(payload = {}) {
+  await requireDatabase(payload);
   const { word, limit = 10, strip = false } = payload;
   const normalizedLimit = Math.max(1, Math.min(Number(limit) || 10, 50));
   const key = strip ? String(word).replace(/[^\p{L}\p{N}]/gu, "").toLowerCase() : word;
@@ -328,13 +356,38 @@ function match(payload = {}) {
   ).map(([id, entryWord]) => ({ id, word: entryWord }));
 }
 
-function count(payload = {}) {
-  requireDatabase(payload);
+// Entries starting with what the learner has typed, most common first, for the quick lookup box.
+// Phrases are left out until the typed text itself contains a space. Enter still looks up exactly what was typed.
+async function suggest(payload = {}) {
+  const dictionary = await requireDatabase(payload);
+  await ensureFrequency(payload, dictionary);
+  const prefix = String(payload.word || "").trim();
+  if (!prefix) return [];
+  const limit = Math.max(1, Math.min(Number(payload.limit) || 8, 20));
+  const useFrequency = dictionary.languageId !== "en" && hasFrequencyTable(dictionary);
+  const source = useFrequency
+    ? `stardict LEFT JOIN ${FREQUENCY_TABLE} AS frequency ON frequency.word = stardict.word`
+    : "stardict";
+  const rank = useFrequency
+    ? "COALESCE(frequency.frequency_rank, 1000000000)"
+    : "CASE WHEN frq > 0 AND (bnc IS NULL OR bnc <= 0 OR frq <= bnc) THEN frq WHEN bnc > 0 THEN bnc ELSE 1000000000 END";
+  const phrases = prefix.includes(" ") ? "" : "AND instr(stardict.word, ' ') = 0";
+  return database.selectArrays(
+    `SELECT stardict.word, stardict.translation FROM ${source}
+      WHERE stardict.word >= ? AND stardict.word < ? ${phrases}
+      ORDER BY ${rank}, length(stardict.word), stardict.word COLLATE NOCASE
+      LIMIT ?`,
+    [prefix, `${prefix}\uffff`, limit]
+  ).map(([word, translation]) => ({ word, translation: String(translation || "").split(/\r?\n/)[0] }));
+}
+
+async function count(payload = {}) {
+  await requireDatabase(payload);
   return database.selectValue("SELECT count(*) FROM stardict");
 }
 
 async function list(payload = {}) {
-  const dictionary = requireDatabase(payload);
+  const dictionary = await requireDatabase(payload);
   await ensureFrequency(payload, dictionary);
   const profile = listProfile(dictionary);
   const { entryType = "words", category = "all", sort = "alphabetical", query = "", page = 1, pageSize = 100, excludeWords = [] } = payload.options || payload;
@@ -374,7 +427,7 @@ async function list(payload = {}) {
 }
 
 async function studyList(payload = {}) {
-  const dictionary = requireDatabase(payload);
+  const dictionary = await requireDatabase(payload);
   await ensureFrequency(payload, dictionary);
   const profile = listProfile(dictionary);
   const { category = "all", sort = "alphabetical", excludeWords = [] } = payload.options || payload;
@@ -393,7 +446,7 @@ async function studyList(payload = {}) {
   ).map(([id, word, collins]) => ({ id, word, collins: Number(collins) || 0 }));
 }
 
-const handlers = { status, install, remove, query, queryMany, match, count, list, studyList };
+const handlers = { status, install, remove, query, queryMany, match, suggest, count, list, studyList };
 
 self.addEventListener("message", async (event) => {
   const { id, method, payload } = event.data || {};

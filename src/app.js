@@ -202,7 +202,7 @@ const fallbackSentences = [
       grammarVisible: false,
       translationEditing: false,
       translationDraft: "",
-      translationGrammarVisible: false,
+      translationCategoryVisible: false,
       grammarExpansionMode: "main",
       grammarExpandedNodeIds: new Set(),
       library: {
@@ -411,7 +411,7 @@ const fallbackSentences = [
     function setCurrentLibrary(label, statusText = "") {
       stopFullTextReading();
       clearAudioMaterial();
-      state.currentLibraryLabel = label || "自定义句库";
+      state.currentLibraryLabel = label || "导入句库";
       syncCurrentLibrarySelect(state.currentLibraryLabel);
       if (statusText) $("sourceStatus").textContent = statusText;
       state.randomHistory = [];
@@ -1039,7 +1039,6 @@ const fallbackSentences = [
         $(buttonId).classList.toggle("is-active", name === active);
         $(buttonId).setAttribute("aria-current", String(name === active));
       });
-      if (active === "common") $("librarySearchInput").focus();
       if (active === "audio") renderAudioLibrary();
       if (active === "grammar") grammarLibrary.open();
       if (active === "channel") channelLibrary.open();
@@ -1214,9 +1213,11 @@ const fallbackSentences = [
       clearPeekedWord();
       if (state.speaking.holdActive) scheduleStopSpeakingPractice();
       $("libraryModal").hidden = false;
-      setLibraryView("common");
+      $("libraryModalTitle").textContent = `${currentLearningLanguage().label} · 句库`;
+      // The channel library opens first; it is English only, so other languages start from the common library.
+      const view = state.learningLanguageId === "en" ? "channel" : "common";
+      setLibraryView(view);
       await loadCommonLibrary();
-      $("librarySearchInput").focus();
     }
 
     function useCommonLibrary() {
@@ -1630,7 +1631,7 @@ const fallbackSentences = [
     }
 
     // ---- Free translation with the browser's built-in, on-device Translator API (desktop Chrome/Edge 138+).
-    // Only sentences without a translation in 自定义句库 / 音频字幕 are translated, on an explicit button press.
+    // Only sentences without a translation in 导入句库 / 音频字幕 are translated, on an explicit button press.
     // Results are cached by English text in localStorage and reused on every later import, so each sentence is
     // translated once per browser.
     const TRANSLATION_CACHE_KEY = "langLSRWTranslationCache";
@@ -1813,8 +1814,8 @@ const fallbackSentences = [
 
     async function translateCurrentLibraryForFree() {
       if (freeTranslationRunning) return;
-      if (!["自定义句库", "音频字幕"].includes(state.currentLibraryLabel)) {
-        alert("只能翻译自定义句库或音频字幕中的句子。");
+      if (!["导入句库", "音频字幕"].includes(state.currentLibraryLabel)) {
+        alert("只能翻译导入句库或音频字幕中的句子。");
         return;
       }
       if (!("Translator" in window)) {
@@ -2045,7 +2046,7 @@ const fallbackSentences = [
       fillTranslationsFromCache(sentences);
       state.sentences = sentences;
       state.index = 0;
-      setCurrentLibrary("自定义句库", sentenceSourceLabel(file.name, sentences));
+      setCurrentLibrary("导入句库", sentenceSourceLabel(file.name, sentences));
       resetCurrent(true);
       closeTopMenus();
       return true;
@@ -2710,6 +2711,7 @@ const fallbackSentences = [
         [voiceKey]: usingOriginalVoice() ? (state.speechSettings[voiceKey] || "") : $("voiceSelect").value,
         autoSpeak: $("autoSpeakToggle").checked,
         displayMode: sourceDisplayMode(),
+        practiceOrder: $("modeSelect").value,
         speakWord: $("speakWordToggle").checked,
         showSource: $("showSourceToggle").checked,
         showTranslation: $("showTranslationToggle").checked
@@ -2975,7 +2977,7 @@ const fallbackSentences = [
       if (!grammarOption) {
         grammarOption = new Option("语法句库", "grammar");
         grammarOption.title = "切换到完整的英语语法句库";
-        librarySelect.append(grammarOption);
+        librarySelect.prepend(grammarOption);
       }
       grammarOption.hidden = state.learningLanguageId !== "en";
       grammarOption.disabled = state.learningLanguageId !== "en";
@@ -2983,7 +2985,7 @@ const fallbackSentences = [
       if (!channelOption) {
         channelOption = new Option("频道句库", "channel");
         channelOption.title = "切换到英语频道句库的完整频道";
-        librarySelect.append(channelOption);
+        librarySelect.prepend(channelOption);
       }
       channelOption.hidden = state.learningLanguageId !== "en";
       channelOption.disabled = state.learningLanguageId !== "en";
@@ -3533,7 +3535,8 @@ ${orderNote}`;
 
     function handleGlobalShortcut(event) {
       if (event.isComposing) return;
-      if (event.target && event.target.closest && event.target.closest("[data-shortcut]")) return;
+      // The shortcut recorder and the quick lookup box handle their own keys.
+      if (event.target && event.target.closest && event.target.closest("[data-shortcut], #quickLookupInput")) return;
       if (document.activeElement === counterIndexInput || event.target === counterIndexInput) return;
       if (event.key === "Escape" && learningFilterMenu && !learningFilterMenu.hidden) {
         event.preventDefault();
@@ -3661,7 +3664,8 @@ ${orderNote}`;
 
     function handleGlobalShortcutKeyup(event) {
       if (event.isComposing) return;
-      if (event.target && event.target.closest && event.target.closest("[data-shortcut]")) return;
+      // The shortcut recorder and the quick lookup box handle their own keys.
+      if (event.target && event.target.closest && event.target.closest("[data-shortcut], #quickLookupInput")) return;
       if (document.activeElement === counterIndexInput || event.target === counterIndexInput) return;
       if (wordSpeakRecognition && normalizeShortcutEvent(event) === state.shortcuts.holdSpeaking) {
         event.preventDefault();
@@ -3697,6 +3701,9 @@ ${orderNote}`;
       // Older settings stored a longText checkbox; it maps to 长文显示.
       const displayMode = state.speechSettings.displayMode || (state.speechSettings.longText === true ? "long" : "single");
       $("displayModeSelect").value = ["single", "long", "focus"].includes(displayMode) ? displayMode : "single";
+      const practiceOrder = state.speechSettings.practiceOrder;
+      $("modeSelect").value = ["ordered", "random", "fulltext", "mistakes"].includes(practiceOrder) ? practiceOrder : "random";
+      updateSentenceNavigationTitles();
       $("speakWordToggle").checked = state.speechSettings.speakWord !== false;
       $("showSourceToggle").checked = state.speechSettings.showSource !== false;
       $("showTranslationToggle").checked = state.speechSettings.showTranslation !== false;
@@ -8824,13 +8831,18 @@ ${orderNote}`;
       return { accuracy, cpm, wpm, pauseCount, fluency, errors, typedChars, targetLength: target.length, avgInterval };
     }
 
-    function grammarTranslationButton(item) {
-      if (state.currentLibraryLabel !== "语法句库" || !item?.grammarPoint) return "";
-      return `<button class="translation-edit-button translation-content-toggle" type="button" data-translation-action="grammar-translation" title="${state.translationGrammarVisible ? "切换显示本句翻译" : "切换显示本句所属语法点"}">${state.translationGrammarVisible ? "翻译" : "语法"}</button>`;
+    // 语法句库 and 频道句库 sentences carry their category (语法点 / 话题); the translation line can switch to show it.
+    function hasSentenceCategory(item) {
+      return (state.currentLibraryLabel === "语法句库" || state.currentLibraryLabel === "频道句库") && Boolean(item?.grammarPoint);
+    }
+
+    function categoryTranslationButton(item) {
+      if (!hasSentenceCategory(item)) return "";
+      return `<button class="translation-edit-button translation-content-toggle" type="button" data-translation-action="category-translation" title="${state.translationCategoryVisible ? "切换显示本句翻译" : "切换显示本句所属分类"}">${state.translationCategoryVisible ? "翻译" : "分类"}</button>`;
     }
 
     function sentenceTranslationDisplay(item) {
-      if (state.currentLibraryLabel === "语法句库" && state.translationGrammarVisible && item.grammarPoint) return item.grammarPoint;
+      if (state.translationCategoryVisible && hasSentenceCategory(item)) return item.grammarPoint;
       return item.translation ? displayedTranslation(item.translation) : "暂无翻译";
     }
 
@@ -8863,7 +8875,7 @@ ${orderNote}`;
           : "左键分析当前句，右键更多选项";
       const showTranslation = $("showTranslationToggle").checked;
       const currentItem = normalizeSentenceItem(state.sentences[state.index]);
-      const contentToggle = grammarTranslationButton(currentItem);
+      const contentToggle = categoryTranslationButton(currentItem);
       const translationText = escapeHtml(sentenceTranslationDisplay(currentItem));
       const languageToggle = chineseTranslationToggle(translation);
       const translationHtml = state.translationEditing
@@ -8985,7 +8997,7 @@ ${orderNote}`;
         }
         const item = normalizeSentenceItem(state.sentences[index]);
         const languageToggle = chineseTranslationToggle(item.translation);
-        const contentToggle = grammarTranslationButton(item);
+        const contentToggle = categoryTranslationButton(item);
         rows.push(`<div class="long-text-item" data-long-text-index="${index}" title="点击切换到这一句">
           <span class="target-english"><span class="target-english-text${showSource ? "" : " long-text-hidden-note"}">${showSource ? longTextEnglishHtml(item.text) : "原文已隐藏"}</span>${sentenceFavoriteButton(item.text)}</span>
           <div class="translation-prompt ${showTranslation ? "" : "is-hidden"}${languageToggle ? " has-language-toggle" : ""}${contentToggle ? " has-content-toggle" : ""}"><span aria-hidden="${showTranslation ? "false" : "true"}">${escapeHtml(sentenceTranslationDisplay(item))}</span><div class="translation-actions">${sentenceHasGrammar(item, analysedKeys) ? grammarToggleButton(false) : ""}${languageToggle}${contentToggle}<button class="translation-edit-button" type="button" data-translation-action="edit" title="切换到这一句并编辑翻译">编辑</button></div></div>
@@ -9302,7 +9314,7 @@ ${orderNote}`;
     });
 
     $("fileInput").addEventListener("change", async (event) => {
-      // 自定义句库 imports text only; audio + subtitle materials are imported in the 音频字幕 panel.
+      // 导入句库 imports text only; audio + subtitle materials are imported in the 音频字幕 panel.
       await importSentenceFile(event.target.files[0]);
       event.target.value = "";
     });
@@ -9313,7 +9325,7 @@ ${orderNote}`;
       fillTranslationsFromCache(sentences);
       state.sentences = sentences;
       state.index = 0;
-      setCurrentLibrary("自定义句库", sentenceSourceLabel("粘贴内容", sentences));
+      setCurrentLibrary("导入句库", sentenceSourceLabel("粘贴内容", sentences));
       resetCurrent(true);
     });
 
@@ -9347,6 +9359,92 @@ ${orderNote}`;
     $("clearTranslationCacheBtn").addEventListener("click", clearTranslationCache);
     $("openLibraryBtn").addEventListener("click", openLibraryModal);
     $("openDictionaryLibraryBtn").addEventListener("click", openDictionaryLibrary);
+    // Quick lookup left of 词库: typing lists common words that start with the letters, and Enter looks the typed or
+    // chosen word up in the learning language's dictionary, below the box. Suggestions come from the local dictionary.
+    const quickLookup = { items: [], active: -1, timer: 0, token: 0 };
+    function hideQuickLookupSuggestions() {
+      quickLookup.token += 1;
+      clearTimeout(quickLookup.timer);
+      quickLookup.items = [];
+      quickLookup.active = -1;
+      $("quickLookupSuggestions").hidden = true;
+      $("quickLookupInput").removeAttribute("aria-activedescendant");
+    }
+    function renderQuickLookupSuggestions() {
+      const list = $("quickLookupSuggestions");
+      list.replaceChildren(...quickLookup.items.map((item, index) => {
+        const option = document.createElement("button");
+        option.type = "button";
+        option.id = `quickLookupOption${index}`;
+        option.className = "quick-lookup-option";
+        option.tabIndex = -1;
+        option.setAttribute("role", "option");
+        option.setAttribute("aria-selected", String(index === quickLookup.active));
+        option.title = `查询 ${item.word}`;
+        const word = document.createElement("span");
+        word.className = "quick-lookup-word";
+        word.textContent = item.word;
+        const meaning = document.createElement("span");
+        meaning.className = "quick-lookup-meaning";
+        meaning.textContent = item.translation;
+        option.append(word, meaning);
+        // Keep focus in the box so the list does not close before the click lands.
+        option.addEventListener("pointerdown", (event) => event.preventDefault());
+        option.addEventListener("click", () => runQuickLookup(item.word));
+        return option;
+      }));
+      list.hidden = !quickLookup.items.length;
+      if (quickLookup.active >= 0) $("quickLookupInput").setAttribute("aria-activedescendant", `quickLookupOption${quickLookup.active}`);
+      else $("quickLookupInput").removeAttribute("aria-activedescendant");
+      list.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: "nearest" });
+    }
+    function runQuickLookup(word) {
+      const input = $("quickLookupInput");
+      word = String(word || "").trim();
+      hideQuickLookupSuggestions();
+      if (!word) return;
+      input.value = word;
+      const rect = input.getBoundingClientRect();
+      lookupLearningWord(word, { clientX: rect.left, avoidRect: rect });
+    }
+    $("quickLookupInput").addEventListener("input", (event) => {
+      const word = event.currentTarget.value.trim();
+      const token = ++quickLookup.token;
+      clearTimeout(quickLookup.timer);
+      if (!word) { hideQuickLookupSuggestions(); return; }
+      quickLookup.timer = setTimeout(async () => {
+        let items = [];
+        try {
+          items = await window.langLSRWDictionary.suggest(word, 8);
+        } catch {
+          items = [];
+        }
+        if (token !== quickLookup.token) return;
+        quickLookup.items = items;
+        quickLookup.active = -1;
+        renderQuickLookupSuggestions();
+      }, 120);
+    });
+    $("quickLookupInput").addEventListener("keydown", (event) => {
+      if (event.isComposing) return;
+      const input = event.currentTarget;
+      const count = $("quickLookupSuggestions").hidden ? 0 : quickLookup.items.length;
+      if ((event.key === "ArrowDown" || event.key === "ArrowUp") && count) {
+        event.preventDefault();
+        const step = event.key === "ArrowDown" ? 1 : -1;
+        quickLookup.active = quickLookup.active < 0 && step < 0 ? count - 1 : (quickLookup.active + step + count) % count;
+        renderQuickLookupSuggestions();
+      } else if (event.key === "Enter") {
+        event.preventDefault();
+        runQuickLookup(quickLookup.active >= 0 && count ? quickLookup.items[quickLookup.active].word : input.value);
+      } else if (event.key === "Escape") {
+        event.preventDefault();
+        if (count) hideQuickLookupSuggestions();
+        else if (!$("dictionaryLookupPopover").hidden) closeDictionaryLookup();
+        else input.blur();
+      }
+    });
+    $("quickLookupInput").addEventListener("blur", hideQuickLookupSuggestions);
     $("userPhrasesBtn").addEventListener("click", openUserPhrases);
     $("closeLibraryBtn").addEventListener("click", closeLibraryModal);
     $("closeDictionaryLibraryBtn").addEventListener("click", closeDictionaryLibrary);
@@ -9914,8 +10012,8 @@ ${orderNote}`;
         if (action === "save") saveCurrentTranslation();
         if (action === "cancel") cancelTranslationEdit();
         if (action === "language") toggleChineseTranslation();
-        if (action === "grammar-translation" && state.currentLibraryLabel === "语法句库") {
-          state.translationGrammarVisible = !state.translationGrammarVisible;
+        if (action === "category-translation" && hasSentenceCategory(normalizeSentenceItem(state.sentences[state.index]))) {
+          state.translationCategoryVisible = !state.translationCategoryVisible;
           renderTarget();
         }
         return;
@@ -10104,6 +10202,7 @@ ${orderNote}`;
 
     $("modeSelect").addEventListener("change", () => {
       stopFullTextReading();
+      saveSpeechSettings();
       updateSentenceNavigationTitles();
     });
     updateSentenceNavigationTitles();

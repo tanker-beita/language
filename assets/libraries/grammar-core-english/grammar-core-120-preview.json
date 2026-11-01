@@ -23862,7 +23862,7 @@
           "points": [
             {
               "id": "structure.constituents-patterns.sv",
-              "name": "主语加谓语",
+              "name": "主语+谓语",
               "examples": [
                 {
                   "id": "structure.constituents-patterns.sv.001",
@@ -24388,7 +24388,7 @@
             },
             {
               "id": "structure.constituents-patterns.svo",
-              "name": "主语加谓语加宾语",
+              "name": "主语+谓语+宾语",
               "examples": [
                 {
                   "id": "structure.constituents-patterns.svo.001",
@@ -25028,7 +25028,7 @@
             },
             {
               "id": "structure.constituents-patterns.svc",
-              "name": "主语加系动词加表语",
+              "name": "主语+系动词+表语",
               "examples": [
                 {
                   "id": "structure.constituents-patterns.svc.001",
@@ -25660,7 +25660,7 @@
             },
             {
               "id": "structure.constituents-patterns.svoo",
-              "name": "主语加谓语加间接宾语加直接宾语",
+              "name": "主语+谓语+间接宾语+直接宾语",
               "examples": [
                 {
                   "id": "structure.constituents-patterns.svoo.001",
@@ -26482,7 +26482,7 @@
             },
             {
               "id": "structure.constituents-patterns.svoc",
-              "name": "主语加谓语加宾语加宾语补足语",
+              "name": "主语+谓语+宾语+宾语补足语",
               "examples": [
                 {
                   "id": "structure.constituents-patterns.svoc.001",
@@ -27152,7 +27152,7 @@
             },
             {
               "id": "structure.constituents-patterns.sva",
-              "name": "主语加谓语加必需状语",
+              "name": "主语+谓语+必需状语",
               "examples": [
                 {
                   "id": "structure.constituents-patterns.sva.001",
@@ -28062,7 +28062,7 @@
             },
             {
               "id": "structure.constituents-patterns.svoa",
-              "name": "主语加谓语加宾语加必需状语",
+              "name": "主语+谓语+宾语+必需状语",
               "examples": [
                 {
                   "id": "structure.constituents-patterns.svoa.001",

@@ -1,7 +1,7 @@
 /* Hierarchical, manually editable grammar material; no AI requests or user-data writes. */
 (() => {
   "use strict";
-  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json?v=20261031-1";
+  const URL = "assets/libraries/grammar-core-english/grammar-core-120-preview.json?v=20261101-1";
 
   function keywordParts(text, keywords = []) {
     const ranges = [];
@@ -111,8 +111,7 @@
   function init({ isEnglish, onUse }) {
     return window.langLSRWTreeLibrary.mount({
       ids: {
-        category: "grammarCategorySelect", subcategory: "grammarSubcategorySelect", point: "grammarPointSelect",
-        search: "grammarLibrarySearch", list: "grammarLibraryList", use: "useGrammarLibraryBtn",
+        tree: "grammarLibraryTree", search: "grammarLibrarySearch", list: "grammarLibraryList", use: "useGrammarLibraryBtn",
         status: "grammarLibraryStatus", retry: "retryGrammarLibraryBtn", classButton: "grammarMobileClassBtn",
         classMenu: "grammarMobileClassMenu", meta: "grammarLibraryMeta", mobileMeta: "grammarLibraryMobileMeta"
       },

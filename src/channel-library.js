@@ -114,8 +114,7 @@
     const select = document.getElementById("channelSelect");
     const view = window.langLSRWTreeLibrary.mount({
       ids: {
-        category: "channelSituationSelect", subcategory: "channelSceneSelect", point: "channelTopicSelect",
-        search: "channelLibrarySearch", list: "channelLibraryList", use: "useChannelLibraryBtn",
+        tree: "channelLibraryTree", search: "channelLibrarySearch", list: "channelLibraryList", use: "useChannelLibraryBtn",
         status: "channelLibraryStatus", retry: "retryChannelLibraryBtn", classButton: "channelMobileClassBtn",
         classMenu: "channelMobileClassMenu", meta: "channelLibraryMeta", mobileMeta: "channelLibraryMobileMeta"
       },

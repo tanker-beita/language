@@ -1024,6 +1024,20 @@ const fallbackSentences = [
       closeDictionaryLookup();
     }
 
+    // Phones show the open library's search in the 句库 title row; wider screens keep it in the library's own panel.
+    const librarySearchRows = ["commonLibraryPanel", "grammarLibraryPanel", "channelLibraryPanel"].map((panelId) => {
+      const el = document.querySelector(`#${panelId} .grammar-library-search-row`);
+      return { panelId, el, parent: el.parentNode, next: el.nextSibling };
+    });
+    const libraryPhoneQuery = window.matchMedia("(max-width: 700px), (max-width: 900px) and (max-height: 500px)");
+    function placeLibrarySearch() {
+      librarySearchRows.forEach((item) => {
+        if (libraryPhoneQuery.matches && !$(item.panelId).hidden) $("libraryHeaderSearch").append(item.el);
+        else if (item.el.parentNode !== item.parent) item.parent.insertBefore(item.el, item.next);
+      });
+    }
+    libraryPhoneQuery.addEventListener("change", placeLibrarySearch);
+
     function setLibraryView(view) {
       closeDictionaryLookup();
       const views = [
@@ -1039,6 +1053,7 @@ const fallbackSentences = [
         $(buttonId).classList.toggle("is-active", name === active);
         $(buttonId).setAttribute("aria-current", String(name === active));
       });
+      placeLibrarySearch();
       if (active === "audio") renderAudioLibrary();
       if (active === "grammar") grammarLibrary.open();
       if (active === "channel") channelLibrary.open();

@@ -4178,10 +4178,13 @@
     .grammar-class-column { min-width: 0; max-height: inherit; overflow-y: auto; overscroll-behavior: contain; }
     .grammar-class-column + .grammar-class-column { border-left: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
     .grammar-class-menu button { white-space: normal; overflow-wrap: anywhere; line-height: 1.5; padding: 5px 6px; min-height: 30px; }
-    .grammar-class-menu button > span:first-child { min-width: 0; }
-    .grammar-class-menu button > span + span { flex-shrink: 0; }
-    .grammar-class-menu button.grammar-class-back { position: sticky; top: 0; z-index: 1; font-weight: 700; color: var(--accent, var(--ink)); background: var(--panel); border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
-    @media (max-width: 640px) { .grammar-class-menu button { min-height: 38px; padding: 8px 12px; font-size: 14px; } }
+    .grammar-class-menu button > span:not(.grammar-class-arrow) { min-width: 0; }
+    .grammar-class-menu .grammar-class-arrow { flex-shrink: 0; font-size: 18px; line-height: 1; }
+    /* A thin line between rows; the back row keeps its own heavier line below it. */
+    .grammar-class-column button + button { border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent); border-radius: 0; }
+    .grammar-class-column button.grammar-class-back + button { border-top: 0; }
+    .grammar-class-menu button.grammar-class-back { justify-content: flex-start; gap: 6px; position: sticky; top: 0; z-index: 1; font-weight: 700; color: var(--accent, var(--ink)); background: var(--panel); border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
+    @media (max-width: 640px) { .grammar-class-menu button { min-height: 28px; padding: 2px 12px; font-size: 14px; line-height: 1.4; } }
 
     .grammar-library-panel .library-title-line h3 {
       margin: 0;
@@ -4464,27 +4467,46 @@
         border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
       }
 
-      .library-sentence-row {
-        grid-template-columns: 52px minmax(0, 1fr);
+      /* Phones: number | English | ▶ on one line; the Chinese is left out. */
+      #librarySentenceList .library-sentence-row {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 8px;
+        align-items: center;
+        padding: 1px 8px;
+        line-height: 1.35;
       }
 
-      .library-sentence-translation {
-        grid-column: 2;
+      #librarySentenceList .library-sentence-id {
+        font-size: 11px;
       }
 
-      .library-sentence-row .user-sentence-load-button {
-        grid-column: 1 / -1;
-        justify-self: end;
+      #librarySentenceList .library-sentence-translation {
+        display: none;
       }
 
+      /* Page buttons and the page box share one row; the count sits on the row below. */
       .library-pagination {
         justify-content: flex-start;
+        gap: 4px;
+      }
+
+      .library-pagination button {
+        min-height: 28px;
+        padding: 0 6px;
+        font-size: 12px;
+      }
+
+      .library-page-jump input {
+        width: 44px;
+        min-height: 28px;
+        padding: 2px 4px;
       }
 
       .library-pagination .library-status {
         width: 100%;
         margin-left: 0;
-        }
+        text-align: left;
+      }
     }
 
     .ai-text-dialog {
@@ -6273,9 +6295,23 @@
       .language-tab { width: 24px; min-width: 24px; height: 28px; min-height: 28px; font-size: 13px; }
       .page-nav { margin-left: auto; }
       .page-tab { min-width: 30px; min-height: 28px; padding: 0 6px; font-size: 13px; }
-      .toolbar { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); width: 100%; gap: 4px; }
-      .toolbar > button, .user-menu > summary { min-height: 32px; padding: 0 4px; font-size: 13px; border-radius: 6px; }
-      .toolbar .user-menu { margin-left: 0; min-width: 0; }
+      /* Phones leave out 听说读写 and lay the top bar out in two rows:
+         langLSRW 英西 | 护眼 设置 用户
+         查词框        | 词库 句库 收藏 */
+      .page-nav { display: none; }
+      .topbar { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 50px); align-items: center; gap: 6px 4px; }
+      .toolbar { display: contents; }
+      .brand-area { grid-area: 1 / 1; width: auto; }
+      #themeToggleBtn { grid-area: 1 / 2; }
+      #openSettingsBtn { grid-area: 1 / 3; }
+      .toolbar .user-menu { grid-area: 1 / 4; margin-left: 0; min-width: 0; }
+      .quick-lookup { grid-area: 2 / 1; margin-right: 4px; }
+      #openDictionaryLibraryBtn { grid-area: 2 / 2; }
+      #openLibraryBtn { grid-area: 2 / 3; }
+      #userPhrasesBtn { grid-area: 2 / 4; }
+      .toolbar > button, .user-menu > summary { min-width: 0; min-height: 32px; padding: 0 4px; font-size: 13px; border-radius: 6px; }
+      .quick-lookup-input { width: 100%; height: 32px; min-height: 32px; padding: 0 8px; border-radius: 6px; font-size: 13px; }
+      .quick-lookup-suggestions { width: min(280px, calc(100vw - 32px)); }
       .user-menu > summary { display: flex; justify-content: center; font-size: 0; }
       .user-menu > summary::before { content: "用户"; font-size: 13px; }
       .user-popover { max-width: calc(100vw - 32px); }
@@ -6549,6 +6585,14 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        /* On phones every library reads as a button; the open one is highlighted. */
+        border-color: color-mix(in srgb, var(--ink) 22%, transparent);
+        background: var(--panel);
+      }
+      #libraryModal .library-type-button.is-active {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: color-mix(in srgb, var(--accent) 14%, var(--panel));
       }
       #libraryModal .grammar-library-panel {
         padding: 8px;
@@ -6576,10 +6620,18 @@
       #libraryModal .tree-library-body { grid-template-columns: minmax(0, 1fr); }
       #libraryModal .tree-library-tree { display: none; }
       #libraryModal .grammar-mobile-classification { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px; font-size: 12px; }
-      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn) { min-width: 0; width: 100%; min-height: 22px; height: 22px; padding: 0 6px; font-size: 12px; line-height: 1; text-align: left; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; background: var(--panel); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; }
+      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn) { display: flex; align-items: center; gap: 4px; min-width: 0; width: 100%; min-height: 22px; height: 22px; padding: 0 6px; font-size: 12px; line-height: 1; text-align: left; overflow: hidden; white-space: nowrap; background: var(--panel); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; }
+      #libraryModal :is(#grammarMobileClassBtn, #channelMobileClassBtn) > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+      #libraryModal .class-button-caret { flex-shrink: 0; font-size: 16px; }
       #libraryModal .grammar-library-search-row { grid-template-columns: auto minmax(0, 1fr); gap: 4px; }
       #libraryModal .grammar-library-search-row > span { font-size: 11px; }
       #libraryModal .grammar-library-search-row .library-search { height: 24px; min-height: 24px; padding-top: 0; padding-bottom: 0; font-size: 12px; }
+      /* The search moved into the title row: no 搜索： label, and as tall as 关闭. */
+      #libraryModal .library-header { gap: 8px; }
+      #libraryModal .library-header-search { flex: 1 1 auto; min-width: 0; }
+      #libraryModal .library-header-search .grammar-library-search-row { grid-template-columns: minmax(0, 1fr); }
+      #libraryModal .library-header-search .grammar-library-search-row > span { display: none; }
+      #libraryModal .library-header-search .library-search { width: 100%; height: 28px; min-height: 28px; }
       #libraryModal .grammar-library-examples { grid-template-columns: minmax(0, 1fr); }
       #libraryModal .grammar-library-heading { padding: 6px 8px; font-size: 12px; line-height: 1.5; }
       #libraryModal .grammar-library-example { gap: 8px; padding: 0 8px; font-size: 14px; line-height: 1.35; }

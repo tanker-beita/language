@@ -155,11 +155,12 @@
           const text = document.createElement("span");
           text.textContent = entry.label;
           button.append(text);
-          if (entry.children) {
+          if (entry.children || entry.back) {
             const arrow = document.createElement("span");
-            arrow.textContent = "▸";
+            arrow.className = "grammar-class-arrow";
+            arrow.textContent = entry.back ? "◂" : "▸";
             arrow.setAttribute("aria-hidden", "true");
-            button.append(arrow);
+            if (entry.back) button.prepend(arrow); else button.append(arrow);
           }
           button.title = entry.children ? `展开${entry.label}的子分类` : `筛选${entry.label}`;
           if (entry.current) button.classList.add("is-current");
@@ -180,7 +181,7 @@
         }))], levels[0]);
       if (branchCategory) {
         const categoryRows = filter(rows, { category: branchCategory });
-        const back = (label, action) => ({ label: `‹ 返回 · ${label}`, action, back: true });
+        const back = (label, action) => ({ label: `返回 · ${label}`, action, back: true });
         if (!narrow || level === 1) addColumn([...(narrow ? [back(name(categoryRows[0].category), () => { branchCategory = ""; branchSubcategory = ""; showClassMenu(); })] : []), { label: "全部", action: () => chooseClass(branchCategory), current: chosen.category === branchCategory && !chosen.subcategory },
           ...unique(categoryRows, "subcategoryId", "subcategory").map(([id, text]) => ({
             label: name(text), children: true, current: id === branchSubcategory,
@@ -214,7 +215,13 @@
       search.disabled = !enabled;
       classButton.disabled = !enabled;
       const label = chosenLabel() || "全部分类";
-      classButton.textContent = `${label} ▾`;
+      const text = document.createElement("span");
+      text.textContent = label;
+      const caret = document.createElement("span");
+      caret.className = "class-button-caret";
+      caret.textContent = "▾";
+      caret.setAttribute("aria-hidden", "true");
+      classButton.replaceChildren(text, caret);
       classButton.title = `当前：${label}；点击母项展开子项，选择全部或具体${levels[2]}进行筛选`;
       if (enabled) renderTree(); else tree.replaceChildren();
       visible = enabled ? filter(rows, { ...chosen, query: search.value }) : [];

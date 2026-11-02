@@ -212,6 +212,94 @@
       classMenu.style.top = upward ? "auto" : `${anchor.bottom}px`;
       classMenu.style.bottom = upward ? `${window.innerHeight - anchor.top}px` : "auto";
     }
+    // Phone: one topic per page, with the page buttons in the footer; wider screens list every topic.
+    const pagedQuery = window.matchMedia("(max-width: 700px)");
+    const pager = document.createElement("span");
+    pager.className = "tree-library-pager";
+    pager.hidden = true;
+    const pagerPrev = document.createElement("button");
+    pagerPrev.type = "button";
+    pagerPrev.innerHTML = '<svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M8.5 1.5v9L2.5 6z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>';
+    pagerPrev.title = "上一个话题";
+    pagerPrev.setAttribute("aria-label", "上一个话题");
+    const pagerText = document.createElement("span");
+    const pagerNext = document.createElement("button");
+    pagerNext.type = "button";
+    pagerNext.innerHTML = '<svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3.5 1.5v9l6-4.5z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>';
+    pagerNext.title = "下一个话题";
+    pagerNext.setAttribute("aria-label", "下一个话题");
+    const edgeButton = (label, title, d) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.title = title;
+      button.setAttribute("aria-label", title);
+      button.innerHTML = `<svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="${d}" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>`;
+      return button;
+    };
+    const pagerFirst = edgeButton("first", "第一个话题", "M2 1.5v9M10 1.5v9l-6-4.5z");
+    const pagerLast = edgeButton("last", "最后一个话题", "M10 1.5v9M2 1.5v9l6-4.5z");
+    pager.append(pagerFirst, pagerPrev, pagerText, pagerNext, pagerLast);
+    status.parentElement.append(pager);
+    let topicGroups = new Map();
+    let page = 0;
+    function drawList(enabled) {
+      list.replaceChildren();
+      if (!enabled || !visible.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = !isEnglish() ? "这份句库是英语材料，请切换到英语后使用。" : "没有找到匹配的句子。";
+        list.append(empty);
+      }
+      const entries = [...topicGroups.values()];
+      const paged = pagedQuery.matches && entries.length > 0;
+      page = Math.max(0, Math.min(page, entries.length - 1));
+      pager.hidden = !paged;
+      if (paged) {
+        pagerText.textContent = `${page + 1} / ${entries.length}`;
+        pagerFirst.disabled = pagerPrev.disabled = page === 0;
+        pagerNext.disabled = pagerLast.disabled = page >= entries.length - 1;
+      }
+      for (const groupRows of paged ? [entries[page]] : entries) {
+        const first = groupRows[0];
+        const element = document.createElement("div");
+        element.className = "library-sentence-row grammar-library-row";
+        const heading = document.createElement("div");
+        heading.className = "grammar-library-heading";
+        const [number, ...pointName] = first.point.split("：");
+        heading.textContent = `${number}：${name(first.category)} - ${name(first.subcategory)} - ${pointName.join("：")}`;
+        const examples = document.createElement("div");
+        examples.className = "grammar-library-examples";
+        element.append(heading, examples);
+        list.append(element);
+        for (const row of groupRows) {
+          const sentence = document.createElement("div");
+          sentence.className = "grammar-library-example";
+          const english = document.createElement("span");
+          english.className = "library-sentence-english";
+          english.title = "点击朗读整句；右键点单词查词典；中键点击在主页显示这句（手机：单击、长按单词、双击）";
+          renderText(row, english);
+          sentence.append(english);
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "user-sentence-load-button";
+          button.textContent = "▶";
+          button.title = "从这句开始练习当前筛选结果";
+          button.setAttribute("aria-label", `练习：${row.text}`);
+          button.addEventListener("click", () => { if (isEnglish()) onUse(visible, row.id); });
+          sentence.append(button);
+          examples.append(sentence);
+        }
+      }
+      list.scrollTop = 0;
+    }
+    pager.addEventListener("click", event => event.target.closest("button")?.blur());
+    // Phone swipe: left = next topic, right = previous topic.
+    window.langLSRWBindSwipe?.(list, () => { if (!pager.hidden) pagerNext.click(); }, () => { if (!pager.hidden) pagerPrev.click(); });
+    pagerFirst.addEventListener("click", () => { page = 0; drawList(true); });
+    pagerLast.addEventListener("click", () => { page = topicGroups.size - 1; drawList(true); });
+    pagerPrev.addEventListener("click", () => { page -= 1; drawList(true); });
+    pagerNext.addEventListener("click", () => { page += 1; drawList(true); });
+    pagedQuery.addEventListener("change", () => { if (shownLoaded) drawList(true); });
     function render() {
       const enabled = isEnglish() && rows.length > 0;
       search.disabled = !enabled;
@@ -228,49 +316,15 @@
       if (enabled) renderTree(); else tree.replaceChildren();
       visible = enabled ? filter(rows, { ...chosen, query: search.value }) : [];
       use.disabled = !visible.length;
-      list.replaceChildren();
-      if (!enabled || !visible.length) {
-        const empty = document.createElement("div");
-        empty.className = "empty";
-        empty.textContent = !isEnglish() ? "这份句库是英语材料，请切换到英语后使用。" : "没有找到匹配的句子。";
-        list.append(empty);
-      }
-      const groups = new Map();
+      topicGroups = new Map();
       visible.forEach(row => {
-        let examples = groups.get(row.pointId);
-        if (!examples) {
-          const element = document.createElement("div");
-          element.className = "library-sentence-row grammar-library-row";
-          const heading = document.createElement("div");
-          heading.className = "grammar-library-heading";
-          const [number, ...pointName] = row.point.split("：");
-          heading.textContent = `${number}：${name(row.category)} - ${name(row.subcategory)} - ${pointName.join("：")}`;
-          examples = document.createElement("div");
-          examples.className = "grammar-library-examples";
-          element.append(heading, examples);
-          list.append(element);
-          groups.set(row.pointId, examples);
-        }
-        const sentence = document.createElement("div");
-        sentence.className = "grammar-library-example";
-        const english = document.createElement("span");
-        english.className = "library-sentence-english";
-        english.title = "点击朗读整句；右键点单词查词典；中键点击在主页显示这句（手机：单击、长按单词、双击）";
-        renderText(row, english);
-        sentence.append(english);
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "user-sentence-load-button";
-        button.textContent = "▶";
-        button.title = "从这句开始练习当前筛选结果";
-        button.setAttribute("aria-label", `练习：${row.text}`);
-        button.addEventListener("click", () => { if (isEnglish()) onUse(visible, row.id); });
-        sentence.append(button);
-        examples.append(sentence);
+        if (!topicGroups.has(row.pointId)) topicGroups.set(row.pointId, []);
+        topicGroups.get(row.pointId).push(row);
       });
+      page = 0;
+      drawList(enabled);
       // The filtered count only appears while a class or search narrows the list.
       if (enabled) status.textContent = visible.length === rows.length ? `共${rows.length}句` : `共${rows.length}句 · 当前${visible.length}句`;
-      list.scrollTop = 0;
       shownLoaded = enabled;
     }
     // reset: start from the full list, used when the panel switches to other data such as another channel.

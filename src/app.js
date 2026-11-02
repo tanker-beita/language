@@ -410,11 +410,34 @@ const fallbackSentences = [
       select.classList.toggle("has-unavailable-libraries", [...select.options].some((option) => option.disabled && !option.hidden));
     }
 
+    // Reading modes: 全文 for most libraries; the channel library reads on to the end of the 频道 / 情景 / 场景 / 话题 instead.
+    const SCOPE_MODES = { channel: "channelId", situation: "categoryId", scene: "subcategoryId", topic: "pointId" };
+    function isFullTextMode(mode = $("modeSelect").value) {
+      return mode === "fulltext" || mode in SCOPE_MODES;
+    }
+    function syncReadingModeOptions() {
+      const select = $("modeSelect");
+      const isChannel = state.currentLibraryLabel === "频道句库";
+      select.querySelectorAll("option").forEach((option) => {
+        const scoped = option.value in SCOPE_MODES;
+        const hide = scoped ? !isChannel : option.value === "fulltext" && isChannel;
+        option.hidden = hide;
+        option.disabled = hide;
+      });
+      const current = select.selectedOptions[0];
+      if (current?.disabled) {
+        select.value = isChannel ? "channel" : "fulltext";
+        saveSpeechSettings();
+        updateSentenceNavigationTitles();
+      }
+    }
+
     function setCurrentLibrary(label, statusText = "") {
       stopFullTextReading();
       clearAudioMaterial();
       state.currentLibraryLabel = label || "导入句库";
       syncCurrentLibrarySelect(state.currentLibraryLabel);
+      syncReadingModeOptions();
       if (statusText) $("sourceStatus").textContent = statusText;
       state.randomHistory = [];
       state.randomForwardStack = [];
@@ -692,6 +715,8 @@ const fallbackSentences = [
           libraryId: String(item.libraryId || "").trim(),
           keywords: Array.isArray(item.keywords) ? item.keywords.filter(word => typeof word === "string" && word.trim()) : [],
           grammarPoint: String(item.grammarPoint || item.point || "").trim(),
+          // Channel library classes, used by the 频道 / 情景 / 场景 / 话题 reading modes.
+          ...(item.channelId ? { channelId: String(item.channelId), categoryId: String(item.categoryId || ""), subcategoryId: String(item.subcategoryId || ""), pointId: String(item.pointId || "") } : {}),
           text: String(item.text || item.sentence || item.english || "").trim(),
           translation: String(item.translation || item.zh || item.cn || "").trim(),
           grammar: String(item.grammar || item.grammarAnalysis || "").trim(),
@@ -1056,6 +1081,24 @@ const fallbackSentences = [
     }
     libraryPhoneQuery.addEventListener("change", placeLibraryPhoneControls);
 
+    // Phones: the 词库 search joins the title row (like 句库); wider screens keep it in the count row.
+    const dictionarySearchLabel = document.querySelector("#dictionaryLibraryCount .dictionary-word-search");
+    const dictionarySearchHome = { parent: dictionarySearchLabel.parentNode, next: dictionarySearchLabel.nextSibling };
+    // The "n / n 个单词" count also moves to the bottom pager row on phones.
+    const dictionaryCountText = $("dictionaryLibraryCountText");
+    const dictionaryCountHome = { parent: dictionaryCountText.parentNode, next: dictionaryCountText.nextSibling };
+    function placeDictionarySearch() {
+      if (libraryPhoneQuery.matches) {
+        document.querySelector("#dictionaryLibraryModal .library-header .dialog-header-actions").before(dictionarySearchLabel);
+        document.querySelector("#dictionaryLibraryModal .dictionary-library-pagination").prepend(dictionaryCountText);
+      } else {
+        dictionarySearchHome.parent.insertBefore(dictionarySearchLabel, dictionarySearchHome.next);
+        dictionaryCountHome.parent.insertBefore(dictionaryCountText, dictionaryCountHome.next);
+      }
+    }
+    placeDictionarySearch();
+    libraryPhoneQuery.addEventListener("change", placeDictionarySearch);
+
     function setLibraryView(view) {
       closeDictionaryLookup();
       const views = [
@@ -1165,6 +1208,26 @@ const fallbackSentences = [
 
     const LIBRARY_SENTENCE_TITLE = "点击朗读整句；右键点单词查词典；中键点击在主页显示这句（手机：单击、长按单词、双击）";
 
+    // The common library shows as many sentences per page as the list height fits (measured from the rows just drawn).
+    function fitLibraryPageSize() {
+      const library = state.library;
+      const list = $("librarySentenceList");
+      const rows = list.querySelectorAll(".library-sentence-row");
+      if (library.fitting || !rows.length || !list.clientHeight) return;
+      // Content height from the rows themselves: scrollHeight is never below the box, so a short page would look "tall".
+      const last = rows[rows.length - 1];
+      const rowHeight = (last.offsetTop + last.offsetHeight - rows[0].offsetTop) / rows.length;
+      if (!(rowHeight > 0)) return;
+      const fit = Math.max(5, Math.min(200, Math.floor(list.clientHeight / rowHeight)));
+      if (fit === library.pageSize) return;
+      const first = library.page * library.pageSize;
+      library.pageSize = fit;
+      library.page = Math.floor(first / fit);
+      library.fitting = true;
+      try { renderLibraryPage(); } finally { library.fitting = false; }
+    }
+    new ResizeObserver(() => fitLibraryPageSize()).observe($("librarySentenceList"));
+
     function renderLibraryPage() {
       const library = state.library;
       const items = library.filteredItems;
@@ -1184,8 +1247,8 @@ const fallbackSentences = [
         `).join("")
         : '<div class="empty">没有找到匹配的句子。</div>';
       $("libraryStatus").textContent = library.query
-        ? `找到 ${items.length.toLocaleString()} 条，显示第 ${items.length ? start + 1 : 0}-${Math.min(start + library.pageSize, items.length)} 条`
-        : `共 ${items.length.toLocaleString()} 条，显示第 ${items.length ? start + 1 : 0}-${Math.min(start + library.pageSize, items.length)} 条`;
+        ? `找到 ${items.length.toLocaleString()} 条`
+        : `共 ${items.length.toLocaleString()} 条`;
       $("libraryPageInput").value = pageCount ? library.page + 1 : 0;
       $("libraryPageInput").max = Math.max(1, pageCount);
       $("libraryPageInput").disabled = !pageCount;
@@ -1194,6 +1257,7 @@ const fallbackSentences = [
       $("libraryPreviousPageBtn").disabled = library.page <= 0;
       $("libraryNextPageBtn").disabled = !pageCount || library.page >= pageCount - 1;
       $("libraryLastPageBtn").disabled = !pageCount || library.page >= pageCount - 1;
+      fitLibraryPageSize();
     }
 
     function goToLibraryPage(pageIndex) {
@@ -3446,7 +3510,8 @@ const fallbackSentences = [
         nextInOrder: shortcutDisplayName(state.shortcuts.nextSentenceInOrder)
       };
       const orderNote = `顺序模式：${keys.previousInOrder}/${keys.nextInOrder}=上/下一句；${keys.previous}/${keys.next}=上/下一句。\n随机模式：${keys.previousInOrder}/${keys.nextInOrder}=上/下一句；${keys.previous}/${keys.next}=上个随机句/随机下一句。`;
-      $("modeSelect").title = `顺序＝按句库顺序切换；\n随机＝从句库随机抽取；\n全文＝开始朗读后，从当前句连续朗读到全文结束。\n---------------------------
+      $("modeSelect").title = `顺序＝按句库顺序切换；\n随机＝从句库随机抽取；\n全文＝开始朗读后，从当前句连续朗读到全文结束；
+频道句库另有频道／情景／场景／话题＝从当前句连续朗读到该范围结束。\n---------------------------
 ${orderNote}`;
       const previous = {
         ordered: "上一句",
@@ -3747,7 +3812,8 @@ ${orderNote}`;
       const displayMode = state.speechSettings.displayMode || (state.speechSettings.longText === true ? "long" : "single");
       $("displayModeSelect").value = ["single", "long", "focus"].includes(displayMode) ? displayMode : "single";
       const practiceOrder = state.speechSettings.practiceOrder;
-      $("modeSelect").value = ["ordered", "random", "fulltext", "mistakes"].includes(practiceOrder) ? practiceOrder : "random";
+      $("modeSelect").value = ["ordered", "random", "fulltext", ...Object.keys(SCOPE_MODES), "mistakes"].includes(practiceOrder) ? practiceOrder : "random";
+      syncReadingModeOptions();
       updateSentenceNavigationTitles();
       $("speakWordToggle").checked = state.speechSettings.speakWord !== false;
       $("showSourceToggle").checked = state.speechSettings.showSource !== false;
@@ -3823,7 +3889,7 @@ ${orderNote}`;
     }
 
     function speakCurrentSentence() {
-      if ($("modeSelect").value === "fulltext") {
+      if (isFullTextMode()) {
         if (state.fullTextReading) stopFullTextReading();
         else startFullTextReading();
         return;
@@ -3835,7 +3901,7 @@ ${orderNote}`;
     // practice view along, then stop. Any other navigation, stop action, word replay, or library/mode change cancels it.
     function setSpeakButtonReading(reading) {
       const button = $("speakBtn");
-      button.textContent = reading ? "停止 ⏹" : "朗读 📢";
+      button.innerHTML = reading ? '停止 <span class="speak-stop-square" aria-hidden="true"></span>' : "朗读 📢";
       button.title = reading ? "停止全文朗读" : "朗读当前句；全文模式下从当前句连续朗读到结尾";
     }
 
@@ -3850,11 +3916,17 @@ ${orderNote}`;
         if (state.audioMaterial && usingOriginalVoice() && Number.isFinite(state.sentences[state.index]?.start)) {
           await playFullTextAudio(active);
         } else {
-          // TTS: the next sentence starts as soon as the previous one ends.
+          // TTS: the next sentence starts as soon as the previous one ends. Channel scopes wrap at the end of that class.
+          const field = SCOPE_MODES[$("modeSelect").value];
+          const scopeId = field ? state.sentences[state.index]?.[field] : "";
           while (active()) {
             await speakSentenceAndWait(currentReplayRate());
-            if (!active() || state.index >= state.sentences.length - 1) break;
-            advanceFullTextSentence();
+            if (!active()) break;
+            const atEnd = state.index >= state.sentences.length - 1
+              || Boolean(scopeId && state.sentences[state.index + 1]?.[field] !== scopeId);
+            // Reached the end of the range: start over from its first sentence until the learner stops it.
+            if (atEnd) jumpFullTextSentence(scopeId ? Math.max(0, state.sentences.findIndex(item => item[field] === scopeId)) : 0);
+            else advanceFullTextSentence();
           }
         }
       } catch {
@@ -3868,9 +3940,13 @@ ${orderNote}`;
     }
 
     function advanceFullTextSentence() {
+      jumpFullTextSentence(state.index + 1);
+    }
+
+    function jumpFullTextSentence(index) {
       state.fullTextAdvancing = true;
       try {
-        state.index += 1;
+        state.index = index;
         saveLastPosition();
         resetCurrent(false);
       } finally {
@@ -4529,10 +4605,11 @@ ${orderNote}`;
       $("dictionaryLookupPopover").hidden = true;
       closeEnglishLookup();
       // A phone lookup from a library moved its sentence to the top of the list; put the list back where it was.
+      // This waits until the closed popover has been drawn, so a long list being laid out again cannot hold it on screen.
       const saved = state.libraryLookupScroll;
       if (saved) {
         state.libraryLookupScroll = null;
-        saved.list.scrollTop = saved.top;
+        requestAnimationFrame(() => setTimeout(() => { saved.list.scrollTop = saved.top; }));
       }
     }
 
@@ -4595,7 +4672,7 @@ ${orderNote}`;
         $("dictionaryLibrarySummary").textContent = language.dictionaryName;
         $("dictionaryPageInput").value = result.page;
         $("dictionaryPageInput").max = result.pageCount;
-        $("dictionaryPageCount").textContent = `/ ${result.pageCount.toLocaleString()} 页 (每页${result.pageSize}词)`;
+        $("dictionaryPageCount").textContent = `/ ${result.pageCount.toLocaleString()} 页`;
         $("dictionaryFirstPageBtn").disabled = result.page <= 1;
         $("dictionaryPrevPageBtn").disabled = result.page <= 1;
         $("dictionaryNextPageBtn").disabled = result.page >= result.pageCount;
@@ -4605,7 +4682,7 @@ ${orderNote}`;
         const favoriteWords = dictionaryCollectionEnabled() ? loadUserWords() : [];
         list.classList.toggle("is-without-review-status", !dictionaryWordStudyEnabled());
         list.innerHTML = result.rows.length
-          ? result.rows.map((item, index) => `<div class="user-word-item" role="button" tabindex="0" data-dictionary-library-word="${escapeHtml(item.word)}" data-dictionary-library-index="${(result.page - 1) * result.pageSize + index + 1}">${dictionaryWordStudyEnabled() ? wordReviewStatusIconsHtml(item.word, reviewRecords, manualMastery) : ""}<span class="user-word-label">${dictionarySearchWordHtml(item.word, $("dictionaryLibrarySearchInput").value)}</span>${dictionaryCollectionEnabled() ? dictionaryFavoriteButton(item.word, false, state.learningLanguageId, favoriteWords) : ""}</div>`).join("")
+          ? result.rows.map((item, index) => `<div class="user-word-item" role="button" tabindex="0" data-dictionary-library-word="${escapeHtml(item.word)}" data-dictionary-library-index="${(result.page - 1) * result.pageSize + index + 1}">${dictionaryWordStudyEnabled() ? wordReviewStatusIconsHtml(item.word, reviewRecords, manualMastery) : ""}<span class="user-word-label">${dictionarySearchWordHtml(item.word, $("dictionaryLibrarySearchInput").value)}</span><button class="dictionary-library-speak" type="button" data-library-speak title="朗读这个单词" aria-label="朗读 ${escapeHtml(item.word)}">🔊</button>${dictionaryCollectionEnabled() ? dictionaryFavoriteButton(item.word, false, state.learningLanguageId, favoriteWords) : ""}</div>`).join("")
           : '<div class="user-phrases-empty">当前分类没有单词。</div>';
         list.querySelectorAll("[data-dictionary-library-word]").forEach((button) => {
           const activateFromPointer = () => {
@@ -4617,6 +4694,11 @@ ${orderNote}`;
           button.addEventListener("mouseenter", () => { if (!dictionaryLibraryUsesOverlay()) activateFromPointer(); });
           bindTouchWordSelection(button, () => { if (!dictionaryLibraryUsesOverlay()) activateFromPointer(); });
           button.addEventListener("click", (event) => {
+            if (event.target.closest("[data-library-speak]")) {
+              event.stopPropagation();
+              speakText(button.dataset.dictionaryLibraryWord, { rate: currentReplayRate() });
+              return;
+            }
             if (!dictionaryLibraryUsesOverlay() || event.target.closest("button, input, [data-word-status]")) return;
             activateDictionaryLibraryWord(button, result.total, typeLabel, true);
           });
@@ -7451,10 +7533,21 @@ ${orderNote}`;
       if (!word) return;
       const popover = $("dictionaryLookupPopover");
       const wordRect = wordEl.getBoundingClientRect();
-      const sourceLineRect = wordEl.closest(".target-english")?.getBoundingClientRect() || wordRect;
+      const sourceLine = wordEl.closest(".target-english");
+      // Phones: when the sentence sits too low for the popover to open right under it, scroll the sentence up first
+      // (instead of letting the popover jump above it).
+      if (isMobileSpeaker() && sourceLine && window.innerHeight - sourceLine.getBoundingClientRect().bottom < 260) {
+        sourceLine.scrollIntoView({ block: "start", behavior: "instant" });
+      }
+      // The popover follows the sentence text itself (its last line), not the taller box around it.
+      const textRects = sourceLine ? [...sourceLine.querySelectorAll("[data-word]")].map(el => el.getBoundingClientRect()).filter(r => r.height) : [];
+      const sourceLineRect = textRects.length
+        ? new DOMRect(sourceLine.getBoundingClientRect().x, Math.min(...textRects.map(r => r.top)), sourceLine.getBoundingClientRect().width, Math.max(...textRects.map(r => r.bottom)) - Math.min(...textRects.map(r => r.top)))
+        : sourceLine?.getBoundingClientRect() || wordRect;
       const lookupAnchor = {
         clientX: anchor?.clientX ?? wordRect.left,
-        avoidRect: sourceLineRect
+        avoidRect: sourceLineRect,
+        gap: textRects.length ? 8 : 0
       };
       await lookupLearningWord(word, lookupAnchor);
     }
@@ -9529,6 +9622,10 @@ ${orderNote}`;
         renderDictionaryLibrary();
       }, 250);
     });
+    // Phone swipes: left = next, right = previous (sentence on the main page, page in the libraries).
+    window.langLSRWBindSwipe?.($("listenPage"), () => $("nextUnifiedBtn").click(), () => $("previousUnifiedBtn").click());
+    window.langLSRWBindSwipe?.($("librarySentenceList"), () => $("libraryNextPageBtn").click(), () => $("libraryPreviousPageBtn").click());
+    window.langLSRWBindSwipe?.($("dictionaryLibraryList"), () => $("dictionaryNextPageBtn").click(), () => $("dictionaryPrevPageBtn").click());
     $("dictionaryPrevPageBtn").addEventListener("click", () => {
       goToDictionaryLibraryPage(state.dictionaryLibraryPage - 1);
     });
@@ -10280,6 +10377,18 @@ ${orderNote}`;
       }
       if (event.target.closest("[data-dictionary-close]")) closeDictionaryLookup();
     });
+    // Phones: × closes as the finger lifts instead of waiting for the click, which can arrive noticeably later.
+    {
+      let closeDown = null;
+      $("dictionaryLookupPopover").addEventListener("pointerdown", (event) => {
+        closeDown = event.pointerType === "touch" ? event.target.closest("[data-dictionary-close]") : null;
+      });
+      $("dictionaryLookupPopover").addEventListener("pointerup", (event) => {
+        if (closeDown && event.target.closest("[data-dictionary-close]") === closeDown) closeDictionaryLookup();
+        closeDown = null;
+      });
+      $("dictionaryLookupPopover").addEventListener("pointercancel", () => { closeDown = null; });
+    }
     document.addEventListener("click", async (event) => {
       const popover = event.target.closest(".english-lookup-popover");
       if (!popover) return;

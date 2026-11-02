@@ -510,7 +510,6 @@
 
     .dictionary-badges {
       display: flex;
-      flex-wrap: wrap;
       gap: 5px;
       margin-top: 9px;
     }
@@ -1442,6 +1441,10 @@
       padding: 8px 10px;
       box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     }
+
+    /* 朗读 📢 and 停止 ⏹ swap in the same button; keep the width fixed so it does not narrow when reading starts. */
+    .speak-stop-square { display: inline-block; width: 0.8em; height: 0.8em; margin-left: 2px; border-radius: 2px; background: #e03131; vertical-align: -0.05em; }
+    #speakBtn { min-width: 5.6em; text-align: center; white-space: nowrap; }
 
     .sentence-tools {
       display: flex;
@@ -3560,6 +3563,8 @@
       text-align: center;
     }
 
+    .dictionary-library-pagination .pg-icon { display: none; }
+
     .dictionary-library-pagination[hidden] {
       display: none;
     }
@@ -3806,6 +3811,12 @@
       gap: 4px;
     }
 
+    .dictionary-library-speak { display: none; }
+    @media (max-width: 700px), (max-height: 500px) and (pointer: coarse) {
+      .dictionary-library-speak { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; margin-left: auto; width: 24px; min-width: 24px; height: 24px; min-height: 24px; padding: 0; border: 0; background: transparent; font-size: 14px; line-height: 1; }
+      #dictionaryLibraryList .dictionary-library-speak + .dictionary-rating { margin-left: 0; }
+    }
+
     #userPhrasesList .user-word-item {
       height: 26px;
       white-space: nowrap;
@@ -3889,6 +3900,16 @@
       border-bottom-color: color-mix(in srgb, var(--ink) 58%, transparent);
       background: color-mix(in srgb, var(--accent) 12%, var(--panel));
       outline: none;
+    }
+
+    /* Phone: the word detail opens as an overlay, so the list keeps no highlight (tap-stuck hover or the last opened word) once it is closed. */
+    @media (max-width: 700px), (max-height: 500px) and (pointer: coarse) {
+      #dictionaryLibraryList .user-word-item:hover,
+      #dictionaryLibraryList .user-word-item.is-current {
+        border-top-color: transparent;
+        border-bottom-color: color-mix(in srgb, var(--ink) 13%, transparent);
+        background-color: transparent;
+      }
     }
 
     .user-sentence-item {
@@ -4379,8 +4400,16 @@
       min-height: 20px;
     }
 
+    .library-pagination .pg-icon { display: none; }
+    .tree-library-pager { display: flex; align-items: center; gap: 4px; margin-left: auto; font-size: 12px; white-space: nowrap; }
+    .tree-library-pager[hidden] { display: none; }
+    .tree-library-pager button { display: inline-flex; align-items: center; justify-content: center; width: 28px; min-width: 28px; min-height: 26px; height: 26px; padding: 0; border-radius: 13px; color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--panel)); transition: background-color .15s, transform .15s; }
+    @media (hover: hover) { .tree-library-pager button:not(:disabled):hover { background: color-mix(in srgb, var(--accent) 22%, var(--panel)); transform: translateY(-1px); } }
+    .tree-library-pager button:disabled { opacity: .35; }
+    .tree-library-pager > span { min-width: 46px; text-align: center; font-variant-numeric: tabular-nums; }
     .grammar-library-footer {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       align-items: center;
     }
@@ -4613,6 +4642,18 @@
         margin-left: 0;
         text-align: left;
       }
+    }
+
+    /* Phone: the common library pager matches the channel library one: status left, round icon buttons right. */
+    @media (max-width: 700px) {
+      #libraryModal .library-pagination { flex-wrap: nowrap; justify-content: flex-end; gap: 4px; }
+      #libraryModal .library-pagination #libraryStatus { order: -1; flex: 1 1 auto; width: auto; margin: 0; min-width: 0; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      #libraryModal .library-pagination .pg-text { display: none; }
+      #libraryModal .library-pagination .pg-icon { display: block; }
+      #libraryModal .library-pagination button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 28px; min-width: 28px; min-height: 26px; height: 26px; padding: 0; border-radius: 13px; color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
+      #libraryModal .library-pagination button:disabled { opacity: .35; }
+      #libraryModal .library-pagination .library-page-jump { flex: 0 0 auto; gap: 3px; font-size: 12px; }
+      #libraryModal .library-pagination .library-page-jump input { width: 44px; min-height: 26px; height: 26px; padding: 0 2px; font-size: 12px; text-align: center; }
     }
 
     .ai-text-dialog {
@@ -6549,6 +6590,13 @@
       #userPhrasesModal .user-phrases-dialog {
         min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; resize: none;
       }
+      /* 句库 and 词库 fill the whole phone screen (only the notch / home-bar safe areas stay free). */
+      #libraryModal, #dictionaryLibraryModal {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      }
+      #libraryModal > .library-dialog, #dictionaryLibraryModal > .user-phrases-dialog {
+        width: 100%; height: 100%; max-height: 100%; border: 0; border-radius: 0;
+      }
       .library-header { gap: 8px; padding: 10px; }
       #dictionaryLibraryModal > .user-phrases-dialog > .library-header > div:first-child {
         display: flex; align-items: baseline; gap: 8px; white-space: nowrap;
@@ -6568,6 +6616,27 @@
       }
       .dictionary-library-pagination { grid-template-columns: 32px 32px minmax(72px, 1fr) 32px 32px; }
       .dictionary-library-pagination button { width: 32px; min-height: 32px; }
+      /* Phone: the search sits in the 词库 title row, like 句库 (moved there by app.js). */
+      #dictionaryLibraryModal .library-header > .dictionary-word-search { flex: 1 1 0; min-width: 0; font-size: 0; gap: 0; }
+      #dictionaryLibraryModal .library-header > .dictionary-word-search input { flex: 1 1 auto; width: 100%; min-width: 0; height: 32px; min-height: 32px; padding: 0 8px; font-size: 13px; border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: 7px; background: var(--panel); color: var(--ink); }
+      #dictionaryLibraryModal #dictionaryLibrarySummary { display: none; }
+      #dictionaryLibraryModal > .user-phrases-dialog > .library-header { padding: 6px 8px 4px 8px; gap: 8px; }
+      #dictionaryLibraryModal .library-header > .dictionary-word-search { margin-left: 8px; }
+      #dictionaryLibraryModal > .user-phrases-dialog > .library-header h2 { font-size: 18px; }
+      #dictionaryLibraryModal #closeDictionaryLibraryBtn { height: 32px; min-height: 32px; padding: 0 10px; font-size: 14px; line-height: 1; }
+      /* The count moves into the pager row; the emptied count row collapses (it still marks where the word detail overlay starts). */
+      #dictionaryLibraryModal #dictionaryLibraryCount:not(:has(*)) { padding: 0; min-height: 0; height: 0; border: 0; overflow: hidden; }
+      #dictionaryLibraryModal .dictionary-library-pagination { display: flex; align-items: center; gap: 4px; }
+      #dictionaryLibraryModal .dictionary-library-pagination #dictionaryLibraryCountText { flex: 1 1 0; min-width: 0; margin-right: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; font-size: 11px; }
+      #dictionaryLibraryModal .dictionary-library-pagination button, #dictionaryLibraryModal .dictionary-page-jump { flex: 0 0 auto; }
+      /* The 词库 pager matches the 句库 one: round icon buttons. */
+      #dictionaryLibraryModal .dictionary-library-pagination { grid-template-columns: 28px 28px minmax(72px, 1fr) 28px 28px; gap: 4px; }
+      #dictionaryLibraryModal .dictionary-library-pagination .pg-text { display: none; }
+      #dictionaryLibraryModal .dictionary-library-pagination .pg-icon { display: block; }
+      #dictionaryLibraryModal .dictionary-library-pagination button { display: inline-flex; align-items: center; justify-content: center; width: 28px; min-height: 26px; height: 26px; border-radius: 13px; color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
+      #dictionaryLibraryModal .dictionary-library-pagination button:disabled { opacity: .35; }
+      #dictionaryLibraryModal .dictionary-page-jump { font-size: 12px; gap: 3px; }
+      #dictionaryLibraryModal .dictionary-page-jump input { width: 44px; height: 26px; font-size: 12px; }
       /* Tabs remain reachable; list and detail have bounded, independent scrolling. */
       .user-phrases-layout,
       .user-phrases-layout.is-sentences-view,
@@ -6582,8 +6651,9 @@
         border-right: 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
       }
       .user-phrases-tabs button { flex: 0 0 auto; width: auto; min-height: 36px; white-space: nowrap; }
-      #dictionaryLibraryModal .user-phrases-tabs { padding: 3px 8px; }
-      #dictionaryLibraryModal .user-phrases-tabs button { min-height: 28px; padding: 2px 12px; font-size: 14px; line-height: 1.2; }
+      /* Same compact tab row as the 句库 one. */
+      #dictionaryLibraryModal .user-phrases-tabs { padding: 3px 6px; gap: 4px; align-items: center; }
+      #dictionaryLibraryModal .user-phrases-tabs button { min-height: 26px; height: 26px; margin: 0; padding: 2px 6px; font-size: 14px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
       .user-phrases-collection { border-right: 0; }
       .user-phrase-detail { padding: 10px; border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
       #dictionaryLibraryList, #userPhrasesList { overflow-y: auto; }
@@ -6754,7 +6824,7 @@
         white-space: nowrap;
       }
       #libraryModal #commonLibraryPanel { grid-template-rows: minmax(0, 1fr) auto; }
-      #libraryModal #libraryMobileMeta { display: inline; font-size: 11px; line-height: 1.4; white-space: nowrap; }
+      #libraryModal #libraryMobileMeta { display: none; }
       #libraryModal .library-pagination #libraryStatus { flex: 1 1 auto; width: auto; min-width: 0; font-size: 11px; }
       #libraryModal #channelLibraryPanel .grammar-mobile-classification { grid-template-columns: auto auto minmax(0, 1fr); }
       /* The channel choice is a button and menu like the class button next to it (channel-library.js). */
@@ -6778,7 +6848,7 @@
 
     @media (max-width: 700px), (max-height: 500px) and (pointer: coarse) {
       #dictionaryLibraryModal {
-        padding: max(var(--app-top), env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(var(--app-top), env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
         background: var(--panel); backdrop-filter: none;
       }
       #dictionaryLibraryModal > .user-phrases-dialog {
